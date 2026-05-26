@@ -457,7 +457,7 @@ For questions, contact your competitive intelligence team.
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {[tulip, ...competitorsOnly].map(comp => (
+                {[tulip, ...competitorsOnly].filter(Boolean).map(comp => (
                   <div key={comp.id} className="p-4 border rounded-lg">
                     <h3 className="font-semibold mb-3">{comp.name}</h3>
                     <div className="grid md:grid-cols-2 gap-4 text-sm">

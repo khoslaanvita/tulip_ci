@@ -8,6 +8,7 @@ import { generateMarketSummary, generateCategorySummaries, generateDepartmentBri
 import { migrateCustomerTranscripts } from '@/lib/db-operations';
 import { generateCompetitorThreatsOpportunities, getRecentCompetitorNews } from '@/lib/competitor-analysis';
 import { generateStrategicInsights, computeThreatScore } from '@/lib/strategic-insights';
+import { generateCategoryIntelligence } from '@/lib/category-intelligence';
 
 // Start the background scheduler when the API loads
 if (typeof window === 'undefined') { // Server-side only
@@ -137,7 +138,7 @@ export async function GET(request) {
 
     // GET /api/voc/stats - Get Voice of Customer statistics
     if (path === '/voc/stats') {
-      const stats = getVoCStats();
+      const stats = await getVoCStats();
       return NextResponse.json(stats);
     }
 
@@ -170,6 +171,13 @@ export async function GET(request) {
     if (path === '/intelligence/strategic-insights') {
       const insights = await generateStrategicInsights();
       return NextResponse.json(insights);
+    }
+
+    // GET /api/intelligence/category-intelligence - Category-grouped insights with Tulip takeaways
+    if (path === '/intelligence/category-intelligence') {
+      const force = searchParams.get('force') === '1';
+      const data = await generateCategoryIntelligence({ force });
+      return NextResponse.json(data);
     }
 
     // GET /api/intelligence/categories - Get category summaries

@@ -1,0 +1,122 @@
+{
+  "mes_erp": {
+    "title": "MES / ERP",
+    "summary": "Incumbent MES vendors are racing to bolt on AI and \"composable\" app layers while customers push back on 12-18 month deployments. The center of gravity is shifting from records-of-work to flexible, app-based execution.",
+    "happening": {
+      "product": "SAP launched DM Cloud with low-code extensions; Plex pushed an AI co-pilot for production reporting; Critical Manufacturing rolled out semiconductor-focused MES 11 with real-time AI quality.",
+      "ai": "All MES leaders are launching \"generative co-pilots\" for shift handover, work-order summarisation, and exception triage — Siemens Industrial Copilot, SAP Joule for manufacturing, Oracle's Fusion AI Agents.",
+      "sales": "Long deal cycles (9-15 months) remain. Vendors increasingly bundle MES into ERP transformation deals to dodge standalone scrutiny. Aerospace + life sciences seeing the most new logos.",
+      "pricing": "Implementation-heavy pricing ($500K–$5M+ rollouts). Critical Manufacturing and First Resonance trying SaaS subscription pivots to win mid-market."
+    },
+    "takeaways": [
+      "Lead with \"app layer, not rip-and-replace\" in every SAP/Plex/Oracle compete deal — 60-90 day pilots beat 12-month MES rollouts.",
+      "Counter Industrial Copilot narrative: show Tulip's frontline-workflow AI in operator hands, not just IT dashboards.",
+      "Build a coexistence reference architecture for SAP S/4HANA + Tulip on the shop floor; arm AEs with the diagram."
+    ]
+  },
+  "connected_worker": {
+    "title": "Connected Worker",
+    "summary": "The category is consolidating around AI-augmented work. Augmentir's GenAI lead and Poka's IFS acquisition are reshaping competitive dynamics. Tulip's composability and platform extensibility remain unmatched here.",
+    "happening": {
+      "product": "Augmentir doubled down on GenAI skills agents; Poka deeply integrated into IFS Cloud as \"IFS Connected Worker\"; Parsable launched no-code procedure builder; Dozuki added AI-generated SOPs from video.",
+      "ai": "Generative procedure authoring is table stakes now. Augmentir leads on AI-driven training; Poka uses GenAI for video summarisation; SwipeGuide adds AI-suggested next-best-steps.",
+      "sales": "Land-and-expand motions dominate (single plant pilots → enterprise). Augmentir winning mid-market with PLG; Poka leveraging IFS sales force for enterprise reach.",
+      "pricing": "Per-user pricing $30–$80/month/user. Augmentir and MaintainX disrupting with $20-tier mobile-first SKUs."
+    },
+    "takeaways": [
+      "Differentiate hard on \"platform vs point solution\" — Tulip is the only connected-worker player with full app composability.",
+      "Counter Augmentir's GenAI narrative with Tulip Frontline Copilot positioning + real customer outcomes.",
+      "Build a Poka-to-Tulip migration play for IFS customers wanting a more flexible app layer."
+    ]
+  },
+  "qms": {
+    "title": "Quality / QMS",
+    "summary": "QMS vendors are expanding into manufacturing execution (MasterControl Manufacturing Excellence, Sparta's TrackWise + Honeywell). The line between QMS and MES is blurring — opportunity for Tulip to own the workflow execution layer.",
+    "happening": {
+      "product": "MasterControl shipped Manufacturing Excellence GA expanding into shop-floor execution; Kneat dominates validation lifecycle; Sparta + Honeywell pushing TrackWise Digital deeper into operations.",
+      "ai": "AI-assisted CAPA root cause, automated deviation triage, predictive quality risk scoring. MasterControl AI for batch record review now in public beta.",
+      "sales": "Long, compliance-heavy sales cycles. Pharma/biotech overwhelmingly drives the category. Co-sell motions with regulatory consultants common.",
+      "pricing": "$100K–$1M+ annual enterprise QMS. Implementation 6-12 months. Validation costs add 30-50%."
+    },
+    "takeaways": [
+      "Position Tulip as the execution layer above QMS — \"QMS owns the records, Tulip owns the work.\"",
+      "Build pre-validated Tulip apps for common GMP workflows to neutralise MasterControl's compliance moat.",
+      "Co-sell with Sparta/Kneat where possible — protect the deal, expand the footprint."
+    ]
+  },
+  "cmms": {
+    "title": "CMMS / EAM",
+    "summary": "MaintainX is reshaping the category with PLG and a $400M+ valuation; legacy EAM (IBM Maximo, Fiix) is pivoting to AI-led predictive maintenance. The category overlaps with Tulip on frontline mobile work.",
+    "happening": {
+      "product": "MaintainX shipped procedure-based work orders + IoT sensor integrations; IBM watsonx for Maximo expanding predictive scope; Fiix added GenAI work order summaries.",
+      "ai": "Predictive maintenance + GenAI work order triage are the focus. MaintainX's mobile-first AI gaining real traction in mid-market.",
+      "sales": "MaintainX winning massively on bottoms-up PLG; Maximo retaining enterprise asset-heavy verticals. Limble carving the SMB niche.",
+      "pricing": "MaintainX $16-$49/user/month freemium; Maximo $300K+ enterprise; Fiix per-asset pricing."
+    },
+    "takeaways": [
+      "Position Tulip as the operator workflow layer above CMMS — connect maintenance into broader plant ops, not just asset records.",
+      "Build integration content for MaintainX + Tulip and Maximo + Tulip — own the \"frontline app\" persona.",
+      "Don't compete directly on asset records; compete on workflow flexibility."
+    ]
+  },
+  "scada_ot": {
+    "title": "SCADA / OT",
+    "summary": "The SCADA/OT layer is fragmenting between data infrastructure (HighByte, Litmus, AWS) and execution platforms. Inductive Automation Ignition is the breakout darling. Tulip's opportunity: workflow outcomes on top of OT data.",
+    "happening": {
+      "product": "Inductive Automation Ignition 8.3 added enterprise features; HighByte 4.0 expanded UNS support; AVEVA fully transitioned PI System to cloud; AWS IoT SiteWise added Edge Manager.",
+      "ai": "AVEVA AI Assistant for process engineers; AWS Bedrock + IoT integration patterns; HighByte using LLMs for data modeling assistance.",
+      "sales": "Inductive wins on unlimited-license pricing; AVEVA strong in upstream energy; HighByte/Litmus carving the modern UNS niche. Most deals through SIs.",
+      "pricing": "Inductive ~$10K/server unlimited; AVEVA per-tag enterprise; HighByte starts $25K; AWS pay-per-use."
+    },
+    "takeaways": [
+      "Don't try to be SCADA. Partner deeply with Inductive, HighByte, and AVEVA — own the workflow layer that turns OT data into operator action.",
+      "Build certified integrations and joint reference architectures with the top 2-3 SCADA players.",
+      "Sales play: \"You've invested in data infrastructure — Tulip is how you turn it into shop-floor outcomes.\""
+    ]
+  },
+  "analytics": {
+    "title": "Analytics / Manufacturing Intelligence",
+    "summary": "Manufacturing analytics has split into infrastructure (Seeq, TrendMiner) and outcomes (Sight Machine, MachineMetrics). Customers increasingly buy outcomes, not dashboards. Tulip's opportunity: close the loop from insight to action.",
+    "happening": {
+      "product": "Seeq added generative formula authoring; TrendMiner expanded into batch + continuous hybrid; Sight Machine launched Foundation Model for Manufacturing; MachineMetrics added AI machine prognostics.",
+      "ai": "All vendors are launching \"foundation models for manufacturing\" — Sight Machine, Seeq, AVEVA. Real impact still emerging. Most are LLM wrappers + good UX.",
+      "sales": "Outcomes-based selling rising — vendors pitch \"15% OEE uplift\" not dashboards. Pricing-on-impact deals appearing.",
+      "pricing": "Seeq enterprise $100K-$500K; MachineMetrics per-machine; Sight Machine outcome-based pilots."
+    },
+    "takeaways": [
+      "Lead with \"insights to action\" — Tulip apps close the loop on Seeq/TrendMiner data in operator hands.",
+      "Partner motion with Seeq for process industries; compete with Sight Machine on workflow execution.",
+      "Avoid the dashboard war — be the action layer that makes analytics worth the cost."
+    ]
+  },
+  "ai_vision": {
+    "title": "AI Vision / Quality AI",
+    "summary": "AI vision is hot — Cognex still leads on hardware-anchored deployments, Landing AI on bring-your-own-camera SaaS. Both are starting to ship workflow features that overlap with Tulip's execution layer.",
+    "happening": {
+      "product": "Cognex In-Sight L38 with GenAI labeling; Landing AI VisionAgent for production deployment; both adding low-code workflow trigger features.",
+      "ai": "Cognex EdgeLearning + foundation models for surface defect; Landing AI's Large Vision Models for few-shot inspection.",
+      "sales": "Cognex deep with automotive + electronics; Landing AI winning mid-market with $100/camera/month entry.",
+      "pricing": "Cognex hardware-bundled $5K-$50K per station; Landing AI SaaS $100-$500 per camera per month."
+    },
+    "takeaways": [
+      "Frame Tulip as the workflow layer around vision/AI inspection — co-sell where possible, displace where customers want one platform.",
+      "Build native integrations with Cognex (deepest installed base) and Landing AI; turn their detections into Tulip workflows.",
+      "Don't try to be a vision vendor — be the orchestrator of action when vision detects an issue."
+    ]
+  },
+  "platform": {
+    "title": "Low-Code Platform",
+    "summary": "General-purpose low-code platforms (Mendix, OutSystems, Microsoft Power Platform) are showing up in manufacturing app evaluations. Tulip's advantage: manufacturing-native primitives that horizontal platforms can't match.",
+    "happening": {
+      "product": "Mendix shipping AI-assisted app modeling; deeper Siemens Xcelerator integration; Power Platform deepening manufacturing templates with Copilot Studio.",
+      "ai": "All horizontal players adding AI-assisted app build (Mendix Maia, Power Platform Copilot). Productivity gains real but manufacturing context still shallow.",
+      "sales": "Mendix winning where customer already standardized on Siemens; Power Platform winning Microsoft-heavy accounts; rarely chosen for true plant-floor work.",
+      "pricing": "Mendix enterprise platform licensing $50K+; Power Platform per-user from $20/month."
+    },
+    "takeaways": [
+      "Differentiate on manufacturing-native primitives: connectors to IoT/PLC, operator UX, quality workflows that horizontal platforms can't ship in 3 months.",
+      "When competing vs Mendix or Power Platform, lead with \"time-to-first-shop-floor-app\" demo.",
+      "Coexistence story: use horizontal platform for IT apps, Tulip for plant-floor; reduce sales friction."
+    ]
+  }
+}

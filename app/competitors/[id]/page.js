@@ -362,7 +362,15 @@ export default function CompetitorProfilePage() {
               </CardContent>
             </Card>
           </div>
-          
+
+          {/* === Tulip Battle Plan: Threats & Opportunities (auto-generated) === */}
+          <ThreatsOpportunitiesSection
+            competitor={competitor}
+            analysis={competitorAnalysis}
+            loading={loadingAnalysis}
+            onRefresh={loadCompetitorAnalysis}
+          />
+
           {/* White space at bottom */}
           <div className="h-16"></div>
         </TabsContent>
@@ -1039,6 +1047,250 @@ export default function CompetitorProfilePage() {
           </Card>
         </TabsContent>
       </Tabs>
+    </div>
+  );
+}
+
+// ============================================================
+// Tulip Battle Plan: Threats & Opportunities for the competitor
+// Auto-loads, AI-powered when available, deterministic fallback
+// ============================================================
+function ThreatsOpportunitiesSection({ competitor, analysis, loading, onRefresh }) {
+  if (loading && !analysis) {
+    return (
+      <Card className="border border-gray-900">
+        <CardContent className="py-10 text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto mb-3"></div>
+          <p className="text-sm text-gray-600 uppercase tracking-widest text-[10px]">Generating Tulip-specific threats & opportunities…</p>
+        </CardContent>
+      </Card>
+    );
+  }
+  if (!analysis) return null;
+
+  const a = analysis.analysis || {};
+  const threats = a.threatsToTulip || [];
+  const opps = a.opportunitiesForTulip || [];
+  const gaps = a.competitiveGaps || [];
+  const trends = a.marketTrends || {};
+  const actions = a.recommendedActions || [];
+
+  const sevTone = (s) => {
+    const t = (s || '').toLowerCase();
+    if (t === 'critical' || t === 'high') return 'bg-red-50 text-red-700 border-red-200';
+    if (t === 'medium')                    return 'bg-amber-50 text-amber-800 border-amber-200';
+    return                                       'bg-gray-50 text-gray-700 border-gray-300';
+  };
+  const impactTone = (s) => {
+    const t = (s || '').toLowerCase();
+    if (t === 'high')   return 'bg-emerald-50 text-emerald-800 border-emerald-200';
+    if (t === 'medium') return 'bg-emerald-50/60 text-emerald-700 border-emerald-100';
+    return                     'bg-gray-50 text-gray-700 border-gray-300';
+  };
+  const priorityTone = (p) => {
+    const t = (p || '').toLowerCase();
+    if (t === 'high')   return 'bg-black text-white';
+    if (t === 'medium') return 'bg-gray-700 text-white';
+    return                     'bg-gray-300 text-gray-900';
+  };
+
+  return (
+    <div className="space-y-6">
+      {/* Section header */}
+      <div className="flex items-end justify-between flex-wrap gap-3 pt-4">
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <div className="h-1 w-8 bg-emerald-600"></div>
+            <span className="text-[11px] uppercase tracking-widest text-emerald-700 font-semibold">Tulip Battle Plan</span>
+          </div>
+          <h2 className="text-3xl font-light text-gray-900 tracking-tight">Threats & Opportunities vs {competitor.name}</h2>
+          <p className="text-sm text-gray-500 mt-1">
+            {analysis.aiEnabled ? 'AI-generated' : 'Curated from competitor data'} · based on {analysis.basedOnSignals || 0} signals · auto-refreshes when you visit
+          </p>
+        </div>
+        <div className="flex items-center gap-3">
+          <span className="text-[10px] uppercase tracking-widest text-gray-400">
+            Updated · {new Date(analysis.lastUpdated).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+          </span>
+          <Button onClick={onRefresh} size="sm" variant="outline" className="border-gray-300">Refresh</Button>
+        </div>
+      </div>
+
+      {/* Niche summary strip */}
+      {a.companyNiche && (
+        <div className="grid md:grid-cols-3 gap-0 border border-gray-900 divide-x divide-gray-900">
+          <div className="p-4">
+            <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Core function</div>
+            <p className="text-sm text-gray-900 leading-snug">{a.companyNiche.coreFunction}</p>
+          </div>
+          <div className="p-4">
+            <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Target market</div>
+            <p className="text-sm text-gray-900 leading-snug">{a.companyNiche.targetMarket}</p>
+          </div>
+          <div className="p-4">
+            <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Key differentiator</div>
+            <p className="text-sm text-gray-900 leading-snug">{a.companyNiche.keyDifferentiator}</p>
+          </div>
+        </div>
+      )}
+
+      {/* Threats + Opportunities side-by-side */}
+      <div className="grid lg:grid-cols-2 gap-5">
+        {/* THREATS */}
+        <Card className="border border-gray-900 rounded-none">
+          <CardHeader className="bg-black text-white border-b border-black py-4">
+            <div className="flex items-center gap-2">
+              <AlertTriangle className="h-4 w-4 text-red-400" />
+              <CardTitle className="text-base font-medium text-white">Threats to Tulip</CardTitle>
+              <span className="ml-auto text-[10px] uppercase tracking-widest text-gray-400">{threats.length} identified</span>
+            </div>
+          </CardHeader>
+          <CardContent className="p-0 divide-y divide-gray-100">
+            {threats.length === 0 && <p className="p-5 text-sm text-gray-500">No specific threats identified.</p>}
+            {threats.map((t, i) => (
+              <div key={i} className="p-5">
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h4 className="font-medium text-gray-900 leading-snug flex-1">{t.threat}</h4>
+                  <span className={`text-[10px] uppercase tracking-widest border px-2 py-0.5 flex-shrink-0 ${sevTone(t.severity)}`}>{t.severity}</span>
+                </div>
+                <p className="text-sm text-gray-700 leading-relaxed mb-3">{t.description}</p>
+                {t.mitigationStrategy && (
+                  <div className="bg-emerald-50/60 border-l-2 border-emerald-600 p-3">
+                    <div className="text-[10px] uppercase tracking-widest text-emerald-800 font-semibold mb-1">Tulip Counter-Move</div>
+                    <p className="text-sm text-gray-900 leading-snug">{t.mitigationStrategy}</p>
+                  </div>
+                )}
+                <div className="flex items-center gap-3 mt-3 text-[10px] uppercase tracking-widest text-gray-400">
+                  {t.likelihood && <span>Likelihood · <strong className="text-gray-700">{t.likelihood}</strong></span>}
+                  {t.impactedAreas?.length > 0 && (
+                    <span>Impacted · <strong className="text-gray-700">{t.impactedAreas.join(', ')}</strong></span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        {/* OPPORTUNITIES */}
+        <Card className="border border-emerald-700 rounded-none">
+          <CardHeader className="bg-emerald-700 text-white border-b border-emerald-700 py-4">
+            <div className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4" />
+              <CardTitle className="text-base font-medium text-white">Opportunities for Tulip</CardTitle>
+              <span className="ml-auto text-[10px] uppercase tracking-widest text-emerald-100">{opps.length} identified</span>
+            </div>
+          </CardHeader>
+          <CardContent className="p-0 divide-y divide-gray-100">
+            {opps.length === 0 && <p className="p-5 text-sm text-gray-500">No specific opportunities identified.</p>}
+            {opps.map((o, i) => (
+              <div key={i} className="p-5">
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h4 className="font-medium text-gray-900 leading-snug flex-1">{o.opportunity}</h4>
+                  <span className={`text-[10px] uppercase tracking-widest border px-2 py-0.5 flex-shrink-0 ${impactTone(o.impact)}`}>{o.impact} impact</span>
+                </div>
+                <p className="text-sm text-gray-700 leading-relaxed mb-3">{o.description}</p>
+                {o.requiredAction && (
+                  <div className="bg-gray-900 text-white p-3">
+                    <div className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold mb-1">Required Action</div>
+                    <p className="text-sm text-white leading-snug">{o.requiredAction}</p>
+                  </div>
+                )}
+                <div className="flex items-center gap-3 mt-3 text-[10px] uppercase tracking-widest text-gray-400">
+                  {o.owner && <span>Owner · <strong className="text-gray-700">{o.owner}</strong></span>}
+                  {o.timeframe && <span>Timeframe · <strong className="text-gray-700">{o.timeframe}</strong></span>}
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Competitive gaps */}
+      {gaps.length > 0 && (
+        <Card className="border border-gray-200 rounded-none">
+          <CardHeader className="bg-gray-50 border-b border-gray-200 py-4">
+            <CardTitle className="text-base font-medium">Competitive Gaps — Where Tulip Wins</CardTitle>
+          </CardHeader>
+          <CardContent className="p-0 divide-y divide-gray-100">
+            {gaps.map((g, i) => (
+              <div key={i} className="p-5 grid md:grid-cols-3 gap-4">
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-red-700 font-semibold mb-1">Competitor Gap</div>
+                  <p className="text-sm text-gray-900 leading-snug">{g.gap}</p>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-emerald-700 font-semibold mb-1">Tulip Advantage</div>
+                  <p className="text-sm text-gray-900 leading-snug">{g.tulipAdvantage}</p>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-gray-500 font-semibold mb-1">Customer Impact</div>
+                  <p className="text-sm text-gray-900 leading-snug">{g.customerImpact}</p>
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Market trends + Tulip position */}
+      {trends.relevantTrends?.length > 0 && (
+        <Card className="border border-gray-200 rounded-none">
+          <CardHeader className="border-b border-gray-200 py-4">
+            <CardTitle className="text-base font-medium">Market Trends & Tulip Position</CardTitle>
+          </CardHeader>
+          <CardContent className="pt-5 space-y-4">
+            <div>
+              <div className="text-[10px] uppercase tracking-widest text-gray-500 font-semibold mb-2">Relevant Trends</div>
+              <div className="flex flex-wrap gap-1.5">
+                {trends.relevantTrends.map((t, i) => (
+                  <span key={i} className="inline-flex items-center gap-1 px-2 py-1 border border-gray-300 text-xs text-gray-800">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+            {trends.howTheyreResponding && (
+              <div className="border-l-2 border-gray-400 pl-3">
+                <div className="text-[10px] uppercase tracking-widest text-gray-500 font-semibold mb-0.5">How {competitor.name} is responding</div>
+                <p className="text-sm text-gray-800">{trends.howTheyreResponding}</p>
+              </div>
+            )}
+            {trends.tulipPosition && (
+              <div className="border-l-2 border-emerald-600 pl-3 bg-emerald-50/40 py-2">
+                <div className="text-[10px] uppercase tracking-widest text-emerald-800 font-semibold mb-0.5">How Tulip Should Position</div>
+                <p className="text-sm text-gray-900">{trends.tulipPosition}</p>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Recommended actions */}
+      {actions.length > 0 && (
+        <Card className="border-2 border-gray-900 rounded-none">
+          <CardHeader className="bg-gray-900 text-white border-b border-gray-900 py-4">
+            <CardTitle className="text-base font-medium text-white">Recommended Actions for Tulip</CardTitle>
+          </CardHeader>
+          <CardContent className="p-0 divide-y divide-gray-100">
+            {actions.map((act, i) => (
+              <div key={i} className="p-5 flex items-start gap-4">
+                <span className={`flex-shrink-0 text-[10px] uppercase tracking-widest px-2.5 py-1 ${priorityTone(act.priority)}`}>
+                  {act.priority}
+                </span>
+                <div className="flex-1">
+                  <p className="font-medium text-gray-900 leading-snug mb-1">{act.action}</p>
+                  {act.rationale && <p className="text-sm text-gray-600 leading-snug">{act.rationale}</p>}
+                  {act.expectedOutcome && (
+                    <p className="text-xs text-emerald-700 mt-1.5">
+                      <span className="uppercase tracking-widest font-semibold">Expected outcome</span> · {act.expectedOutcome}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }

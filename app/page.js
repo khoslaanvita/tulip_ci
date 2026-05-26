@@ -51,6 +51,7 @@ function Dashboard() {
   const [marketSummary, setMarketSummary] = useState(null);
   const [categorySummaries, setCategorySummaries] = useState({});
   const [strategicInsights, setStrategicInsights] = useState(null);
+  const [categoryIntel, setCategoryIntel] = useState(null);
   const [loadingIntelligence, setLoadingIntelligence] = useState(true);
 
   useEffect(() => {
@@ -59,31 +60,24 @@ function Dashboard() {
   }, []);
 
   async function loadIntelligence() {
-    // Fetch with retry — Next.js dev compiles routes on first request so the
-    // very first call can fail before the API is ready.
     const safeFetch = async (url, retries = 3) => {
       for (let i = 0; i <= retries; i++) {
         try {
           const r = await fetch(url);
           if (r.ok) return await r.json();
         } catch (e) {
-          // swallow and retry
+          // swallow & retry
         }
         await new Promise(res => setTimeout(res, 600 + i * 400));
       }
-      console.warn(`Fetch ultimately failed: ${url}`);
       return null;
     };
 
-    const [summary, categories, insights] = await Promise.all([
-      safeFetch('/api/intelligence/market-summary'),
-      safeFetch('/api/intelligence/categories'),
-      safeFetch('/api/intelligence/strategic-insights'),
-    ]);
-
-    if (summary) setMarketSummary(summary);
-    if (categories) setCategorySummaries(categories);
-    if (insights) setStrategicInsights(insights);
+    // Fire each independently — update state as each finishes so users see
+    // progressive enrichment instead of waiting for the slowest endpoint.
+    safeFetch('/api/intelligence/market-summary').then(d => d && setMarketSummary(d));
+    safeFetch('/api/intelligence/strategic-insights').then(d => d && setStrategicInsights(d));
+    safeFetch('/api/intelligence/category-intelligence').then(d => d && setCategoryIntel(d));
     setLoadingIntelligence(false);
   }
 
@@ -394,6 +388,11 @@ function Dashboard() {
           </div>
         )}
 
+        {/* Category Intelligence — per-category insights with Tulip takeaways */}
+        {categoryIntel && categoryIntel.categories?.length > 0 && (
+          <CategoryIntelligence data={categoryIntel} />
+        )}
+
       {/* Competitors Table - Clean and Minimal */}
       <Card className="border border-gray-200">
         <CardHeader className="border-b border-gray-100">
@@ -488,4 +487,154 @@ function Dashboard() {
 
 export default function App() {
   return <Dashboard />;
+}
+
+// Category Intelligence — shows insights per category bucket with Tulip takeaways
+function CategoryIntelligence({ data }) {
+  const [active, setActive] = useState(data.categories[0]?.key);
+  const current = data.categories.find(c => c.key === active) || data.categories[0];
+
+  return (
+    <div className="mb-12">
+      <div className="flex items-end justify-between mb-5 flex-wrap gap-3">
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <div className="h-1 w-8 bg-emerald-600"></div>
+            <span className="text-[11px] uppercase tracking-widest text-emerald-700 font-semibold">Category Intelligence</span>
+          </div>
+          <h2 className="text-3xl font-light text-gray-900 tracking-tight">What's Moving by Category</h2>
+          <p className="text-sm text-gray-500 mt-1">
+            {data.categories.length} categories · {data.aiEnabledCount} AI-refreshed · auto-updates hourly
+          </p>
+        </div>
+        <div className="text-[10px] uppercase tracking-widest text-gray-400">
+          Last updated · {new Date(data.generatedAt).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+        </div>
+      </div>
+
+      {/* Category tabs as buckets */}
+      <div className="flex flex-wrap gap-2 mb-5">
+        {data.categories.map(cat => {
+          const isActive = cat.key === active;
+          return (
+            <button
+              key={cat.key}
+              onClick={() => setActive(cat.key)}
+              className={`group inline-flex items-center gap-2 px-3.5 py-2 border text-xs font-medium uppercase tracking-wider transition-all ${
+                isActive
+                  ? 'bg-black text-white border-black'
+                  : 'bg-white text-gray-700 border-gray-300 hover:border-gray-900 hover:text-gray-900'
+              }`}
+            >
+              <span>{cat.title}</span>
+              <span className={`inline-flex items-center justify-center min-w-[20px] h-5 px-1 text-[10px] ${
+                isActive ? 'bg-white text-black' : 'bg-gray-100 text-gray-700 group-hover:bg-gray-900 group-hover:text-white'
+              }`}>
+                {cat.competitorCount}
+              </span>
+              {cat.aiEnriched && (
+                <span className={`h-1.5 w-1.5 rounded-full ${isActive ? 'bg-emerald-400' : 'bg-emerald-600'}`}></span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Active category content */}
+      {current && (
+        <Card className="border border-gray-900 rounded-none overflow-hidden">
+          {/* Header */}
+          <div className="bg-black text-white px-6 py-5">
+            <div className="flex items-start justify-between gap-4 flex-wrap">
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-2">
+                  <h3 className="text-2xl font-light">{current.title}</h3>
+                  <span className="text-[10px] uppercase tracking-widest text-gray-400 border border-gray-600 px-2 py-0.5">
+                    {current.competitorCount} competitors
+                  </span>
+                  {current.aiEnriched && (
+                    <span className="text-[10px] uppercase tracking-widest text-emerald-400 border border-emerald-700 px-2 py-0.5 flex items-center gap-1">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                      AI refreshed
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-gray-300 leading-relaxed max-w-3xl">{current.summary}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Body: What's Happening + Tulip Takeaways */}
+          <div className="grid lg:grid-cols-5 divide-x divide-gray-200">
+            {/* Left: 3 columns of "What's Happening" */}
+            <div className="lg:col-span-3 p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-[10px] uppercase tracking-widest text-gray-500 font-semibold">What's Happening</span>
+                <div className="flex-1 h-px bg-gray-200"></div>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-5">
+                <DimensionBlock label="Product" content={current.happening.product} />
+                <DimensionBlock label="AI" content={current.happening.ai} accent />
+                <DimensionBlock label="Sales / GTM" content={current.happening.sales} />
+                <DimensionBlock label="Pricing" content={current.happening.pricing} />
+              </div>
+
+              {/* Competitor pills */}
+              <div className="mt-6 pt-5 border-t border-gray-200">
+                <div className="text-[10px] uppercase tracking-widest text-gray-500 font-semibold mb-2">Competitors in this category</div>
+                <div className="flex flex-wrap gap-1.5">
+                  {current.competitors.slice(0, 12).map(c => {
+                    const t = threatStyle(c.threatScore);
+                    return (
+                      <Link key={c.id} href={`/competitors/${c.id}`}>
+                        <span className="inline-flex items-center gap-1.5 px-2 py-1 border border-gray-200 hover:border-gray-900 text-xs text-gray-800 transition-colors">
+                          <span className={`h-1.5 w-1.5 rounded-full ${t.dot}`}></span>
+                          {c.name}
+                          <span className="text-gray-400 text-[10px]">·</span>
+                          <span className="text-gray-500 text-[10px]">{c.threatScore}</span>
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Takeaways */}
+            <div className="lg:col-span-2 p-6 bg-emerald-50/40">
+              <div className="flex items-center gap-2 mb-4">
+                <Target className="h-4 w-4 text-emerald-700" />
+                <span className="text-[10px] uppercase tracking-widest text-emerald-800 font-semibold">Tulip Takeaways</span>
+                <div className="flex-1 h-px bg-emerald-200"></div>
+              </div>
+              <ol className="space-y-3">
+                {current.takeaways.map((t, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <span className="flex-shrink-0 w-5 h-5 bg-emerald-700 text-white text-[11px] font-medium flex items-center justify-center mt-0.5">
+                      {i + 1}
+                    </span>
+                    <p className="text-sm text-gray-900 leading-snug">{t}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </Card>
+      )}
+    </div>
+  );
+}
+
+function DimensionBlock({ label, content, accent }) {
+  return (
+    <div>
+      <div className="flex items-center gap-1.5 mb-1.5">
+        <span className={`text-[10px] uppercase tracking-widest font-semibold ${accent ? 'text-emerald-700' : 'text-gray-500'}`}>
+          {label}
+        </span>
+        {accent && <span className="h-1 w-1 rounded-full bg-emerald-600"></span>}
+      </div>
+      <p className="text-sm text-gray-800 leading-snug">{content}</p>
+    </div>
+  );
 }
