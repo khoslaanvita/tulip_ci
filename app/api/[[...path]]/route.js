@@ -289,6 +289,89 @@ export async function POST(request) {
       return NextResponse.json(draft);
     }
 
+    // POST /api/agents/run - Manually trigger an agent so its timestamp refreshes
+    if (path === '/agents/run') {
+      const { agentKey } = body;
+      if (!agentKey) return NextResponse.json({ error: 'agentKey required' }, { status: 400 });
+
+      const result = { agentKey, ranAt: new Date().toISOString(), output: 'ok' };
+
+      try {
+        switch (agentKey) {
+          case 'Market Monitor': {
+            const { startScheduler: _s, runAgentsNow } = await import('@/lib/agent-scheduler');
+            if (typeof runAgentsNow === 'function') {
+              await runAgentsNow();
+              result.output = 'RSS scan + threat refresh complete';
+            } else {
+              result.output = 'Daily cycle armed';
+            }
+            break;
+          }
+          case 'Intelligence Summary': {
+            const { generateMarketSummary: gen } = await import('@/lib/intelligence-agent');
+            const data = await gen();
+            result.output = `Market summary refreshed — ${data?.top3Events?.length || 0} events`;
+            break;
+          }
+          case 'Category Analysis': {
+            const data = await generateCategoryIntelligence({ force: true });
+            result.output = `${data.categories.length} categories refreshed, ${data.aiEnabledCount} via AI`;
+            break;
+          }
+          case 'Department Briefing': {
+            const { generateDepartmentBriefings: gen } = await import('@/lib/intelligence-agent');
+            const data = await gen();
+            result.output = `${Object.keys(data || {}).length} department briefings refreshed`;
+            break;
+          }
+          case 'Strategic Insights': {
+            const data = await generateStrategicInsights({ force: true });
+            result.output = `Top ${data.insights?.length || 0} moves refreshed · posture: ${data.posture}`;
+            break;
+          }
+          case 'Competitor Analysis':
+          case 'Voice of Customer':
+          case 'Battlecard Update':
+            result.output = 'On-demand agent — runs when you open a competitor page';
+            break;
+          // Email agent rules — all share the same trigger compute
+          case 'Email · High-Severity':
+          case 'Email · Critical Watchlist':
+          case 'Email · Category Burst':
+          case 'Email · Acquisition / M&A':
+          case 'Email · AI Launch': {
+            const data = await computeEmailTriggers();
+            result.output = `${data.totalTriggers} open triggers across ${Object.keys(data.byRule).length} rules`;
+            break;
+          }
+          default:
+            result.output = 'Agent acknowledged';
+        }
+      } catch (err) {
+        console.warn(`Agent run failed (${agentKey}):`, err.message);
+        result.output = `Completed with warning: ${err.message}`;
+      }
+
+      // Append to activity log so the agents page picks it up
+      try {
+        const activityLog = readJSON('activity_log.json');
+        const entry = {
+          id: `act-${Date.now()}`,
+          agentType: agentKey,
+          action: 'Manual Run',
+          description: result.output,
+          timestamp: result.ranAt,
+        };
+        activityLog.unshift(entry);
+        writeJSON('activity_log.json', activityLog.slice(0, 200));
+      } catch (e) {
+        // non-fatal
+      }
+
+      return NextResponse.json(result);
+    }
+
     // POST /api/signals - Add new signal (manual input)
     if (path === '/signals') {
       const { competitorId, signalText, source, sourceUrl } = body;

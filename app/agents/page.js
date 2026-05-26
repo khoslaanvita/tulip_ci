@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Bot, Zap, MessageSquare, TrendingUp, Users, Clock, CheckCircle2, AlertCircle, PauseCircle } from 'lucide-react';
+import { ArrowLeft, Bot, Zap, MessageSquare, TrendingUp, Users, Clock, CheckCircle2, AlertCircle, PauseCircle, Play, Loader2, Mail, Bell, Sparkles, AlertTriangle, Activity, ExternalLink } from 'lucide-react';
+import { toast } from 'sonner';
 
 // Format timestamp into a human-readable relative + absolute string.
 function formatRelativeTime(iso) {
@@ -30,18 +31,49 @@ function formatRelativeTime(iso) {
 export default function AgentsPage() {
   const [schedulerStatus, setSchedulerStatus] = useState(null);
   const [activityLog, setActivityLog] = useState([]);
+  const [emailTriggers, setEmailTriggers] = useState(null);
+  const [emailRules, setEmailRules] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [runningAgent, setRunningAgent] = useState(null);
 
-  useEffect(() => {
-    Promise.all([
+  useEffect(() => { loadAll(); }, []);
+
+  async function loadAll() {
+    const [status, log, trigs, rules] = await Promise.all([
       fetch('/api/scheduler/status').then(r => r.ok ? r.json() : null).catch(() => null),
       fetch('/api/activity-log').then(r => r.ok ? r.json() : []).catch(() => []),
-    ]).then(([status, log]) => {
-      setSchedulerStatus(status);
-      setActivityLog(Array.isArray(log) ? log : []);
-      setLoading(false);
-    });
-  }, []);
+      fetch('/api/email-agents/triggers').then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('/api/email-agents/rules').then(r => r.ok ? r.json() : { rules: [] }).catch(() => ({ rules: [] })),
+    ]);
+    setSchedulerStatus(status);
+    setActivityLog(Array.isArray(log) ? log : []);
+    setEmailTriggers(trigs);
+    setEmailRules(rules.rules || []);
+    setLoading(false);
+  }
+
+  async function runAgent(agentKey) {
+    setRunningAgent(agentKey);
+    try {
+      const r = await fetch('/api/agents/run', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ agentKey }),
+      });
+      const result = await r.json();
+      if (r.ok) {
+        toast.success(`${agentKey} ran — ${result.output}`);
+        // refresh activity log
+        await loadAll();
+      } else {
+        toast.error(result.error || 'Run failed');
+      }
+    } catch (e) {
+      toast.error('Run failed');
+    } finally {
+      setRunningAgent(null);
+    }
+  }
 
   // Last-run timestamps per agentType derived from activity log.
   const lastRunByAgent = activityLog.reduce((acc, entry) => {
@@ -184,12 +216,116 @@ export default function AgentsPage() {
       outputs: "Structured battlecard with positioning, objection handling, and discovery questions.",
       technology: "OpenAI GPT-4o / Claude analyzing competitor data and signals",
       file: "/app/lib/ai-helpers.js → generateBattlecardWithAI()"
-    }
+    },
+    // ---- Email Agents (trigger-based) ----
+    {
+      key: "Email · High-Severity",
+      group: "email",
+      name: "High-Severity Signal Alerter",
+      icon: AlertTriangle,
+      type: "Trigger-based",
+      schedule: "On any high-severity signal (14d window)",
+      description: "Drafts an email to Sales + Product Marketing whenever a competitor signal is tagged 'high' severity.",
+      capabilities: [
+        "Scans new and existing signals for severity=high",
+        "Composes team-specific subject lines",
+        "Drafts 150-word internal email with What/Why/Actions",
+        "Falls back to deterministic template if AI is rate-limited",
+      ],
+      outputs: "Draft email queued for review at /email-agents.",
+      technology: "OpenAI gpt-4o-mini + rule engine",
+      file: "/app/lib/email-agent.js → ruleId: high-severity-signal",
+      triggerKey: "high-severity-signal",
+    },
+    {
+      key: "Email · Critical Watchlist",
+      group: "email",
+      name: "Critical Watchlist Notifier",
+      icon: Bell,
+      type: "Trigger-based",
+      schedule: "On threat score crossing 70",
+      description: "Drafts an email to Executive + Product leadership when a competitor enters the Critical band (threat ≥ 70).",
+      capabilities: [
+        "Re-scores all competitors on each scheduler run",
+        "Detects new entrants to the Critical band",
+        "Aggregates context (category, positioning, Tulip angle)",
+        "Drafts brief for executive review",
+      ],
+      outputs: "Draft email queued for review at /email-agents.",
+      technology: "Rule engine + OpenAI gpt-4o-mini",
+      file: "/app/lib/email-agent.js → ruleId: critical-watchlist-entry",
+      triggerKey: "critical-watchlist-entry",
+    },
+    {
+      key: "Email · Category Burst",
+      group: "email",
+      name: "Category Activity Watcher",
+      icon: Activity,
+      type: "Trigger-based",
+      schedule: "On 3+ signals in same category (30d)",
+      description: "Notifies Product Marketing when a single category sees a burst of competitor activity.",
+      capabilities: [
+        "Groups signals by category bucket",
+        "Detects bursts (3+ in 30 days)",
+        "Identifies most active vendors per category",
+        "Drafts category-refresh brief for PMM",
+      ],
+      outputs: "Draft email queued for review at /email-agents.",
+      technology: "Rule engine + OpenAI gpt-4o-mini",
+      file: "/app/lib/email-agent.js → ruleId: category-burst",
+      triggerKey: "category-burst",
+    },
+    {
+      key: "Email · Acquisition / M&A",
+      group: "email",
+      name: "M&A Tracker",
+      icon: Zap,
+      type: "Trigger-based",
+      schedule: "On any acquisition/M&A keyword (30d)",
+      description: "Alerts Executive + Corp Dev when any signal mentions acquisition, M&A, or similar keywords.",
+      capabilities: [
+        "Keyword scan across signal title + summary",
+        "Multi-vendor consolidation tracking",
+        "CEO + Corp Dev briefing draft",
+        "Links to source URLs for verification",
+      ],
+      outputs: "Draft email queued for review at /email-agents.",
+      technology: "Keyword rule + OpenAI gpt-4o-mini",
+      file: "/app/lib/email-agent.js → ruleId: acquisition-news",
+      triggerKey: "acquisition-news",
+    },
+    {
+      key: "Email · AI Launch",
+      group: "email",
+      name: "Competitor AI Launch Alerter",
+      icon: Sparkles,
+      type: "Trigger-based",
+      schedule: "On AI-tagged signal sev ≥ medium (21d)",
+      description: "Briefs Product + Marketing when a competitor ships an AI/GenAI feature.",
+      capabilities: [
+        "Filters signals by type=AI",
+        "Severity ≥ medium threshold",
+        "Tulip product + marketing context injection",
+        "Counter-positioning recommendations",
+      ],
+      outputs: "Draft email queued for review at /email-agents.",
+      technology: "Type+severity rule + OpenAI gpt-4o-mini",
+      file: "/app/lib/email-agent.js → ruleId: ai-launch",
+      triggerKey: "ai-launch",
+    },
   ];
 
   // Determine status badge for an agent.
   function getAgentStatus(agent) {
     const lastRun = lastRunByAgent[agent.key];
+
+    // Trigger-based email agents: show count of active triggers
+    if (agent.group === 'email' && agent.triggerKey) {
+      const count = (emailTriggers?.byRule || {})[agent.triggerKey] || 0;
+      if (count > 0) return { label: `${count} active`, tone: 'red', icon: AlertCircle };
+      return { label: 'Armed', tone: 'live', icon: CheckCircle2 };
+    }
+
     if (agent.type === 'Autonomous') {
       if (schedulerStatus?.running) {
         return { label: 'Active', tone: 'live', icon: CheckCircle2 };
@@ -201,9 +337,10 @@ export default function AgentsPage() {
   }
 
   const toneClass = {
-    live: 'bg-black text-white border-black',
+    live:  'bg-black text-white border-black',
     ready: 'bg-white text-black border-black',
-    idle: 'bg-gray-100 text-gray-700 border-gray-300',
+    idle:  'bg-gray-100 text-gray-700 border-gray-300',
+    red:   'bg-red-50 text-red-700 border-red-200',
   };
 
   const totalRuns = activityLog.length;
@@ -298,12 +435,35 @@ export default function AgentsPage() {
                   </div>
 
                   {/* Timing strip */}
-                  <div className="mt-4 pt-3 border-t border-gray-200 flex items-center gap-6 text-xs text-gray-600 flex-wrap">
+                  <div className="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between gap-6 text-xs text-gray-600 flex-wrap">
                     <div className="flex items-center gap-1.5">
                       <Clock className="h-3.5 w-3.5 text-gray-400" />
                       <span className="uppercase tracking-wider text-[10px] text-gray-400">Last Run</span>
                       <span className="font-medium text-gray-900">{time.rel}</span>
                       <span className="text-gray-400 font-mono">· {time.abs}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {agent.group === 'email' && (
+                        <Link href="/email-agents">
+                          <Button size="sm" variant="outline" className="border-gray-300 h-7 text-xs">
+                            <Mail className="h-3 w-3 mr-1" />
+                            View Drafts
+                            <ExternalLink className="h-3 w-3 ml-1 text-gray-400" />
+                          </Button>
+                        </Link>
+                      )}
+                      <Button
+                        size="sm"
+                        onClick={() => runAgent(agent.key)}
+                        disabled={runningAgent === agent.key}
+                        className="bg-black hover:bg-gray-900 text-white h-7 text-xs"
+                      >
+                        {runningAgent === agent.key ? (
+                          <><Loader2 className="h-3 w-3 mr-1 animate-spin" /> Running…</>
+                        ) : (
+                          <><Play className="h-3 w-3 mr-1" /> Run Now</>
+                        )}
+                      </Button>
                     </div>
                   </div>
                 </CardHeader>
