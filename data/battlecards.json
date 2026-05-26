@@ -1,12 +1,12 @@
 [
   {
-    "id": "bc-48c6aa12",
+    "id": "bc-bc162b5d",
     "competitorId": "poka",
     "competitorName": "Poka",
-    "lastUpdated": "2026-05-26T02:05:20.360Z",
+    "lastUpdated": "2026-05-26T02:26:10.624Z",
     "dealContext": null,
     "whenTheyAppear": "Poka typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Connected worker platform focused on digitizing frontline knowledge, training, and communication for... They often enter through functional teams evaluating specialized solutions.",
-    "theirPositioning": "Connected worker platform focused on digitizing frontline knowledge, training, and communication for manufacturing teams with AI-assisted workflows.",
+    "theirPositioning": "Connected worker platform focused on digitizing frontline knowledge, training, and communication for manufacturing teams with AI-assisted workflows. Now part of IFS industrial software ecosystem.",
     "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Connected Worker. While Poka focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
     "likelyObjections": [
       "\"Poka specializes in our specific industry\"",
@@ -29,13 +29,13 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-236b8abb",
+    "id": "bc-0b5d6393",
     "competitorId": "parsable",
     "competitorName": "Parsable",
-    "lastUpdated": "2026-05-26T02:05:17.963Z",
+    "lastUpdated": "2026-05-26T02:26:10.723Z",
     "dealContext": null,
     "whenTheyAppear": "Parsable typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Connected worker platform for operational execution, focusing on digitizing procedures, checklists, ... They often enter through functional teams evaluating specialized solutions.",
-    "theirPositioning": "Connected worker platform for operational execution, focusing on digitizing procedures, checklists, and workflows for industrial frontline teams.",
+    "theirPositioning": "Connected worker platform for operational execution, focusing on digitizing procedures, checklists, and workflows for industrial frontline teams. Now integrated with CAI Software's ERP and manufacturing execution suite.",
     "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Connected Worker. While Parsable focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
     "likelyObjections": [
       "\"Parsable specializes in our specific industry\"",
@@ -58,13 +58,13 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-b2d0f438",
+    "id": "bc-59347234",
     "competitorId": "critical-manufacturing",
     "competitorName": "Critical Manufacturing",
-    "lastUpdated": "2026-05-26T02:05:17.758Z",
+    "lastUpdated": "2026-05-26T02:37:48.352Z",
     "dealContext": null,
-    "whenTheyAppear": "Critical Manufacturing typically appears in MES evaluations, particularly in deals where customers are focused on Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, and com... They often enter through functional teams evaluating specialized solutions.",
-    "theirPositioning": "Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, and complex discrete manufacturing with strong emphasis on Industry 4.0 capabilities.",
+    "whenTheyAppear": "Critical Manufacturing typically appears in MES evaluations, particularly in deals where customers are focused on Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, medical... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, medical devices, and complex discrete manufacturing with strong emphasis on Industry 4.0 capabilities and traceability.",
     "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond MES. While Critical Manufacturing focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
     "likelyObjections": [
       "\"Critical Manufacturing specializes in our specific industry\"",
@@ -87,13 +87,13 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-1f1ef2d5",
+    "id": "bc-2a0dbd0d",
     "competitorId": "apprentice",
     "competitorName": "Apprentice.io",
-    "lastUpdated": "2026-05-26T02:05:20.553Z",
+    "lastUpdated": "2026-05-26T02:37:48.639Z",
     "dealContext": null,
     "whenTheyAppear": "Apprentice.io typically appears in Life Sciences / Pharma evaluations, particularly in deals where customers are focused on Purpose-built manufacturing execution platform for life sciences and pharmaceutical manufacturing wi... They often enter through functional teams evaluating specialized solutions.",
-    "theirPositioning": "Purpose-built manufacturing execution platform for life sciences and pharmaceutical manufacturing with focus on compliance, batch records, and quality.",
+    "theirPositioning": "Purpose-built manufacturing execution platform for life sciences and pharmaceutical manufacturing with focus on compliance, batch records, and quality. Strong in biopharma, cell & gene therapy.",
     "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Life Sciences / Pharma. While Apprentice.io focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
     "likelyObjections": [
       "\"Apprentice.io specializes in our specific industry\"",
@@ -116,13 +116,13 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-f2adc263",
+    "id": "bc-32b5956d",
     "competitorId": "siemens-xcelerator",
     "competitorName": "Siemens MindSphere / Xcelerator",
-    "lastUpdated": "2026-05-26T02:05:14.145Z",
+    "lastUpdated": "2026-05-26T02:37:48.785Z",
     "dealContext": null,
-    "whenTheyAppear": "Siemens MindSphere / Xcelerator typically appears in SCADA / Industrial Platform evaluations, particularly in deals where customers are focused on Industrial IoT and automation platform from Siemens, combining operational technology (OT) with IT s... They often enter through functional teams evaluating specialized solutions.",
-    "theirPositioning": "Industrial IoT and automation platform from Siemens, combining operational technology (OT) with IT systems for comprehensive digital manufacturing.",
+    "whenTheyAppear": "Siemens MindSphere / Xcelerator typically appears in SCADA / Industrial Platform evaluations, particularly in deals where customers are focused on Industrial IoT and automation platform combining operational technology (OT) with IT systems for com... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Industrial IoT and automation platform combining operational technology (OT) with IT systems for comprehensive digital manufacturing. Open digital business platform with massive ecosystem and industrial AI focus.",
     "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond SCADA / Industrial Platform. While Siemens MindSphere / Xcelerator focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
     "likelyObjections": [
       "\"Siemens MindSphere / Xcelerator specializes in our specific industry\"",
@@ -142,6 +142,35 @@
       "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
     ],
     "productImplications": "Continue strengthening SCADA / Industrial Platform capabilities to match Siemens MindSphere / Xcelerator's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-3e1cc65f",
+    "competitorId": "tulip",
+    "competitorName": "Tulip",
+    "lastUpdated": "2026-05-26T02:37:48.232Z",
+    "dealContext": null,
+    "whenTheyAppear": "Tulip typically appears in Frontline Operations Platform evaluations, particularly in deals where customers are focused on No-code frontline operations platform that empowers manufacturers to build custom apps for shop floo... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "No-code frontline operations platform that empowers manufacturers to build custom apps for shop floor digitization, combining machine connectivity, analytics, and worker guidance for Industry 4.0 transformation.",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Frontline Operations Platform. While Tulip focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Tulip specializes in our specific industry\"",
+      "\"They seem more focused on Frontline Operations Platform than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their Frontline Operations Platform capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Tulip's strengths in Frontline Operations Platform, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond Frontline Operations Platform, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening Frontline Operations Platform capabilities to match Tulip's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   }
 ]

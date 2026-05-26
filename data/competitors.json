@@ -6,10 +6,26 @@
     "headquarters": "Somerville, MA, USA",
     "founded": "2014",
     "revenue": "$50M ARR",
-    "employees": "340",
-    "funding": "$152.5M (Series D)",
-    "valuation": "$150M",
-    "positioning": "No-code frontline operations platform that empowers manufacturers to build custom apps for shop floor digitization, combining machine connectivity, analytics, and worker guidance for Industry 4.0 transformation.",
+    "employees": "340+",
+    "funding": "$272.5M (Series D)",
+    "valuation": "$1.3B (Unicorn)",
+    "lastFunding": "$120M Series D led by Mitsubishi Electric (Jan 2026)",
+    "threatLevel": null,
+    "threatScore": 0,
+    "verticals": [
+      "Automotive",
+      "Aerospace & Defense",
+      "Pharmaceuticals",
+      "Electronics",
+      "Contract Manufacturing"
+    ],
+    "keyCustomers": [
+      "Piaggio Fast Forward",
+      "Sharp Packaging",
+      "Crestline",
+      "Marle"
+    ],
+    "positioning": "No-code frontline operations platform empowering manufacturers to build custom apps for shop floor digitization. Combines machine connectivity, analytics, and worker guidance. Unicorn status ($1.3B valuation) validates market leadership across automotive, aerospace, pharma, and electronics verticals.",
     "strengths": [
       "No-code app builder loved by engineers and frontline teams",
       "Strong machine connectivity and IoT integration",
@@ -53,8 +69,8 @@
     "employees": "467-541",
     "funding": "Private",
     "valuation": "N/A",
-    "threatLevel": "low",
-    "threatScore": 5,
+    "threatLevel": "high",
+    "threatScore": 31,
     "positioning": "Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, medical devices, and complex discrete manufacturing with strong emphasis on Industry 4.0 capabilities and traceability.",
     "strengths": [
       "Deep domain expertise in semiconductor manufacturing",
@@ -131,8 +147,8 @@
       "Emphasizing AI-powered search and text tools for manufacturing"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 10,
-    "threatLevel": "medium"
+    "threatScore": 26,
+    "threatLevel": "high"
   },
   {
     "id": "parsable",
@@ -177,8 +193,8 @@
       "Lightspeed Venture Partners remains investor in combined company"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 5,
-    "threatLevel": "low"
+    "threatScore": 21,
+    "threatLevel": "high"
   },
   {
     "id": "apprentice",
@@ -223,8 +239,8 @@
       "Strong growth in cell & gene therapy segment"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 5,
-    "threatLevel": "low"
+    "threatScore": 21,
+    "threatLevel": "high"
   },
   {
     "id": "siemens-xcelerator",
@@ -272,7 +288,7 @@
       "Showcased AWS collaboration for industrial AI at CES 2025"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 0,
-    "threatLevel": "low"
+    "threatScore": 21,
+    "threatLevel": "high"
   }
 ]

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "tulip",
+    "name": "Tulip",
+    "category": "Frontline Operations Platform",
+    "headquarters": "Somerville, MA, USA",
+    "founded": "2014",
+    "revenue": "$50M ARR",
+    "employees": "340+",
+    "funding": "$272.5M (Series D)",
+    "valuation": "$1.3B (Unicorn)",
+    "lastFunding": "$120M Series D led by Mitsubishi Electric (Jan 2026)",
+    "verticals": ["Automotive", "Aerospace & Defense", "Pharmaceuticals", "Electronics", "Contract Manufacturing", "Consumer Goods"],
+    "keyCustomers": ["Piaggio Fast Forward", "Sharp Packaging", "Crestline", "Marle", "EV aircraft manufacturers", "Race car teams"],
+    "positioning": "No-code frontline operations platform that empowers manufacturers to build custom apps for shop floor digitization, combining machine connectivity, analytics, and worker guidance for Industry 4.0 transformation. Proven across automotive, aerospace, pharma, and electronics verticals.",
+    "strengths": [
+      "No-code app builder loved by engineers and frontline teams - fastest time-to-value",
+      "Strong machine connectivity and IoT integration across all major protocols",
+      "Comprehensive platform: work instructions + quality + analytics + traceability + maintenance",
+      "Fast deployment (2-4 weeks typical) with immediate ROI",
+      "AI Composer converts SOPs/videos to apps in minutes",
+      "Tulip AI Agents for configurable automation and analysis",
+      "OpsMoto enterprise dashboard for global visibility",
+      "Growing library of 100+ reusable templates and industry-specific apps",
+      "Strategic partnership with Mitsubishi Electric for global expansion",
+      "Acquired Akooda (Nov 2025) for AI-driven operations intelligence",
+      "Unicorn status ($1.3B valuation) validates market leadership"
+    ],
+    "weaknesses": [
+      "Smaller than Siemens/Rockwell in enterprise MES market",
+      "Less vertical-specific regulatory depth than niche players (e.g., Apprentice in pharma validation)",
+      "Requires change management and training for full adoption",
+      "Platform breadth can seem complex vs single-purpose tools",
+      "Growing fast but still smaller sales team than legacy MES vendors"
+    ],
+    "pricingNotes": "Subscription model with per-user pricing + platform fee. Typical mid-market: $50K-200K annual. Enterprise: $200K-$1M+ depending on scale. More accessible than legacy MES ($250K-$2M+) while offering comparable capabilities. Free trial and POC programs available.",
+    "aiClaims": "**Industry-leading AI capabilities:** AI Composer (SOP-to-app conversion using GPT), Tulip AI Agents (configurable automation), Vision AI (quality inspection), Frontline Copilot (operator assistance). Acquired Akooda (Nov 2025) for contextual enterprise AI and real-time operations intelligence. Focus on practical, production-ready AI vs vaporware.",
+    "keyProducts": [
+      "AI Composer - SOP to app conversion",
+      "Tulip AI Agents - Configurable automation",
+      "Functions - Reusable logic library",
+      "OpsMoto - Enterprise dashboard",
+      "Frontline QMS - Quality management",
+      "Composable MES - Modular MES apps",
+      "Tulip Vision - AI quality inspection",
+      "Equipment Logbook - Maintenance tracking"
+    ],
+    "recentNews": [
+      "Achieved unicorn status with $1.3B valuation (Jan 2026)",
+      "Raised $120M Series D led by Mitsubishi Electric (Jan 2026)",
+      "Acquired Akooda for AI-driven operations intelligence (Nov 2025)",
+      "Launched AI Composer for SOP-to-app conversion (2025)",
+      "Introduced Tulip AI Agents for configurable automation (2025)",
+      "Released OpsMoto enterprise dashboard beta (2025)",
+      "Expanded Library with no-code MES app suites (June 2025)",
+      "Partnership with Sartorius for biopharma (2025)",
+      "Strategic alliance with Mitsubishi Electric for global expansion"
+    ],
+    "aiDevelopments": [
+      "AI Composer launched - converts documents/videos to apps using GPT",
+      "Tulip AI Agents - run inside platform, analyze data, automate tasks",
+      "Akooda acquisition brings contextual enterprise AI (Nov 2025)",
+      "Vision AI integrations with third-party models",
+      "Frontline Copilot for operator guidance",
+      "Functions enable AI-powered reusable logic"
+    ],
+    "marketPosition": "#3 by revenue in frontline operations category. Leading innovator in manufacturing AI. Fastest-growing platform in mid-market discrete manufacturing.",
+    "competitiveAdvantages": [
+      "Only no-code platform with enterprise MES capabilities",
+      "Fastest time-to-value (weeks vs months/years)",
+      "Most comprehensive AI suite (Composer + Agents + Vision)",
+      "Unicorn status and strong funding runway",
+      "Mitsubishi partnership opens global enterprise accounts"
+    ],
+    "sources": {
+      "valuation": "https://tulip.co/press/tulip-secures-120m-series-d/",
+      "acquisition": "https://tulip.co/press/tulip-acquires-ai-company-akooda/",
+      "customers": "https://tulip.co/case-studies/",
+      "products": "https://tulip.co/platform/"
+    },
+    "lastUpdated": "2026-01-26T00:00:00Z"
+  }
+]
