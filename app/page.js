@@ -266,6 +266,12 @@ function Dashboard() {
               Agents
             </Button>
           </Link>
+          <Link href="/email-agents">
+            <Button variant="outline" size="sm" className="border-gray-300">
+              <Bell className="mr-2 h-4 w-4" />
+              Email Agents
+            </Button>
+          </Link>
           <Link href="/activity">
             <Button variant="outline" size="sm" className="border-gray-300">
               <Bell className="mr-2 h-4 w-4" />

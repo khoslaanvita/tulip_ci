@@ -4,23 +4,26 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { TrendingUp, TrendingDown, Mail, Crown, Target, Zap, ExternalLink, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { TrendingUp, TrendingDown, Mail, Target, AlertTriangle, ArrowLeft, Activity, Pencil, Check, X } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function TulipCommandCenter() {
   const [competitors, setCompetitors] = useState([]);
   const [signals, setSignals] = useState([]);
+  const [tulip, setTulip] = useState(null);
   const [loading, setLoading] = useState(true);
   const [emailDialogOpen, setEmailDialogOpen] = useState(false);
   const [emailRecipients, setEmailRecipients] = useState('leadership-team@tulip.co');
-  const [sendingEmail, setSendingEmail] = useState(false);
+
+  // Inline edit state for revenue
+  const [editingRevenue, setEditingRevenue] = useState(false);
+  const [revenueDraft, setRevenueDraft] = useState('');
+  const [savingRevenue, setSavingRevenue] = useState(false);
 
   useEffect(() => {
     loadData();
@@ -28,13 +31,14 @@ export default function TulipCommandCenter() {
 
   async function loadData() {
     try {
-      const [competitorsRes, signalsRes] = await Promise.all([
+      const [competitorsRes, signalsRes, tulipRes] = await Promise.all([
         fetch('/api/competitors'),
-        fetch('/api/signals')
+        fetch('/api/signals'),
+        fetch('/api/tulip-profile'),
       ]);
-      
       setCompetitors(await competitorsRes.json());
       setSignals(await signalsRes.json());
+      setTulip(await tulipRes.json());
     } catch (error) {
       console.error('Error loading data:', error);
       toast.error('Failed to load data');
@@ -43,472 +47,406 @@ export default function TulipCommandCenter() {
     }
   }
 
-  async function sendWeeklyDigest() {
-    setSendingEmail(true);
-    
-    // Generate comprehensive digest
-    const tulip = competitors.find(c => c.id === 'tulip');
-    const competitorsOnly = competitors.filter(c => c.id !== 'tulip');
-    const highThreatCompetitors = competitorsOnly.filter(c => c.threatLevel === 'high');
-    const recentSignals = signals.filter(s => {
-      const signalDate = new Date(s.timestamp);
-      const weekAgo = new Date();
-      weekAgo.setDate(weekAgo.getDate() - 7);
-      return signalDate > weekAgo;
-    });
+  async function saveRevenue() {
+    setSavingRevenue(true);
+    try {
+      const r = await fetch('/api/tulip-profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ revenue: revenueDraft }),
+      });
+      if (!r.ok) throw new Error('save failed');
+      const updated = await r.json();
+      setTulip(updated);
+      setEditingRevenue(false);
+      toast.success('Revenue updated');
+    } catch (e) {
+      toast.error('Failed to save revenue');
+    } finally {
+      setSavingRevenue(false);
+    }
+  }
 
-    const emailSubject = `Weekly Competitive Intelligence Digest - ${new Date().toLocaleDateString()}`;
-    const emailBody = `TULIP COMPETITIVE INTELLIGENCE - WEEKLY DIGEST
+  function buildEmailBody() {
+    // Competitor-focused digest — no Tulip metrics
+    const competitorsOnly = competitors.filter(c => c.id !== 'tulip');
+    const sorted = [...competitorsOnly].sort((a, b) => (b.threatScore || 0) - (a.threatScore || 0));
+    const top5 = sorted.slice(0, 5);
+    const critical = sorted.filter(c => (c.threatScore || 0) >= 70);
+
+    const weekAgo = new Date(); weekAgo.setDate(weekAgo.getDate() - 7);
+    const recentSignals = signals.filter(s => new Date(s.timestamp) > weekAgo);
+
+    const subject = `Weekly Competitive Intelligence Digest — ${new Date().toLocaleDateString()}`;
+    const body = `TULIP COMPETITIVE INTELLIGENCE — WEEKLY DIGEST
 ${new Date().toLocaleDateString()}
 
 ═══════════════════════════════════════════════
-📊 TULIP MARKET POSITION
+🎯 COMPETITIVE LANDSCAPE — TOP 5 BY THREAT
 ═══════════════════════════════════════════════
-
-✓ Valuation: ${tulip?.valuation} (UNICORN STATUS)
-✓ Revenue: ${tulip?.revenue}
-✓ Employees: ${tulip?.employees}
-✓ Market Rank: #3 by revenue in frontline operations
-✓ Funding: ${tulip?.funding}
-✓ Recent: Acquired Akooda for AI (Nov 2025)
-
-═══════════════════════════════════════════════
-🎯 COMPETITIVE LANDSCAPE (Top 5 Competitors)
-═══════════════════════════════════════════════
-
-${competitorsOnly.slice(0, 5).map((c, idx) => `
-${idx + 1}. ${c.name} (${c.category})
-   Revenue: ${c.revenue}
-   Threat Level: ${c.threatLevel?.toUpperCase() || 'LOW'}
-   Employees: ${c.employees}
-   Status: ${c.valuation || 'Private'}
+${top5.map((c, idx) => `
+${idx + 1}. ${c.name} — ${c.category}
+   Threat Score:   ${c.threatScore ?? '—'}/100
+   Revenue:        ${c.revenue || '—'}
+   Employees:      ${c.employees || '—'}
+   Valuation:      ${c.valuation || 'Private'}
+   Tulip angle:    ${(c.tulipRelevance || c.tulipCompetitiveAngle || '—').slice(0, 140)}
 `).join('')}
 
 ═══════════════════════════════════════════════
-⚠️  HIGH-PRIORITY THREATS
+⚠️  CRITICAL WATCHLIST — ${critical.length} competitors at threat ≥ 70
 ═══════════════════════════════════════════════
-
-${highThreatCompetitors.length > 0 ? highThreatCompetitors.map(c => `
-• ${c.name}
-  Why: ${c.positioning.substring(0, 150)}...
-  Action: Monitor closely, update battlecards
-`).join('') : 'No high-priority threats this week.'}
+${critical.length > 0 ? critical.map(c => `
+• ${c.name} (${c.threatScore}/100) — ${c.category}
+  ${(c.positioning || '').slice(0, 150)}
+`).join('') : 'No competitors at threat ≥ 70 this week.'}
 
 ═══════════════════════════════════════════════
-📰 NEW COMPETITIVE SIGNALS (Last 7 Days)
+📰 NEW COMPETITIVE SIGNALS — LAST 7 DAYS
 ═══════════════════════════════════════════════
-
 ${recentSignals.length > 0 ? recentSignals.map(s => `
-• [${s.severity.toUpperCase()}] ${s.competitorName}: ${s.title}
-  ${s.summary.substring(0, 120)}...
-  Recommended: ${s.recommendedAction.substring(0, 100)}...
+• [${(s.severity || '').toUpperCase()}] ${s.competitorName}: ${s.title}
+  ${(s.summary || '').slice(0, 150)}
+  Recommended: ${(s.recommendedAction || '').slice(0, 120)}
 `).join('') : 'No new signals in the past week.'}
 
 ═══════════════════════════════════════════════
-📈 KEY INSIGHTS & RECOMMENDATIONS
+🔗 NEXT STEPS
 ═══════════════════════════════════════════════
+View Full Dashboard:     ${typeof window !== 'undefined' ? window.location.origin : ''}
+Strategic Insights:      ${typeof window !== 'undefined' ? window.location.origin : ''}#strategic-insights
+Battlecards:             ${typeof window !== 'undefined' ? window.location.origin : ''}/battlecard
 
-1. Market Position: Tulip maintains #3 position with unicorn status
-2. Funding Advantage: $272.5M vs competitors averaging $100M
-3. AI Leadership: Most comprehensive AI suite (Composer + Agents + Akooda)
-4. Growth Momentum: Recent Series D validates market opportunity
-5. Watch: Apprentice.io (54% YoY growth in pharma vertical)
+—
+Generated by Tulip Competitive Intelligence Command Center`;
+    return { subject, body };
+  }
 
-═══════════════════════════════════════════════
-🔗 TAKE ACTION
-═══════════════════════════════════════════════
-
-View Full Dashboard:
-${window.location.origin}/tulip-command-center
-
-Generate Battlecards:
-${window.location.origin}/battlecard
-
-View All Signals:
-${window.location.origin}/signals
-
----
-Generated by Tulip Competitive Intelligence Command Center
-For questions, contact your competitive intelligence team.
-`;
-
-    // Create mailto link
-    const mailtoUrl = `mailto:${emailRecipients}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-    
+  function sendWeeklyDigest() {
+    const { subject, body } = buildEmailBody();
+    const mailtoUrl = `mailto:${emailRecipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoUrl;
-    toast.success('Opening email client with weekly digest...');
-    
-    setSendingEmail(false);
+    toast.success('Opening email client with weekly digest…');
     setEmailDialogOpen(false);
   }
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen bg-white">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-          <p className="mt-4 text-muted-foreground">Loading Tulip Command Center...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto"></div>
+          <p className="mt-4 text-sm text-gray-500 uppercase tracking-widest">Loading Tulip Command Center…</p>
         </div>
       </div>
     );
   }
 
-  const tulip = competitors.find(c => c.id === 'tulip');
-  const competitorsOnly = competitors.filter(c => c.id !== 'tulip').sort((a, b) => {
-    const aRev = parseFloat(a.revenue.replace(/[^0-9.]/g, '')) || 0;
-    const bRev = parseFloat(b.revenue.replace(/[^0-9.]/g, '')) || 0;
-    return bRev - aRev;
-  });
+  const competitorsOnly = competitors.filter(c => c.id !== 'tulip');
 
-  const marketRank = competitorsOnly.filter(c => {
-    const cRev = parseFloat(c.revenue.replace(/[^0-9.]/g, '')) || 0;
-    const tulipRev = parseFloat(tulip?.revenue.replace(/[^0-9.]/g, '')) || 0;
-    return cRev > tulipRev;
-  }).length + 1;
+  // Compute relative metrics
+  const sortedByThreat = [...competitorsOnly].sort((a, b) => (b.threatScore || 0) - (a.threatScore || 0));
+  const criticalCount = competitorsOnly.filter(c => (c.threatScore || 0) >= 70).length;
+  const highSeverityRecent = signals.filter(s => {
+    const d = new Date(s.timestamp);
+    const thirty = new Date(); thirty.setDate(thirty.getDate() - 30);
+    return d > thirty && (s.severity || '').toLowerCase() === 'high';
+  }).length;
+
+  // Market rank: how many competitors are above Tulip in revenue
+  const parseRev = (r) => {
+    if (!r) return 0;
+    const m = r.match(/\$([\d.]+)\s*([BM])/i);
+    if (!m) return 0;
+    return parseFloat(m[1]) * (m[2].toUpperCase() === 'B' ? 1000 : 1);
+  };
+  const tulipRevM = parseRev(tulip?.revenue);
+  const competitorsAhead = competitorsOnly.filter(c => parseRev(c.revenue) > tulipRevM).length;
+  const marketRank = competitorsAhead + 1;
+
+  const threatBadge = (score) => {
+    if (score >= 70) return 'bg-red-50 text-red-700 border-red-200';
+    if (score >= 50) return 'bg-amber-50 text-amber-800 border-amber-200';
+    if (score >= 30) return 'bg-gray-50 text-gray-700 border-gray-300';
+    return 'bg-emerald-50 text-emerald-800 border-emerald-200';
+  };
 
   return (
-    <div className="container mx-auto p-6 space-y-6">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <div className="flex items-center gap-3">
-            <Crown className="h-8 w-8 text-yellow-500" />
-            <h1 className="text-4xl font-bold tracking-tight">Tulip Command Center</h1>
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-8 py-10 max-w-7xl">
+        {/* Header */}
+        <Link href="/">
+          <Button variant="ghost" className="mb-4 -ml-3">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Dashboard
+          </Button>
+        </Link>
+
+        <div className="flex items-start justify-between mb-10 flex-wrap gap-4">
+          <div>
+            <h1 className="text-5xl font-light tracking-tight text-gray-900 mb-2">Tulip Command Center</h1>
+            <p className="text-base text-gray-500">Executive view — Tulip's position relative to {competitorsOnly.length} tracked competitors</p>
           </div>
-          <p className="text-muted-foreground mt-2">Executive Competitive Intelligence Dashboard</p>
+          <div className="flex gap-2">
+            <Link href="/email-agents">
+              <Button variant="outline" className="border-gray-300">
+                <Activity className="mr-2 h-4 w-4" />
+                Email Agents
+              </Button>
+            </Link>
+            <Dialog open={emailDialogOpen} onOpenChange={setEmailDialogOpen}>
+              <DialogTrigger asChild>
+                <Button className="bg-black hover:bg-gray-900 text-white">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Send Weekly Digest
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Send Weekly Competitive Digest</DialogTitle>
+                  <DialogDescription>
+                    Generates a digest of competitor activity — no internal Tulip metrics included.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid gap-2">
+                    <Label htmlFor="recipients">Recipients</Label>
+                    <Input id="recipients" value={emailRecipients} onChange={(e) => setEmailRecipients(e.target.value)} />
+                    <p className="text-xs text-gray-500">Separate multiple emails with commas</p>
+                  </div>
+                  <div className="p-4 bg-gray-50 border border-gray-200 text-sm">
+                    <p className="font-medium mb-2">Digest will include:</p>
+                    <ul className="space-y-1 text-gray-700">
+                      <li>• Top 5 competitors ranked by threat</li>
+                      <li>• Critical watchlist (threat ≥ 70)</li>
+                      <li>• New signals from last 7 days</li>
+                      <li>• No Tulip-internal metrics — competitor data only</li>
+                    </ul>
+                  </div>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => setEmailDialogOpen(false)}>Cancel</Button>
+                  <Button onClick={sendWeeklyDigest} className="bg-black text-white">Open in Email Client</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          </div>
         </div>
-        <Dialog open={emailDialogOpen} onOpenChange={setEmailDialogOpen}>
-          <DialogTrigger asChild>
-            <Button size="lg">
-              <Mail className="mr-2 h-4 w-4" />
-              Send Weekly Digest
-            </Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Send Weekly Competitive Digest</DialogTitle>
-              <DialogDescription>
-                Generate and send a comprehensive weekly competitive intelligence report to leadership team
-              </DialogDescription>
-            </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid gap-2">
-                <Label htmlFor="recipients">Email Recipients</Label>
-                <Input
-                  id="recipients"
-                  value={emailRecipients}
-                  onChange={(e) => setEmailRecipients(e.target.value)}
-                  placeholder="leadership-team@tulip.co"
-                />
-                <p className="text-xs text-muted-foreground">
-                  Separate multiple emails with commas
-                </p>
-              </div>
-              <div className="p-4 bg-muted rounded-lg text-sm">
-                <p className="font-semibold mb-2">Digest will include:</p>
-                <ul className="space-y-1 text-muted-foreground">
-                  <li>✓ Tulip market position & metrics</li>
-                  <li>✓ Top 5 competitor overview</li>
-                  <li>✓ High-priority threats analysis</li>
-                  <li>✓ New signals from past 7 days</li>
-                  <li>✓ Key insights & recommendations</li>
-                  <li>✓ Quick action links</li>
-                </ul>
-              </div>
-            </div>
-            <DialogFooter>
-              <Button variant="outline" onClick={() => setEmailDialogOpen(false)}>
-                Cancel
-              </Button>
-              <Button onClick={sendWeeklyDigest} disabled={sendingEmail}>
-                {sendingEmail ? 'Generating...' : 'Generate & Send'}
-              </Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
-      </div>
 
-      {/* Tulip Status Cards */}
-      <div className="grid gap-4 md:grid-cols-4">
-        <Card className="border-yellow-500 border-2">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Valuation</CardTitle>
-            <Crown className="h-4 w-4 text-yellow-500" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-yellow-600">{tulip?.valuation}</div>
-            <p className="text-xs text-green-600 flex items-center mt-1">
-              <TrendingUp className="h-3 w-3 mr-1" />
-              Unicorn Status (Jan 2026)
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Market Rank</CardTitle>
-            <Target className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">#{marketRank}</div>
-            <p className="text-xs text-muted-foreground">By revenue in category</p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Revenue (ARR)</CardTitle>
-            <TrendingUp className="h-4 w-4 text-green-600" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-green-600">{tulip?.revenue}</div>
-            <p className="text-xs text-muted-foreground">Fastest growing</p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Funding</CardTitle>
-            <Zap className="h-4 w-4 text-blue-600" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-blue-600">{tulip?.funding}</div>
-            <p className="text-xs text-muted-foreground">Series D (Mitsubishi)</p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Main Comparison */}
-      <Tabs defaultValue="snapshot" className="space-y-4">
-        <TabsList>
-          <TabsTrigger value="snapshot">Market Snapshot</TabsTrigger>
-          <TabsTrigger value="comparison">Head-to-Head</TabsTrigger>
-          <TabsTrigger value="sources">Data Sources</TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="snapshot" className="space-y-4">
-          <Card>
-            <CardHeader>
-              <CardTitle>Tulip vs Market - Competitive Position</CardTitle>
-              <CardDescription>
-                Real-time comparison with all major competitors
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-[200px]">Company</TableHead>
-                    <TableHead>Revenue</TableHead>
-                    <TableHead>vs Tulip</TableHead>
-                    <TableHead>Employees</TableHead>
-                    <TableHead>Valuation/Status</TableHead>
-                    <TableHead>Threat</TableHead>
-                    <TableHead>Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow className="bg-yellow-50">
-                    <TableCell className="font-bold flex items-center gap-2">
-                      <Crown className="h-4 w-4 text-yellow-500" />
-                      {tulip?.name}
-                    </TableCell>
-                    <TableCell className="font-bold text-green-600">{tulip?.revenue}</TableCell>
-                    <TableCell>
-                      <Badge>Reference</Badge>
-                    </TableCell>
-                    <TableCell>{tulip?.employees}</TableCell>
-                    <TableCell className="font-bold text-yellow-600">{tulip?.valuation}</TableCell>
-                    <TableCell>-</TableCell>
-                    <TableCell>
-                      <Link href="/competitors/tulip">
-                        <Button size="sm" variant="outline">View Profile</Button>
-                      </Link>
-                    </TableCell>
-                  </TableRow>
-                  {competitorsOnly.map((comp) => {
-                    const compRev = parseFloat(comp.revenue.replace(/[^0-9.]/g, '')) || 0;
-                    const tulipRev = parseFloat(tulip?.revenue.replace(/[^0-9.]/g, '')) || 0;
-                    const isAhead = compRev > tulipRev;
-                    const diff = Math.abs(compRev - tulipRev).toFixed(1);
-
-                    return (
-                      <TableRow key={comp.id}>
-                        <TableCell className="font-medium">{comp.name}</TableCell>
-                        <TableCell className="font-semibold">{comp.revenue}</TableCell>
-                        <TableCell>
-                          {isAhead ? (
-                            <span className="flex items-center text-red-600 text-sm">
-                              <TrendingUp className="h-3 w-3 mr-1" />
-                              +${diff}M ahead
-                            </span>
-                          ) : (
-                            <span className="flex items-center text-green-600 text-sm">
-                              <TrendingDown className="h-3 w-3 mr-1" />
-                              ${diff}M behind
-                            </span>
-                          )}
-                        </TableCell>
-                        <TableCell className="text-muted-foreground">{comp.employees}</TableCell>
-                        <TableCell className="text-sm">{comp.valuation || 'Private'}</TableCell>
-                        <TableCell>
-                          <Badge variant="outline" className={
-                            comp.threatLevel === 'high' ? 'bg-red-100 text-red-800' :
-                            comp.threatLevel === 'medium' ? 'bg-yellow-100 text-yellow-800' :
-                            'bg-green-100 text-green-800'
-                          }>
-                            {comp.threatLevel || 'low'}
-                          </Badge>
-                        </TableCell>
-                        <TableCell>
-                          <Link href={`/competitors/${comp.id}`}>
-                            <Button size="sm" variant="ghost">Analyze</Button>
-                          </Link>
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                </TableBody>
-              </Table>
-            </CardContent>
-          </Card>
-
-          {/* Key Advantages */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <Card className="border-green-500">
-              <CardHeader>
-                <CardTitle className="text-green-600 flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5" />
-                  Tulip Competitive Advantages
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">✓</span>
-                    <span className="text-sm">Unicorn status ($1.3B valuation) - only platform with this scale</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">✓</span>
-                    <span className="text-sm">Strongest AI suite: Composer + Agents + Akooda acquisition</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">✓</span>
-                    <span className="text-sm">No-code platform - fastest time-to-value (weeks vs months)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">✓</span>
-                    <span className="text-sm">Mitsubishi partnership opens global enterprise market</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">✓</span>
-                    <span className="text-sm">$272.5M funding - strongest runway in category</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-500">
-              <CardHeader>
-                <CardTitle className="text-orange-600 flex items-center gap-2">
-                  <AlertTriangle className="h-5 w-5" />
-                  Watch List - Competitive Threats
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {competitorsOnly
-                    .filter(c => c.threatLevel === 'high' || c.threatLevel === 'medium')
-                    .map(c => (
-                      <li key={c.id} className="flex items-start gap-2 pb-2 border-b last:border-0">
-                        <span className="text-orange-600 mt-1">⚠</span>
-                        <div className="text-sm flex-1">
-                          <span className="font-semibold">{c.name}</span>
-                          <span className="text-muted-foreground"> ({c.category})</span>
-                          <p className="text-xs text-muted-foreground mt-1">
-                            {c.positioning.substring(0, 100)}...
-                          </p>
-                        </div>
-                      </li>
-                    ))}
-                </ul>
-              </CardContent>
-            </Card>
+        {/* Relative-position stat cards — no valuation front and center */}
+        <div className="grid gap-0 md:grid-cols-4 mb-10 border border-gray-900 divide-x divide-gray-900">
+          <div className="p-5">
+            <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Market Rank (by revenue)</div>
+            <div className="text-3xl font-light text-gray-900">#{marketRank}</div>
+            <p className="text-xs text-gray-500 mt-1">of {competitorsOnly.length + 1} tracked vendors</p>
           </div>
-        </TabsContent>
+          <div className="p-5">
+            <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Larger Competitors</div>
+            <div className="text-3xl font-light text-gray-900">{competitorsAhead}</div>
+            <p className="text-xs text-gray-500 mt-1">by revenue scale</p>
+          </div>
+          <div className="p-5">
+            <div className="text-[10px] uppercase tracking-widest text-red-700 mb-2">Critical Watchlist</div>
+            <div className="text-3xl font-light text-gray-900 flex items-baseline gap-2">
+              {criticalCount}
+              <span className="h-2 w-2 rounded-full bg-red-600"></span>
+            </div>
+            <p className="text-xs text-gray-500 mt-1">competitors at threat ≥ 70</p>
+          </div>
+          <div className="p-5">
+            <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-2">High-Severity Moves</div>
+            <div className="text-3xl font-light text-gray-900">{highSeverityRecent}</div>
+            <p className="text-xs text-gray-500 mt-1">last 30 days</p>
+          </div>
+        </div>
 
-        <TabsContent value="comparison">
-          <Card>
-            <CardHeader>
-              <CardTitle>Detailed Head-to-Head Analysis</CardTitle>
-              <CardDescription>Feature-by-feature comparison coming soon</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">This tab will show detailed feature comparisons, customer overlap, win/loss analysis, and pricing strategies.</p>
-            </CardContent>
-          </Card>
-        </TabsContent>
+        {/* Tulip self-profile — compact, inline editable */}
+        <Card className="border border-gray-200 mb-10 rounded-none">
+          <div className="p-5 grid md:grid-cols-5 gap-5 items-center">
+            <div>
+              <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Tulip Profile</div>
+              <p className="text-base font-medium text-gray-900">{tulip?.name}</p>
+              <p className="text-xs text-gray-500">{tulip?.category}</p>
+            </div>
+            {/* Inline editable Revenue */}
+            <div>
+              <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Revenue (ARR)</div>
+              {editingRevenue ? (
+                <div className="flex items-center gap-1">
+                  <Input
+                    value={revenueDraft}
+                    onChange={(e) => setRevenueDraft(e.target.value)}
+                    className="h-8 text-sm w-24"
+                    placeholder="$50M"
+                    autoFocus
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') saveRevenue();
+                      if (e.key === 'Escape') setEditingRevenue(false);
+                    }}
+                  />
+                  <Button size="sm" variant="ghost" onClick={saveRevenue} disabled={savingRevenue} className="h-8 w-8 p-0">
+                    <Check className="h-4 w-4 text-emerald-700" />
+                  </Button>
+                  <Button size="sm" variant="ghost" onClick={() => setEditingRevenue(false)} className="h-8 w-8 p-0">
+                    <X className="h-4 w-4 text-gray-500" />
+                  </Button>
+                </div>
+              ) : (
+                <button
+                  className="group inline-flex items-center gap-2 text-base font-medium text-gray-900 hover:text-emerald-700 transition-colors"
+                  onClick={() => { setRevenueDraft(tulip?.revenue || ''); setEditingRevenue(true); }}
+                  title="Click to edit"
+                >
+                  {tulip?.revenue || '—'}
+                  <Pencil className="h-3 w-3 text-gray-300 group-hover:text-emerald-700 transition-colors" />
+                </button>
+              )}
+            </div>
+            <div>
+              <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Employees</div>
+              <p className="text-base font-medium text-gray-900">{tulip?.employees}</p>
+            </div>
+            <div>
+              <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Funding</div>
+              <p className="text-base font-medium text-gray-900">{tulip?.funding}</p>
+            </div>
+            <div>
+              <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Valuation</div>
+              <p className="text-base font-medium text-gray-900">{tulip?.valuation}</p>
+            </div>
+          </div>
+        </Card>
 
-        <TabsContent value="sources">
-          <Card>
-            <CardHeader>
-              <CardTitle>Data Sources & Attribution</CardTitle>
-              <CardDescription>Where all competitive intelligence data comes from</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {[tulip, ...competitorsOnly].filter(Boolean).map(comp => (
-                  <div key={comp.id} className="p-4 border rounded-lg">
-                    <h3 className="font-semibold mb-3">{comp.name}</h3>
-                    <div className="grid md:grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <span className="text-muted-foreground">Revenue:</span>
-                        <span className="ml-2 font-mono">{comp.revenue}</span>
-                        <a href="#" className="ml-2 text-xs text-blue-600 hover:underline">
-                          Source <ExternalLink className="inline h-3 w-3" />
-                        </a>
+        {/* Tabs */}
+        <Tabs defaultValue="snapshot" className="space-y-4">
+          <TabsList className="bg-gray-100 border-b border-gray-200">
+            <TabsTrigger value="snapshot">Market Snapshot</TabsTrigger>
+            <TabsTrigger value="threats">Top Threats</TabsTrigger>
+          </TabsList>
+
+          {/* SNAPSHOT — competitor-relative view */}
+          <TabsContent value="snapshot" className="space-y-4">
+            <Card className="border border-gray-200 rounded-none">
+              <CardHeader className="border-b border-gray-100">
+                <CardTitle className="text-xl font-light">Tulip vs Market</CardTitle>
+                <CardDescription>Competitor positions relative to Tulip — sorted by threat</CardDescription>
+              </CardHeader>
+              <CardContent className="p-0">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-gray-50 border-b border-gray-200">
+                      <TableHead className="text-[10px] uppercase tracking-widest text-gray-500">Company</TableHead>
+                      <TableHead className="text-[10px] uppercase tracking-widest text-gray-500">Revenue</TableHead>
+                      <TableHead className="text-[10px] uppercase tracking-widest text-gray-500">vs Tulip</TableHead>
+                      <TableHead className="text-[10px] uppercase tracking-widest text-gray-500">Employees</TableHead>
+                      <TableHead className="text-[10px] uppercase tracking-widest text-gray-500">Valuation</TableHead>
+                      <TableHead className="text-[10px] uppercase tracking-widest text-gray-500">Threat</TableHead>
+                      <TableHead></TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {/* Tulip row — minimal, just for reference */}
+                    <TableRow className="bg-gray-50 border-b border-gray-200">
+                      <TableCell className="font-medium text-gray-900">
+                        {tulip?.name}
+                        <span className="ml-2 text-[10px] uppercase tracking-wider text-gray-500 border border-gray-300 px-1.5 py-0.5">You</span>
+                      </TableCell>
+                      <TableCell className="font-medium text-gray-900">{tulip?.revenue}</TableCell>
+                      <TableCell className="text-xs text-gray-400">—</TableCell>
+                      <TableCell className="text-gray-700">{tulip?.employees}</TableCell>
+                      <TableCell className="text-gray-700">{tulip?.valuation}</TableCell>
+                      <TableCell><span className="text-xs text-gray-400">—</span></TableCell>
+                      <TableCell></TableCell>
+                    </TableRow>
+                    {sortedByThreat.map((comp) => {
+                      const compRev = parseRev(comp.revenue);
+                      const diff = compRev - tulipRevM;
+                      const isAhead = diff > 0;
+                      const diffStr = Math.abs(diff) >= 1000 ? `$${(Math.abs(diff)/1000).toFixed(1)}B` : `$${Math.abs(diff).toFixed(0)}M`;
+                      return (
+                        <TableRow key={comp.id} className="border-b border-gray-100 hover:bg-gray-50/70">
+                          <TableCell className="font-medium text-gray-900">
+                            <Link href={`/competitors/${comp.id}`} className="hover:underline">{comp.name}</Link>
+                            <div className="text-[11px] text-gray-400 font-normal mt-0.5">{comp.category}</div>
+                          </TableCell>
+                          <TableCell className="text-gray-900">{comp.revenue || '—'}</TableCell>
+                          <TableCell>
+                            {compRev === 0 ? (
+                              <span className="text-xs text-gray-400">—</span>
+                            ) : isAhead ? (
+                              <span className="inline-flex items-center gap-1 text-xs text-red-700">
+                                <TrendingUp className="h-3 w-3" />
+                                +{diffStr} ahead
+                              </span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 text-xs text-emerald-700">
+                                <TrendingDown className="h-3 w-3" />
+                                {diffStr} behind
+                              </span>
+                            )}
+                          </TableCell>
+                          <TableCell className="text-gray-700">{comp.employees || '—'}</TableCell>
+                          <TableCell className="text-gray-700 text-sm">{comp.valuation || 'Private'}</TableCell>
+                          <TableCell>
+                            <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider border ${threatBadge(comp.threatScore || 0)}`}>
+                              {comp.threatScore || 0}
+                            </span>
+                          </TableCell>
+                          <TableCell>
+                            <Link href={`/competitors/${comp.id}`}>
+                              <Button size="sm" variant="ghost" className="text-gray-900">View →</Button>
+                            </Link>
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          {/* THREATS — focused view */}
+          <TabsContent value="threats">
+            <Card className="border border-gray-900 rounded-none">
+              <CardHeader className="border-b border-gray-200">
+                <CardTitle className="flex items-center gap-2 text-xl font-light">
+                  <AlertTriangle className="h-5 w-5 text-red-600" />
+                  Top Threats — Critical Watchlist
+                </CardTitle>
+                <CardDescription>Competitors at threat score ≥ 70</CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 divide-y divide-gray-100">
+                {sortedByThreat.filter(c => (c.threatScore || 0) >= 70).length === 0 && (
+                  <p className="p-6 text-sm text-gray-500">No competitors currently on the critical watchlist.</p>
+                )}
+                {sortedByThreat.filter(c => (c.threatScore || 0) >= 70).map(c => (
+                  <div key={c.id} className="p-5 flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <span className={`inline-flex items-center justify-center w-12 h-12 text-xl font-light border ${threatBadge(c.threatScore)}`}>
+                        {c.threatScore}
+                      </span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Link href={`/competitors/${c.id}`} className="font-medium text-gray-900 hover:underline">{c.name}</Link>
+                        <span className="text-[11px] uppercase tracking-wider text-gray-500">{c.category}</span>
                       </div>
-                      <div>
-                        <span className="text-muted-foreground">Employees:</span>
-                        <span className="ml-2 font-mono">{comp.employees}</span>
-                        <a href="#" className="ml-2 text-xs text-blue-600 hover:underline">
-                          Source <ExternalLink className="inline h-3 w-3" />
-                        </a>
-                      </div>
-                      <div>
-                        <span className="text-muted-foreground">Funding:</span>
-                        <span className="ml-2 font-mono">{comp.funding}</span>
-                        <a href="#" className="ml-2 text-xs text-blue-600 hover:underline">
-                          Source <ExternalLink className="inline h-3 w-3" />
-                        </a>
-                      </div>
-                      <div>
-                        <span className="text-muted-foreground">Valuation:</span>
-                        <span className="ml-2 font-mono">{comp.valuation}</span>
-                        <a href="#" className="ml-2 text-xs text-blue-600 hover:underline">
-                          Source <ExternalLink className="inline h-3 w-3" />
-                        </a>
+                      <p className="text-sm text-gray-700 leading-snug line-clamp-2">{(c.tulipRelevance || c.positioning || '').slice(0, 220)}</p>
+                      <div className="flex items-center gap-3 mt-2 text-[11px] text-gray-500">
+                        <span>Revenue · <strong className="text-gray-700">{c.revenue || '—'}</strong></span>
+                        <span>Employees · <strong className="text-gray-700">{c.employees || '—'}</strong></span>
+                        <span>Geography · <strong className="text-gray-700">{c.geography || c.strongGeography || '—'}</strong></span>
                       </div>
                     </div>
+                    <Link href={`/competitors/${c.id}`}>
+                      <Button size="sm" variant="outline" className="border-gray-300">Battle Plan →</Button>
+                    </Link>
                   </div>
                 ))}
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
-
-      {/* Quick Actions */}
-      <div className="flex gap-4 justify-center">
-        <Link href="/">
-          <Button variant="outline">View Full Dashboard</Button>
-        </Link>
-        <Link href="/signals">
-          <Button variant="outline">All Competitive Signals</Button>
-        </Link>
-        <Link href="/battlecard">
-          <Button variant="outline">Generate Battlecards</Button>
-        </Link>
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );

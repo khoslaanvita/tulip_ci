@@ -1,5 +1,500 @@
 [
   {
+    "id": "act-1779804306125",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 20 articles.",
+    "timestamp": "2026-05-26T14:05:06.125Z",
+    "result": {
+      "totalProcessed": 20,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Supply Chain Dive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Pharmaceutical Technology"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-1779804295267",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 20 articles.",
+    "timestamp": "2026-05-26T14:04:55.267Z",
+    "result": {
+      "totalProcessed": 20,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Supply Chain Dive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Pharmaceutical Technology"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-1779804292455",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 20 articles.",
+    "timestamp": "2026-05-26T14:04:52.455Z",
+    "result": {
+      "totalProcessed": 20,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Supply Chain Dive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Pharmaceutical Technology"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-1779804155109",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 20 articles.",
+    "timestamp": "2026-05-26T14:02:35.109Z",
+    "result": {
+      "totalProcessed": 20,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Supply Chain Dive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Pharmaceutical Technology"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-1779804116305",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 20 articles.",
+    "timestamp": "2026-05-26T14:01:56.305Z",
+    "result": {
+      "totalProcessed": 20,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Supply Chain Dive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Pharmaceutical Technology"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-1779803849843",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 20 articles.",
+    "timestamp": "2026-05-26T13:57:29.843Z",
+    "result": {
+      "totalProcessed": 20,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Supply Chain Dive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Pharmaceutical Technology"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-bff19368",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for TrendMiner based on 0 recent signals",
+    "timestamp": "2026-05-26T13:57:00.627Z",
+    "result": {
+      "battlecardId": "bc-7a26ed94",
+      "competitorName": "TrendMiner"
+    }
+  },
+  {
+    "id": "act-1779803803901",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 20 articles.",
+    "timestamp": "2026-05-26T13:56:43.901Z",
+    "result": {
+      "totalProcessed": 20,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Supply Chain Dive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Pharmaceutical Technology"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-e931e994",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 40 competitors and found 40 signals",
+    "timestamp": "2026-05-26T13:56:13.383Z",
+    "result": {
+      "signalsFound": 40,
+      "competitors": [
+        "SAP Digital Manufacturing",
+        "Siemens Xcelerator",
+        "Critical Manufacturing",
+        "FactoryLogix / Aegis",
+        "Plex Systems",
+        "Epicor",
+        "Oracle Cloud Manufacturing",
+        "IFS Cloud",
+        "Infor",
+        "Aptean",
+        "Poka",
+        "Parsable",
+        "Dozuki",
+        "Augmentir",
+        "SwipeGuide",
+        "Zaptic",
+        "Beekeeper",
+        "GoCanvas",
+        "MasterControl",
+        "Kneat",
+        "Sparta / Honeywell TrackWise",
+        "Propel Software",
+        "Fiix",
+        "MaintainX",
+        "IBM Maximo",
+        "Limble CMMS",
+        "Inductive Automation",
+        "AVEVA PI System",
+        "HighByte",
+        "Litmus Automation",
+        "AWS IoT SiteWise",
+        "Seeq",
+        "TrendMiner",
+        "Sight Machine",
+        "MachineMetrics",
+        "Cognex",
+        "Landing AI",
+        "First Resonance",
+        "Apprentice.io",
+        "Mendix"
+      ]
+    }
+  },
+  {
+    "id": "act-1779803673874",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 20 articles.",
+    "timestamp": "2026-05-26T13:54:33.874Z",
+    "result": {
+      "totalProcessed": 20,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Supply Chain Dive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Pharmaceutical Technology"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-1779779168686",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 20 articles.",
+    "timestamp": "2026-05-26T07:06:08.686Z",
+    "result": {
+      "totalProcessed": 20,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Supply Chain Dive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Pharmaceutical Technology"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
     "id": "act-1779776675048",
     "agentType": "Market Monitor",
     "action": "RSS Feed Scan",
@@ -4042,248 +4537,6 @@
     "result": {
       "battlecardId": "bc-7549ccad",
       "competitorName": "Parsable"
-    }
-  },
-  {
-    "id": "act-68583529",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Poka based on 5 recent signals",
-    "timestamp": "2026-05-26T04:18:15.106Z",
-    "result": {
-      "battlecardId": "bc-a07edce6",
-      "competitorName": "Poka"
-    }
-  },
-  {
-    "id": "act-b646488e",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Critical Manufacturing based on 5 recent signals",
-    "timestamp": "2026-05-26T04:18:14.972Z",
-    "result": {
-      "battlecardId": "bc-021cf2c4",
-      "competitorName": "Critical Manufacturing"
-    }
-  },
-  {
-    "id": "act-1779769085678",
-    "agentType": "Market Monitor",
-    "action": "RSS Feed Scan",
-    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 10 articles.",
-    "timestamp": "2026-05-26T04:18:05.678Z",
-    "result": {
-      "totalProcessed": 10,
-      "totalCreated": 0,
-      "details": [
-        {
-          "competitorId": "tulip",
-          "processed": 0,
-          "created": 0,
-          "error": "Attribute without value\nLine: 82\nColumn: 65\nChar: >"
-        },
-        {
-          "competitorId": "critical-manufacturing",
-          "processed": 0,
-          "created": 0,
-          "feedName": "Critical Manufacturing Blog RSS"
-        },
-        {
-          "competitorId": "poka",
-          "processed": 0,
-          "created": 0,
-          "error": "Status code 404"
-        },
-        {
-          "competitorId": "parsable",
-          "processed": 10,
-          "created": 0,
-          "feedName": "Food Industry Executive"
-        },
-        {
-          "competitorId": "apprentice",
-          "processed": 0,
-          "created": 0,
-          "error": "Status code 403"
-        },
-        {
-          "competitorId": "siemens-xcelerator",
-          "processed": 0,
-          "created": 0,
-          "error": "Status code 404"
-        }
-      ]
-    }
-  },
-  {
-    "id": "act-1779768774279",
-    "agentType": "Market Monitor",
-    "action": "RSS Feed Scan",
-    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 10 articles.",
-    "timestamp": "2026-05-26T04:12:54.279Z",
-    "result": {
-      "totalProcessed": 10,
-      "totalCreated": 0,
-      "details": [
-        {
-          "competitorId": "tulip",
-          "processed": 0,
-          "created": 0,
-          "error": "Attribute without value\nLine: 82\nColumn: 65\nChar: >"
-        },
-        {
-          "competitorId": "critical-manufacturing",
-          "processed": 0,
-          "created": 0,
-          "feedName": "Critical Manufacturing Blog RSS"
-        },
-        {
-          "competitorId": "poka",
-          "processed": 0,
-          "created": 0,
-          "error": "Status code 404"
-        },
-        {
-          "competitorId": "parsable",
-          "processed": 10,
-          "created": 0,
-          "feedName": "Food Industry Executive"
-        },
-        {
-          "competitorId": "apprentice",
-          "processed": 0,
-          "created": 0,
-          "error": "Status code 403"
-        },
-        {
-          "competitorId": "siemens-xcelerator",
-          "processed": 0,
-          "created": 0,
-          "error": "Status code 404"
-        }
-      ]
-    }
-  },
-  {
-    "id": "act-9dbab6ab",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Siemens MindSphere / Xcelerator based on 4 recent signals",
-    "timestamp": "2026-05-26T04:10:24.677Z",
-    "result": {
-      "battlecardId": "bc-7b44b2b3",
-      "competitorName": "Siemens MindSphere / Xcelerator"
-    }
-  },
-  {
-    "id": "act-fa449cf1",
-    "agentType": "Market Monitor",
-    "action": "Market Scan Completed",
-    "description": "Scanned 6 competitors and found 6 signals",
-    "timestamp": "2026-05-26T04:10:24.677Z",
-    "result": {
-      "signalsFound": 6,
-      "competitors": [
-        "Tulip",
-        "Critical Manufacturing",
-        "Poka",
-        "Parsable",
-        "Apprentice.io",
-        "Siemens MindSphere / Xcelerator"
-      ]
-    }
-  },
-  {
-    "id": "act-be56e95a",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Apprentice.io based on 4 recent signals",
-    "timestamp": "2026-05-26T04:10:24.519Z",
-    "result": {
-      "battlecardId": "bc-01e82e82",
-      "competitorName": "Apprentice.io"
-    }
-  },
-  {
-    "id": "act-756ebfb8",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Parsable based on 4 recent signals",
-    "timestamp": "2026-05-26T04:10:24.389Z",
-    "result": {
-      "battlecardId": "bc-240eacc7",
-      "competitorName": "Parsable"
-    }
-  },
-  {
-    "id": "act-a3a17e70",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Poka based on 5 recent signals",
-    "timestamp": "2026-05-26T04:10:24.229Z",
-    "result": {
-      "battlecardId": "bc-31c1d008",
-      "competitorName": "Poka"
-    }
-  },
-  {
-    "id": "act-dbb70b34",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Tulip based on 3 recent signals",
-    "timestamp": "2026-05-26T04:10:24.063Z",
-    "result": {
-      "battlecardId": "bc-2772957b",
-      "competitorName": "Tulip"
-    }
-  },
-  {
-    "id": "act-1779768594798",
-    "agentType": "Market Monitor",
-    "action": "RSS Feed Scan",
-    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 10 articles.",
-    "timestamp": "2026-05-26T04:09:54.798Z",
-    "result": {
-      "totalProcessed": 10,
-      "totalCreated": 0,
-      "details": [
-        {
-          "competitorId": "tulip",
-          "processed": 0,
-          "created": 0,
-          "error": "Attribute without value\nLine: 82\nColumn: 65\nChar: >"
-        },
-        {
-          "competitorId": "critical-manufacturing",
-          "processed": 0,
-          "created": 0,
-          "feedName": "Critical Manufacturing Blog RSS"
-        },
-        {
-          "competitorId": "poka",
-          "processed": 0,
-          "created": 0,
-          "error": "Status code 404"
-        },
-        {
-          "competitorId": "parsable",
-          "processed": 10,
-          "created": 0,
-          "feedName": "Food Industry Executive"
-        },
-        {
-          "competitorId": "apprentice",
-          "processed": 0,
-          "created": 0,
-          "error": "Status code 403"
-        },
-        {
-          "competitorId": "siemens-xcelerator",
-          "processed": 0,
-          "created": 0,
-          "error": "Status code 404"
-        }
-      ]
     }
   }
 ]

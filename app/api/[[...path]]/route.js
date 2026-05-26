@@ -9,6 +9,11 @@ import { migrateCustomerTranscripts } from '@/lib/db-operations';
 import { generateCompetitorThreatsOpportunities, getRecentCompetitorNews } from '@/lib/competitor-analysis';
 import { generateStrategicInsights, computeThreatScore } from '@/lib/strategic-insights';
 import { generateCategoryIntelligence } from '@/lib/category-intelligence';
+import { computeEmailTriggers, generateEmailDraft, getEmailAgentRules, getRecentEmailDrafts, saveEmailDraft } from '@/lib/email-agent';
+import fs from 'fs';
+import path from 'path';
+
+const TULIP_PROFILE_PATH = path.join(process.cwd(), 'data', 'tulip-profile.json');
 
 // Start the background scheduler when the API loads
 if (typeof window === 'undefined') { // Server-side only
@@ -180,6 +185,32 @@ export async function GET(request) {
       return NextResponse.json(data);
     }
 
+    // GET /api/tulip-profile - Tulip's own self-reported company data (editable)
+    if (path === '/tulip-profile') {
+      try {
+        const profile = JSON.parse(fs.readFileSync(TULIP_PROFILE_PATH, 'utf-8'));
+        return NextResponse.json(profile);
+      } catch {
+        return NextResponse.json({ error: 'Profile not found' }, { status: 404 });
+      }
+    }
+
+    // GET /api/email-agents/rules - List configured email-agent rules
+    if (path === '/email-agents/rules') {
+      return NextResponse.json({ rules: getEmailAgentRules() });
+    }
+
+    // GET /api/email-agents/triggers - Compute which rules have triggered recently
+    if (path === '/email-agents/triggers') {
+      const triggers = await computeEmailTriggers();
+      return NextResponse.json(triggers);
+    }
+
+    // GET /api/email-agents/drafts - List recent email drafts
+    if (path === '/email-agents/drafts') {
+      return NextResponse.json({ drafts: getRecentEmailDrafts() });
+    }
+
     // GET /api/intelligence/categories - Get category summaries
     if (path === '/intelligence/categories') {
       const summaries = await generateCategorySummaries();
@@ -231,6 +262,32 @@ export async function POST(request) {
 
   try {
     const body = await request.json();
+
+    // POST /api/tulip-profile - Update Tulip's self-reported metrics (revenue, etc.)
+    if (path === '/tulip-profile') {
+      let profile = {};
+      try { profile = JSON.parse(fs.readFileSync(TULIP_PROFILE_PATH, 'utf-8')); } catch {}
+      const allowed = ['revenue', 'employees', 'funding', 'valuation', 'positioning', 'verticalFocus', 'geography'];
+      const update = {};
+      allowed.forEach(k => { if (body[k] !== undefined) update[k] = body[k]; });
+      const next = { ...profile, ...update, lastUpdated: new Date().toISOString() };
+      fs.writeFileSync(TULIP_PROFILE_PATH, JSON.stringify(next, null, 2));
+      return NextResponse.json(next);
+    }
+
+    // POST /api/email-agents/draft - Persist a generated draft (after user reviews)
+    if (path === '/email-agents/draft') {
+      const draft = saveEmailDraft(body);
+      return NextResponse.json(draft);
+    }
+
+    // POST /api/email-agents/generate - Generate an AI-drafted email for a trigger
+    if (path === '/email-agents/generate') {
+      const { triggerId } = body;
+      if (!triggerId) return NextResponse.json({ error: 'triggerId required' }, { status: 400 });
+      const draft = await generateEmailDraft(triggerId);
+      return NextResponse.json(draft);
+    }
 
     // POST /api/signals - Add new signal (manual input)
     if (path === '/signals') {

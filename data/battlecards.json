@@ -201,5 +201,34 @@
     ],
     "productImplications": "Continue strengthening MES / ERP-adjacent capabilities to match SAP Digital Manufacturing's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-7a26ed94",
+    "competitorId": "trendminer",
+    "competitorName": "TrendMiner",
+    "lastUpdated": "2026-05-26T13:57:00.626Z",
+    "dealContext": null,
+    "whenTheyAppear": "TrendMiner typically appears in Analytics / Process evaluations, particularly in deals where customers are focused on Process analytics specialist... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Process analytics specialist",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Analytics / Process. While TrendMiner focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"TrendMiner specializes in our specific industry\"",
+      "\"They seem more focused on Analytics / Process than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their Analytics / Process capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge TrendMiner's strengths in Analytics / Process, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond Analytics / Process, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening Analytics / Process capabilities to match TrendMiner's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   }
 ]
