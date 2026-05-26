@@ -491,5 +491,208 @@
     ],
     "productImplications": "Continue strengthening Connected Worker / AI capabilities to match Augmentir's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-7aaa51c8",
+    "competitorId": "swipeguide",
+    "competitorName": "SwipeGuide",
+    "lastUpdated": "2026-05-26T14:16:32.784Z",
+    "dealContext": null,
+    "whenTheyAppear": "SwipeGuide typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Mobile work instructions... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Mobile work instructions",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Connected Worker. While SwipeGuide focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"SwipeGuide specializes in our specific industry\"",
+      "\"They seem more focused on Connected Worker than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their Connected Worker capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge SwipeGuide's strengths in Connected Worker, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond Connected Worker, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening Connected Worker capabilities to match SwipeGuide's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-c0b8c17e",
+    "competitorId": "zaptic",
+    "competitorName": "Zaptic",
+    "lastUpdated": "2026-05-26T14:16:37.439Z",
+    "dealContext": null,
+    "whenTheyAppear": "Zaptic typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Connected worker for CPG/food... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Connected worker for CPG/food",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Connected Worker. While Zaptic focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Zaptic specializes in our specific industry\"",
+      "\"They seem more focused on Connected Worker than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their Connected Worker capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Zaptic's strengths in Connected Worker, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond Connected Worker, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening Connected Worker capabilities to match Zaptic's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-783e226e",
+    "competitorId": "beekeeper",
+    "competitorName": "Beekeeper",
+    "lastUpdated": "2026-05-26T14:16:42.009Z",
+    "dealContext": null,
+    "whenTheyAppear": "Beekeeper typically appears in Workforce Comms evaluations, particularly in deals where customers are focused on Frontline workforce communication... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Frontline workforce communication",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Workforce Comms. While Beekeeper focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Beekeeper specializes in our specific industry\"",
+      "\"They seem more focused on Workforce Comms than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their Workforce Comms capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Beekeeper's strengths in Workforce Comms, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond Workforce Comms, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening Workforce Comms capabilities to match Beekeeper's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-125b1679",
+    "competitorId": "gocanvas",
+    "competitorName": "GoCanvas",
+    "lastUpdated": "2026-05-26T14:16:45.021Z",
+    "dealContext": null,
+    "whenTheyAppear": "GoCanvas typically appears in Mobile Forms evaluations, particularly in deals where customers are focused on Mobile forms and inspections... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Mobile forms and inspections",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Mobile Forms. While GoCanvas focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"GoCanvas specializes in our specific industry\"",
+      "\"They seem more focused on Mobile Forms than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their Mobile Forms capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge GoCanvas's strengths in Mobile Forms, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond Mobile Forms, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening Mobile Forms capabilities to match GoCanvas's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-24013704",
+    "competitorId": "mastercontrol",
+    "competitorName": "MasterControl",
+    "lastUpdated": "2026-05-26T14:16:48.022Z",
+    "dealContext": null,
+    "whenTheyAppear": "MasterControl typically appears in QMS / Quality evaluations, particularly in deals where customers are focused on QMS leader for regulated industries... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "QMS leader for regulated industries",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond QMS / Quality. While MasterControl focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"MasterControl specializes in our specific industry\"",
+      "\"They seem more focused on QMS / Quality than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their QMS / Quality capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge MasterControl's strengths in QMS / Quality, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond QMS / Quality, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening QMS / Quality capabilities to match MasterControl's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-a4064f0f",
+    "competitorId": "kneat",
+    "competitorName": "Kneat",
+    "lastUpdated": "2026-05-26T14:16:53.092Z",
+    "dealContext": null,
+    "whenTheyAppear": "Kneat typically appears in QMS / Validation evaluations, particularly in deals where customers are focused on Digital validation for life sciences... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Digital validation for life sciences",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond QMS / Validation. While Kneat focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Kneat specializes in our specific industry\"",
+      "\"They seem more focused on QMS / Validation than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their QMS / Validation capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Kneat's strengths in QMS / Validation, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond QMS / Validation, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening QMS / Validation capabilities to match Kneat's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-a8467565",
+    "competitorId": "sparta-trackwise",
+    "competitorName": "Sparta / Honeywell TrackWise",
+    "lastUpdated": "2026-05-26T14:16:57.336Z",
+    "dealContext": null,
+    "whenTheyAppear": "Sparta / Honeywell TrackWise typically appears in QMS evaluations, particularly in deals where customers are focused on Enterprise QMS incumbent... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Enterprise QMS incumbent",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond QMS. While Sparta / Honeywell TrackWise focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Sparta / Honeywell TrackWise specializes in our specific industry\"",
+      "\"They seem more focused on QMS than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their QMS capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Sparta / Honeywell TrackWise's strengths in QMS, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond QMS, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening QMS capabilities to match Sparta / Honeywell TrackWise's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   }
 ]

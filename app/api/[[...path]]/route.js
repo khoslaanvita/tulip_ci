@@ -219,7 +219,8 @@ export async function GET(request) {
 
     // GET /api/intelligence/briefings - Get department briefings
     if (path === '/intelligence/briefings') {
-      const briefings = await generateDepartmentBriefings();
+      const force = searchParams.get('force') === '1';
+      const briefings = await generateDepartmentBriefings({ force });
       return NextResponse.json(briefings);
     }
 
