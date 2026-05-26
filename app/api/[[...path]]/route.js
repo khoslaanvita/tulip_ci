@@ -3,12 +3,15 @@ import { v4 as uuidv4 } from 'uuid';
 import { readJSON, writeJSON, appendToJSON, updateInJSON } from '@/lib/storage';
 import { analyzeSignalWithAI, generateBattlecardWithAI, generateEmailAlert } from '@/lib/ai-helpers';
 import { startScheduler, getSchedulerStatus } from '@/lib/agent-scheduler';
-import { generateVoCInsights, getVoCStats, getTranscriptsForCompetitor } from '@/lib/voc-agent';
+import { generateComprehensiveVoCInsights, getVoCStats } from '@/lib/voc-agent-enhanced';
 import { generateMarketSummary, generateCategorySummaries, generateDepartmentBriefings } from '@/lib/intelligence-agent';
+import { migrateCustomerTranscripts } from '@/lib/db-operations';
 
 // Start the background scheduler when the API loads
 if (typeof window === 'undefined') { // Server-side only
   startScheduler();
+  // Migrate customer transcripts to MongoDB on startup
+  migrateCustomerTranscripts().catch(console.error);
 }
 
 export async function GET(request) {
@@ -132,15 +135,23 @@ export async function GET(request) {
       return NextResponse.json(stats);
     }
 
-    // GET /api/voc/:competitorId - Get VoC insights for a specific competitor
+    // GET /api/voc/:competitorId - Get comprehensive VoC insights for a specific competitor
     if (path.startsWith('/voc/')) {
       const competitorId = path.split('/')[2];
       if (!competitorId) {
         return NextResponse.json({ error: 'Competitor ID required' }, { status: 400 });
       }
       
-      const insights = await generateVoCInsights(competitorId);
-      return NextResponse.json(insights);
+      try {
+        const insights = await generateComprehensiveVoCInsights(competitorId);
+        return NextResponse.json(insights);
+      } catch (error) {
+        console.error('VoC analysis error:', error);
+        return NextResponse.json({ 
+          error: 'Failed to analyze customer conversations',
+          message: error.message 
+        }, { status: 500 });
+      }
     }
 
     // GET /api/intelligence/market-summary - Get market intelligence summary
