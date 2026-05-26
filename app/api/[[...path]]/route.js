@@ -5,7 +5,7 @@ import { analyzeSignalWithAI, generateBattlecardWithAI, generateEmailAlert } fro
 import { startScheduler, getSchedulerStatus } from '@/lib/agent-scheduler';
 import { generateComprehensiveVoCInsights, getVoCStats } from '@/lib/voc-agent-enhanced';
 import { generateMarketSummary, generateCategorySummaries, generateDepartmentBriefings } from '@/lib/intelligence-agent';
-import { migrateCustomerTranscripts } from '@/lib/db-operations';
+import { migrateCustomerTranscripts, migrateToMongoDB } from '@/lib/db-operations';
 import { generateCompetitorThreatsOpportunities, getRecentCompetitorNews } from '@/lib/competitor-analysis';
 import { generateStrategicInsights, computeThreatScore } from '@/lib/strategic-insights';
 import { generateCategoryIntelligence } from '@/lib/category-intelligence';
@@ -20,6 +20,8 @@ if (typeof window === 'undefined') { // Server-side only
   startScheduler();
   // Migrate customer transcripts to MongoDB on startup
   migrateCustomerTranscripts().catch(console.error);
+  // Auto-migrate signals & competitors into MongoDB on first run (idempotent)
+  migrateToMongoDB().catch(console.error);
 }
 
 export async function GET(request) {
