@@ -1,5 +1,170 @@
 [
   {
+    "id": "act-1779769478742",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 10 articles.",
+    "timestamp": "2026-05-26T04:24:38.742Z",
+    "result": {
+      "totalProcessed": 10,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0,
+          "error": "Feed not recognized as RSS 1 or 2."
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog RSS"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Food Industry Executive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-1779769476890",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 10 articles.",
+    "timestamp": "2026-05-26T04:24:36.890Z",
+    "result": {
+      "totalProcessed": 10,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0,
+          "error": "Feed not recognized as RSS 1 or 2."
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog RSS"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Food Industry Executive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-1779769452339",
+    "agentType": "Market Monitor",
+    "action": "RSS Feed Scan",
+    "description": "Scanned RSS feeds for all competitors. Found 0 new signals from 10 articles.",
+    "timestamp": "2026-05-26T04:24:12.339Z",
+    "result": {
+      "totalProcessed": 10,
+      "totalCreated": 0,
+      "details": [
+        {
+          "competitorId": "tulip",
+          "processed": 0,
+          "created": 0,
+          "error": "Feed not recognized as RSS 1 or 2."
+        },
+        {
+          "competitorId": "critical-manufacturing",
+          "processed": 0,
+          "created": 0,
+          "feedName": "Critical Manufacturing Blog RSS"
+        },
+        {
+          "competitorId": "poka",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        },
+        {
+          "competitorId": "parsable",
+          "processed": 10,
+          "created": 0,
+          "feedName": "Food Industry Executive"
+        },
+        {
+          "competitorId": "apprentice",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 403"
+        },
+        {
+          "competitorId": "siemens-xcelerator",
+          "processed": 0,
+          "created": 0,
+          "error": "Status code 404"
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-2460934a",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 6 competitors and found 6 signals",
+    "timestamp": "2026-05-26T04:23:59.435Z",
+    "result": {
+      "signalsFound": 6,
+      "competitors": [
+        "Tulip",
+        "Critical Manufacturing",
+        "Poka",
+        "Parsable",
+        "Apprentice.io",
+        "Siemens MindSphere / Xcelerator"
+      ]
+    }
+  },
+  {
     "id": "act-1779769362562",
     "agentType": "Market Monitor",
     "action": "RSS Feed Scan",
@@ -1686,50 +1851,6 @@
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
     "timestamp": "2026-05-26T03:11:32.696Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779765090129",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:11:30.129Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779765072784",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:11:12.784Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779765047293",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:10:47.293Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779765046929",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:10:46.929Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
