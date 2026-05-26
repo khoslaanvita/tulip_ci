@@ -185,8 +185,15 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Stats Cards - Clean B&W */}
-        <div className="grid gap-6 md:grid-cols-3 mb-12">
+        {/* Stats Cards - Meaningful counts */}
+        {(() => {
+          const now = Date.now();
+          const THIRTY_D = 30 * 24 * 60 * 60 * 1000;
+          const recentSignalCompetitors = competitors.filter(c => c.latestSignal && (now - new Date(c.latestSignal.timestamp).getTime()) < THIRTY_D);
+          const highSeverityCount = competitors.filter(c => c.latestSignal && (c.latestSignal.severity || '').toLowerCase() === 'high').length;
+          const criticalThreatCount = competitors.filter(c => (c.threatScore || 0) >= 70).length;
+          return (
+        <div className="grid gap-6 md:grid-cols-4 mb-12">
           <Card className="border border-gray-200 hover:shadow-md transition-shadow">
             <CardHeader className="pb-3">
               <CardDescription className="text-xs uppercase tracking-wide text-gray-500">Active Competitors</CardDescription>
@@ -196,31 +203,42 @@ function Dashboard() {
               <p className="text-sm text-gray-600">Tracked via RSS & APIs</p>
             </CardContent>
           </Card>
-          
+
           <Card className="border border-gray-200 hover:shadow-md transition-shadow">
             <CardHeader className="pb-3">
               <CardDescription className="text-xs uppercase tracking-wide text-gray-500">Recent Signals</CardDescription>
-              <CardTitle className="text-4xl font-light">
-                {competitors.filter(c => c.latestSignal).length}
-              </CardTitle>
+              <CardTitle className="text-4xl font-light">{recentSignalCompetitors.length}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-gray-600">Last 7 days</p>
+              <p className="text-sm text-gray-600">Last 30 days</p>
             </CardContent>
           </Card>
-          
+
           <Card className="border border-gray-200 hover:shadow-md transition-shadow">
             <CardHeader className="pb-3">
-              <CardDescription className="text-xs uppercase tracking-wide text-gray-500">High Priority</CardDescription>
-              <CardTitle className="text-4xl font-light">
-                {competitors.filter(c => c.latestSignal?.severity === 'high').length}
+              <CardDescription className="text-xs uppercase tracking-wide text-gray-500">High-Severity Moves</CardDescription>
+              <CardTitle className="text-4xl font-light text-gray-900 flex items-baseline gap-2">
+                {highSeverityCount}
+                {highSeverityCount > 0 && <span className="h-2 w-2 rounded-full bg-red-600"></span>}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-gray-600">Require attention</p>
+              <p className="text-sm text-gray-600">Tier-1 competitive activity</p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 border-red-200 hover:shadow-md transition-shadow">
+            <CardHeader className="pb-3">
+              <CardDescription className="text-xs uppercase tracking-wide text-red-700 font-medium">Critical Watchlist</CardDescription>
+              <CardTitle className="text-4xl font-light text-gray-900">{criticalThreatCount}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-gray-600">Threat score ≥ 70 of 100</p>
             </CardContent>
           </Card>
         </div>
+          );
+        })()}
 
         {/* Quick Navigation - Minimal */}
         <div className="flex gap-3 mb-12 pb-12 border-b border-gray-200">

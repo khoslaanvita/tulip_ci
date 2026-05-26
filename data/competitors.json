@@ -5,7 +5,7 @@
     "category": "MES / ERP-adjacent",
     "industry": "Discrete, Process, Automotive, Life Sciences",
     "geography": "Global Enterprise",
-    "threatScore": 0,
+    "threatScore": 10,
     "priority": "High",
     "headquarters": "Walldorf, Germany",
     "founded": "1972",
@@ -28,7 +28,7 @@
     "pricingNotes": "$500K-$5M+ implementations",
     "aiCapabilities": "SAP AI Business Services, predictive quality",
     "aiClaims": "Embedded AI for production optimization",
-    "threatLevel": "low"
+    "threatLevel": "medium"
   },
   {
     "id": "siemens-xcelerator",
@@ -36,7 +36,7 @@
     "category": "SCADA / OT Platform",
     "industry": "Automotive, Industrial Equipment, Energy",
     "geography": "Global, Europe-heavy",
-    "threatScore": 0,
+    "threatScore": 7,
     "priority": "High",
     "headquarters": "Munich, Germany",
     "founded": "1847",
@@ -67,7 +67,7 @@
     "category": "MES",
     "industry": "Semiconductor, Electronics, Medical Device",
     "geography": "Europe, North America, Asia",
-    "threatScore": 5,
+    "threatScore": 7,
     "priority": "High",
     "headquarters": "Porto, Portugal",
     "founded": "2009",
@@ -316,7 +316,7 @@
     "category": "Connected Worker",
     "industry": "Food/Bev, CPG, General Manufacturing",
     "geography": "North America, Europe, Global",
-    "threatScore": 10,
+    "threatScore": 5,
     "priority": "High",
     "headquarters": "Montreal, Canada",
     "founded": "2013",
@@ -341,7 +341,7 @@
     "pricingNotes": "$30-60/user/month, 40% less than Tulip",
     "aiCapabilities": "AI Toolkit 2025 for content generation",
     "aiClaims": "AI-powered work instructions and knowledge",
-    "threatLevel": "medium"
+    "threatLevel": "low"
   },
   {
     "id": "parsable",
@@ -415,7 +415,7 @@
     "category": "Connected Worker / AI",
     "industry": "Manufacturing, Service, Maintenance",
     "geography": "North America, Industrial Enterprise",
-    "threatScore": 0,
+    "threatScore": 12,
     "priority": "High",
     "headquarters": "Reston, VA",
     "founded": "2017",
@@ -440,7 +440,7 @@
     "pricingNotes": "$50-80/user/month estimated",
     "aiCapabilities": "AI skills insights, performance optimization",
     "aiClaims": "AI-native workforce platform",
-    "threatLevel": "low"
+    "threatLevel": "medium"
   },
   {
     "id": "swipeguide",
@@ -580,7 +580,7 @@
     "category": "QMS / Quality",
     "industry": "Pharma, Biotech, Medical Device",
     "geography": "North America, Global Life Sciences",
-    "threatScore": 0,
+    "threatScore": 12,
     "priority": "High",
     "headquarters": "Salt Lake City, UT",
     "founded": "1993",
@@ -605,7 +605,7 @@
     "pricingNotes": "$100K-$1M+ annual QMS",
     "aiCapabilities": "AI quality insights, risk prediction",
     "aiClaims": "Intelligent quality management",
-    "threatLevel": "low"
+    "threatLevel": "medium"
   },
   {
     "id": "kneat",
@@ -745,7 +745,7 @@
     "category": "CMMS / Frontline",
     "industry": "Maintenance, Operations, Frontline",
     "geography": "North America",
-    "threatScore": 0,
+    "threatScore": 5,
     "priority": "High",
     "headquarters": "San Francisco, CA",
     "founded": "2016",
@@ -844,7 +844,7 @@
     "category": "SCADA / OT",
     "industry": "Industrial Automation, SCADA, Plant Systems",
     "geography": "North America, Global Integrators",
-    "threatScore": 0,
+    "threatScore": 2,
     "priority": "High",
     "headquarters": "Folsom, CA",
     "founded": "2003",
@@ -1174,7 +1174,7 @@
     "category": "AI Vision / Quality",
     "industry": "Visual Inspection, AI Quality, Manufacturing",
     "geography": "North America, Global Enterprise",
-    "threatScore": 0,
+    "threatScore": 2,
     "priority": "Medium",
     "headquarters": "Palo Alto, CA",
     "founded": "2017",
