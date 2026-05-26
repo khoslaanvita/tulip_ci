@@ -21,12 +21,42 @@ export default function CompetitorProfilePage() {
   const [generatingBattlecard, setGeneratingBattlecard] = useState(false);
   const [vocInsights, setVocInsights] = useState(null);
   const [loadingVoC, setLoadingVoC] = useState(false);
+  const [competitorAnalysis, setCompetitorAnalysis] = useState(null);
+  const [recentNews, setRecentNews] = useState([]);
+  const [loadingAnalysis, setLoadingAnalysis] = useState(false);
 
   useEffect(() => {
     if (competitorId) {
       loadCompetitorData();
+      loadRecentNews();
+      loadCompetitorAnalysis();
     }
   }, [competitorId]);
+
+  async function loadRecentNews() {
+    try {
+      const response = await fetch(`/api/competitor/${competitorId}/recent-news`);
+      const data = await response.json();
+      setRecentNews(data);
+    } catch (error) {
+      console.error('Error loading recent news:', error);
+    }
+  }
+
+  async function loadCompetitorAnalysis() {
+    setLoadingAnalysis(true);
+    try {
+      const response = await fetch(`/api/competitor/${competitorId}/analysis`);
+      if (response.ok) {
+        const data = await response.json();
+        setCompetitorAnalysis(data);
+      }
+    } catch (error) {
+      console.error('Error loading competitor analysis:', error);
+    } finally {
+      setLoadingAnalysis(false);
+    }
+  }
 
   async function loadCompetitorData() {
     try {

@@ -6,6 +6,7 @@ import { startScheduler, getSchedulerStatus } from '@/lib/agent-scheduler';
 import { generateComprehensiveVoCInsights, getVoCStats } from '@/lib/voc-agent-enhanced';
 import { generateMarketSummary, generateCategorySummaries, generateDepartmentBriefings } from '@/lib/intelligence-agent';
 import { migrateCustomerTranscripts } from '@/lib/db-operations';
+import { generateCompetitorThreatsOpportunities, getRecentCompetitorNews } from '@/lib/competitor-analysis';
 
 // Start the background scheduler when the API loads
 if (typeof window === 'undefined') { // Server-side only
@@ -170,6 +171,28 @@ export async function GET(request) {
     if (path === '/intelligence/briefings') {
       const briefings = await generateDepartmentBriefings();
       return NextResponse.json(briefings);
+    }
+
+    // GET /api/competitor/:id/analysis - Get threats & opportunities analysis
+    if (path.startsWith('/competitor/') && path.endsWith('/analysis')) {
+      const competitorId = path.split('/')[2];
+      try {
+        const analysis = await generateCompetitorThreatsOpportunities(competitorId);
+        return NextResponse.json(analysis);
+      } catch (error) {
+        console.error('Competitor analysis error:', error);
+        return NextResponse.json({ 
+          error: 'Failed to analyze competitor',
+          message: error.message 
+        }, { status: 500 });
+      }
+    }
+
+    // GET /api/competitor/:id/recent-news - Get recent news for competitor
+    if (path.startsWith('/competitor/') && path.endsWith('/recent-news')) {
+      const competitorId = path.split('/')[2];
+      const news = getRecentCompetitorNews(competitorId, 5);
+      return NextResponse.json(news);
     }
 
     return NextResponse.json({ error: 'Not found' }, { status: 404 });
