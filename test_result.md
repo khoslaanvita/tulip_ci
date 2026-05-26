@@ -101,3 +101,50 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: |
+  Tulip Competitive Intelligence Command Center — Polished B&W MVP that tracks 40 industry
+  competitors with executive dashboard, signals, profiles, AI agents (VoC, summary, battlecards).
+  Latest session goals: (1) update dashboard table to drop Threat score and add visual category
+  distinction + standout Industry column; (2) build /agents page with timestamps & status per agent.
+
+frontend:
+  - task: "Dashboard table redesign — drop Threat, group categories into B&W visual buckets, add Industry standout, render 40 competitors"
+    implemented: true
+    working: true
+    file: "/app/app/page.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Replaced Threat column with cleaner 5-column table (Company / Category / Industry Focus / Geography / Tulip Competitive Angle). Added getCategoryGroup() mapping that buckets 35+ raw categories into 9 groups (MES/ERP, Connected Worker, QMS, CMMS/EAM, SCADA/OT, Analytics, AI Vision, Platform, Other) each with distinct B&W badge styling (solid black, double-border, dashed, gray fills) + lucide icon. Industry column gets a VERTICAL eyebrow label with left black border bar for clear visual prominence. Verified via screenshot — all 40 competitors render, badges correctly differentiate categories (incl. Cognex/Landing AI → AI VISION after reordering). Also converted residual blue/green color violations on the page to B&W."
+
+  - task: "Agents page — timestamps + per-agent status (last run, scheduler health, activity log)"
+    implemented: true
+    working: true
+    file: "/app/app/agents/page.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Rebuilt /agents page as a client component fetching /api/scheduler/status and /api/activity-log. Top status bar shows Scheduler (Running/Stopped), Last Global Run (relative + absolute), Total Agent Runs. Each of the 7 agent cards shows ACTIVE/READY/ON-DEMAND status pill, type+schedule chip, and a Last Run strip (relative time + monospace absolute). Bottom adds a 5-step 'How Agents Work Together' B&W card and a Recent Agent Activity table (latest 8 events). Replaced the previous blue summary card with strict B&W styling. Screenshot confirmed Scheduler=Running, Market Monitor=Active with 'just now' timestamp, 100 total runs, activity log rendering correctly."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.1"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus: []
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Completed P0 items: dashboard table redesign + agents page with live timestamps/status. Did not call backend testing agent since changes are frontend-only and rely on existing /api/scheduler/status & /api/activity-log endpoints which are already returning data. OpenAI quota error remains blocked pending funded key from user. Awaiting user verification before moving to upcoming task (weekly leadership digest email)."

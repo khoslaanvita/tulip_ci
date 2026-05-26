@@ -6,8 +6,34 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Activity, TrendingUp, AlertCircle, Bell, Zap } from 'lucide-react';
+import { Activity, TrendingUp, AlertCircle, Bell, Zap, Bot, Factory, Users, ShieldCheck, Wrench, Cpu, BarChart3, Eye, Building2, Layers } from 'lucide-react';
 import { toast } from 'sonner';
+
+// Group categories into broader buckets and assign B&W visual identity
+function getCategoryGroup(category) {
+  const c = (category || '').toLowerCase();
+  if (c.includes('vision') || c.includes('ai quality')) return 'ai_vision';
+  if (c.includes('mes') || c.includes('erp')) return 'mes_erp';
+  if (c.includes('connected worker') || c.includes('frontline') || c.includes('workforce') || c.includes('mobile form')) return 'connected_worker';
+  if (c.includes('qms') || c.includes('quality') || c.includes('validation') || c.includes('plm')) return 'qms';
+  if (c.includes('cmms') || c.includes('eam')) return 'cmms';
+  if (c.includes('scada') || c.includes('ot') || c.includes('iiot') || c.includes('edge') || c.includes('industrial data') || c.includes('cloud iot')) return 'scada_ot';
+  if (c.includes('analytics') || c.includes('intelligence') || c.includes('data ops') || c.includes('process')) return 'analytics';
+  if (c.includes('low-code') || c.includes('platform')) return 'platform';
+  return 'other';
+}
+
+const CATEGORY_STYLES = {
+  mes_erp:          { label: 'MES / ERP',          icon: Factory,     badge: 'bg-black text-white border-black' },
+  connected_worker: { label: 'Connected Worker',   icon: Users,       badge: 'bg-white text-black border-2 border-black' },
+  qms:              { label: 'Quality / QMS',      icon: ShieldCheck, badge: 'bg-white text-black border border-dashed border-black' },
+  cmms:             { label: 'CMMS / EAM',         icon: Wrench,      badge: 'bg-gray-200 text-gray-900 border border-gray-400' },
+  scada_ot:         { label: 'SCADA / OT',         icon: Cpu,         badge: 'bg-gray-800 text-white border-gray-800' },
+  analytics:        { label: 'Analytics',          icon: BarChart3,   badge: 'bg-gray-100 text-gray-900 border border-gray-300' },
+  ai_vision:        { label: 'AI Vision',          icon: Eye,         badge: 'bg-white text-black border border-double border-black border-[3px]' },
+  platform:         { label: 'Platform',           icon: Layers,      badge: 'bg-gray-900 text-white border-gray-900' },
+  other:            { label: 'Other',              icon: Building2,   badge: 'bg-white text-gray-600 border border-gray-300' },
+};
 
 function Dashboard() {
   const [competitors, setCompetitors] = useState([]);
@@ -141,7 +167,7 @@ function Dashboard() {
             </Button>
             <div className="ml-auto flex items-center gap-6 text-sm text-gray-500">
               <span className="flex items-center gap-2">
-                <div className="h-2 w-2 bg-green-500 rounded-full"></div>
+                <div className="h-2 w-2 bg-gray-900 rounded-full animate-pulse"></div>
                 Live Monitoring
               </span>
               <span>Auto-refresh: Daily</span>
@@ -174,9 +200,10 @@ function Dashboard() {
               </div>
 
               {marketSummary.keyTrend && (
-                <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded">
-                  <p className="text-sm text-blue-900">
-                    <strong>Key Trend:</strong> {marketSummary.keyTrend}
+                <div className="mt-4 p-3 bg-gray-50 border-l-2 border-gray-900">
+                  <p className="text-sm text-gray-900">
+                    <strong className="uppercase text-[10px] tracking-widest text-gray-500 block mb-1">Key Trend</strong>
+                    {marketSummary.keyTrend}
                   </p>
                 </div>
               )}
@@ -241,6 +268,12 @@ function Dashboard() {
               Methodology
             </Button>
           </Link>
+          <Link href="/agents">
+            <Button variant="outline" size="sm" className="border-gray-300">
+              <Bot className="mr-2 h-4 w-4" />
+              Agents
+            </Button>
+          </Link>
           <Link href="/activity">
             <Button variant="outline" size="sm" className="border-gray-300">
               <Bell className="mr-2 h-4 w-4" />
@@ -260,61 +293,58 @@ function Dashboard() {
         <CardContent className="p-0">
           <Table>
             <TableHeader>
-              <TableRow className="border-b border-gray-100">
-                <TableHead className="font-medium text-gray-900">Company</TableHead>
-                <TableHead className="font-medium text-gray-900">Category</TableHead>
-                <TableHead className="font-medium text-gray-900">Latest Signal</TableHead>
-                <TableHead className="font-medium text-gray-900">Type</TableHead>
-                <TableHead className="font-medium text-gray-900">Severity</TableHead>
-                <TableHead className="font-medium text-gray-900">Updated</TableHead>
+              <TableRow className="border-b border-gray-200 bg-gray-50">
+                <TableHead className="font-medium text-gray-900 uppercase text-xs tracking-wider">Company</TableHead>
+                <TableHead className="font-medium text-gray-900 uppercase text-xs tracking-wider">Category</TableHead>
+                <TableHead className="font-medium text-gray-900 uppercase text-xs tracking-wider">Industry Focus</TableHead>
+                <TableHead className="font-medium text-gray-900 uppercase text-xs tracking-wider">Geography</TableHead>
+                <TableHead className="font-medium text-gray-900 uppercase text-xs tracking-wider">Tulip Competitive Angle</TableHead>
                 <TableHead></TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {competitors.map((competitor) => (
-                <TableRow key={competitor.id} className="border-b border-gray-100 hover:bg-gray-50">
-                  <TableCell className="font-medium text-gray-900">
-                    {competitor.name}
-                  </TableCell>
-                  <TableCell>
-                    <Badge variant="outline" className="font-normal border-gray-300 text-gray-700">
-                      {competitor.category}
-                    </Badge>
-                  </TableCell>
-                  <TableCell className="max-w-xs">
-                    <p className="truncate text-sm text-gray-600">
-                      {competitor.latestSignal?.title || <span className="italic text-gray-400">No signals</span>}
-                    </p>
-                  </TableCell>
-                  <TableCell>
-                    {competitor.latestSignal && (
-                      <Badge variant="secondary" className="font-normal bg-gray-100 text-gray-700">
-                        {competitor.latestSignal.type}
-                      </Badge>
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    {competitor.latestSignal && (
-                      <Badge variant={getSeverityColor(competitor.latestSignal.severity)} className="font-normal">
-                        {competitor.latestSignal.severity}
-                      </Badge>
-                    )}
-                  </TableCell>
-                  <TableCell className="text-sm text-gray-500">
-                    {competitor.latestSignal 
-                      ? new Date(competitor.latestSignal.timestamp).toLocaleDateString()
-                      : '-'
-                    }
-                  </TableCell>
-                  <TableCell>
-                    <Link href={`/competitors/${competitor.id}`}>
-                      <Button variant="ghost" size="sm" className="text-gray-900">
-                        View →
-                      </Button>
-                    </Link>
-                  </TableCell>
-                </TableRow>
-              ))}
+              {competitors.map((competitor) => {
+                const groupKey = getCategoryGroup(competitor.category);
+                const groupStyle = CATEGORY_STYLES[groupKey];
+                const CatIcon = groupStyle.icon;
+                const industry = competitor.industry || competitor.verticalFocus || '-';
+                const angle = competitor.tulipRelevance || competitor.tulipCompetitiveAngle || '-';
+                return (
+                  <TableRow key={competitor.id} className="border-b border-gray-100 hover:bg-gray-50/70 align-top">
+                    <TableCell className="font-medium text-gray-900 py-4">
+                      <Link href={`/competitors/${competitor.id}`} className="hover:underline">
+                        {competitor.name}
+                      </Link>
+                      <div className="text-[11px] text-gray-400 mt-1 font-normal">{competitor.category}</div>
+                    </TableCell>
+                    <TableCell className="py-4">
+                      <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm text-[11px] font-medium uppercase tracking-wider ${groupStyle.badge}`}>
+                        <CatIcon className="h-3 w-3" />
+                        {groupStyle.label}
+                      </span>
+                    </TableCell>
+                    <TableCell className="py-4 max-w-[240px]">
+                      <div className="border-l-2 border-gray-900 pl-3">
+                        <div className="text-[10px] font-mono uppercase tracking-widest text-gray-500 mb-0.5">Vertical</div>
+                        <div className="text-sm text-gray-900 leading-snug">{industry}</div>
+                      </div>
+                    </TableCell>
+                    <TableCell className="py-4 text-sm text-gray-700 max-w-[160px]">
+                      {competitor.geography || competitor.strongGeography || '-'}
+                    </TableCell>
+                    <TableCell className="py-4 max-w-md text-sm text-gray-700 leading-snug">
+                      {angle}
+                    </TableCell>
+                    <TableCell className="py-4">
+                      <Link href={`/competitors/${competitor.id}`}>
+                        <Button variant="ghost" size="sm" className="text-gray-900">
+                          View →
+                        </Button>
+                      </Link>
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
             </TableBody>
           </Table>
         </CardContent>
