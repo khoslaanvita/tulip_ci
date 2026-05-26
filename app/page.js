@@ -117,7 +117,7 @@ function Dashboard() {
                 <div className="h-2 w-2 bg-green-500 rounded-full"></div>
                 Live Monitoring
               </span>
-              <span>Auto-refresh: 15 min</span>
+              <span>Auto-refresh: Daily</span>
             </div>
           </div>
         </div>
