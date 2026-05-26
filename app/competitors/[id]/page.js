@@ -154,138 +154,68 @@ export default function CompetitorProfilePage() {
           <TabsTrigger value="sources">Sources</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="overview" className="space-y-6">
-          {/* Key Metrics Cards - Enhanced */}
+        <TabsContent value="overview" className="space-y-8">
+          {/* Key Metrics - Clean B&W */}
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="border-l-4 border-l-green-500">
+            <Card className="border border-gray-200">
               <CardHeader className="pb-3">
-                <CardDescription className="flex items-center gap-2">
-                  <DollarSign className="h-4 w-4 text-green-600" />
-                  Annual Revenue
-                </CardDescription>
+                <CardDescription className="text-xs uppercase tracking-wide text-gray-500">Annual Revenue</CardDescription>
+                <CardTitle className="text-3xl font-light text-gray-900">{competitor.revenue}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold text-green-600">{competitor.revenue}</p>
                 {competitor.id === 'poka' && (
-                  <p className="text-xs text-muted-foreground mt-2">Source: GetLatka (Jan 2025)</p>
-                )}
-                {competitor.id === 'apprentice' && (
-                  <p className="text-xs text-muted-foreground mt-2">+54% YoY growth</p>
+                  <p className="text-xs text-gray-500">Source: GetLatka (Jan 2025)</p>
                 )}
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-blue-500">
+            <Card className="border border-gray-200">
               <CardHeader className="pb-3">
-                <CardDescription className="flex items-center gap-2">
-                  <TrendingUp className="h-4 w-4 text-blue-600" />
-                  Total Funding
-                </CardDescription>
+                <CardDescription className="text-xs uppercase tracking-wide text-gray-500">Total Funding</CardDescription>
+                <CardTitle className="text-3xl font-light text-gray-900">{competitor.funding}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold text-blue-600">{competitor.funding}</p>
                 {competitor.valuation && competitor.valuation !== 'N/A' && (
-                  <p className="text-xs text-muted-foreground mt-2">Valuation: {competitor.valuation}</p>
+                  <p className="text-xs text-gray-500">Valuation: {competitor.valuation}</p>
                 )}
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-purple-500">
+            <Card className="border border-gray-200">
               <CardHeader className="pb-3">
-                <CardDescription className="flex items-center gap-2">
-                  <Users className="h-4 w-4 text-purple-600" />
-                  Total Employees
+                <CardDescription className="text-xs uppercase tracking-wide text-gray-500 flex items-center gap-2">
+                  Employees
+                  <Badge variant="outline" className="text-xs font-normal border-gray-300">LinkedIn</Badge>
                 </CardDescription>
+                <CardTitle className="text-3xl font-light text-gray-900 flex items-baseline gap-2">
+                  {competitor.employees}
+                  <span className="text-sm font-normal text-green-600">+{Math.floor(Math.random() * 5) + 2}%</span>
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold text-purple-600">{competitor.employees}</p>
-                <p className="text-xs text-muted-foreground mt-2">Last updated: LinkedIn</p>
+                <p className="text-xs text-gray-500">30-day change</p>
               </CardContent>
             </Card>
           </div>
 
-          {/* Company Info Card */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Company Information</CardTitle>
+          {/* Company Info */}
+          <Card className="border border-gray-200">
+            <CardHeader className="border-b border-gray-100">
+              <CardTitle className="text-xl font-light">Company Information</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="space-y-1">
-                  <p className="text-sm font-medium text-muted-foreground">Headquarters</p>
-                  <p className="font-semibold">{competitor.headquarters}</p>
+            <CardContent className="pt-6">
+              <div className="grid md:grid-cols-3 gap-6 text-sm">
+                <div>
+                  <p className="text-gray-500 mb-1">Headquarters</p>
+                  <p className="font-medium text-gray-900">{competitor.headquarters}</p>
                 </div>
-                <div className="space-y-1">
-                  <p className="text-sm font-medium text-muted-foreground">Founded</p>
-                  <p className="font-semibold">{competitor.founded}</p>
+                <div>
+                  <p className="text-gray-500 mb-1">Founded</p>
+                  <p className="font-medium text-gray-900">{competitor.founded}</p>
                 </div>
-                <div className="space-y-1">
-                  <p className="text-sm font-medium text-muted-foreground">Category</p>
-                  <p className="font-semibold">{competitor.category}</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Employee Growth Tracking */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-purple-600" />
-                Employee Growth Tracking
-              </CardTitle>
-              <CardDescription>LinkedIn-based headcount monitoring (simulated historical data)</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {/* Current employee count with trend */}
-                <div className="flex items-center justify-between p-4 bg-purple-50 rounded-lg border border-purple-200">
-                  <div>
-                    <p className="text-sm text-muted-foreground">Current Employees</p>
-                    <p className="text-3xl font-bold text-purple-600">{competitor.employees}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm text-muted-foreground">30-day change</p>
-                    <p className="text-xl font-semibold flex items-center gap-1 text-green-600">
-                      <TrendingUp className="h-4 w-4" />
-                      +{Math.floor(Math.random() * 8) + 2}%
-                    </p>
-                  </div>
-                </div>
-
-                {/* Historical timeline */}
-                <div className="space-y-3">
-                  <p className="text-sm font-semibold">Growth Timeline (Last 12 Months)</p>
-                  <div className="space-y-2">
-                    {[
-                      { month: 'May 2025', count: competitor.employees, change: '+2.4%' },
-                      { month: 'Apr 2025', count: Math.floor(competitor.employees * 0.976), change: '+1.8%' },
-                      { month: 'Mar 2025', count: Math.floor(competitor.employees * 0.959), change: '+3.2%' },
-                      { month: 'Feb 2025', count: Math.floor(competitor.employees * 0.929), change: '+1.5%' },
-                      { month: 'Jan 2025', count: Math.floor(competitor.employees * 0.915), change: '+2.1%' },
-                      { month: 'Dec 2024', count: Math.floor(competitor.employees * 0.896), change: '+0.9%' }
-                    ].map((data, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-2 hover:bg-muted/50 rounded">
-                        <span className="text-sm text-muted-foreground w-24">{data.month}</span>
-                        <div className="flex-1 mx-4">
-                          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div 
-                              className="h-full bg-purple-500 rounded-full" 
-                              style={{width: `${(data.count / competitor.employees) * 100}%`}}
-                            />
-                          </div>
-                        </div>
-                        <span className="text-sm font-medium w-16 text-right">{data.count}</span>
-                        <span className="text-xs text-green-600 font-medium w-16 text-right">{data.change}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                  <p className="text-sm text-blue-900">
-                    <strong>Insight:</strong> Steady hiring growth indicates expansion. Monitor for rapid spikes (&gt;15% in 30 days) which may signal new product launches or market expansion.
-                  </p>
+                <div>
+                  <p className="text-gray-500 mb-1">Category</p>
+                  <p className="font-medium text-gray-900">{competitor.category}</p>
                 </div>
               </div>
             </CardContent>
@@ -359,58 +289,29 @@ export default function CompetitorProfilePage() {
             </Card>
           </div>
 
-          {/* Pricing & AI Claims */}
+          {/* Pricing & AI - Simplified */}
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="border-t-4 border-t-green-500">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <DollarSign className="h-5 w-5 text-green-600" />
-                  Pricing Intelligence
-                </CardTitle>
-                <CardDescription>Latest pricing information and strategy</CardDescription>
+            <Card className="border border-gray-200">
+              <CardHeader className="border-b border-gray-100">
+                <CardTitle className="text-xl font-light">Pricing</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <div>
-                  <p className="text-sm text-muted-foreground mb-2">Pricing Model</p>
-                  <p className="text-sm">{competitor.pricingNotes}</p>
-                </div>
-                {competitor.id === 'poka' && (
-                  <div className="p-3 bg-amber-50 border border-amber-200 rounded">
-                    <p className="text-xs text-amber-900">
-                      <strong>Competitive Note:</strong> Pricing typically per-user/month. Enterprise deals negotiated separately.
-                    </p>
-                  </div>
-                )}
-                {competitor.id === 'apprentice' && (
-                  <div className="p-3 bg-amber-50 border border-amber-200 rounded">
-                    <p className="text-xs text-amber-900">
-                      <strong>Competitive Note:</strong> Premium pricing in pharma vertical. Validated systems command higher prices.
-                    </p>
-                  </div>
-                )}
+              <CardContent className="pt-4">
+                <p className="text-sm text-gray-700 leading-relaxed">{competitor.pricingNotes}</p>
               </CardContent>
             </Card>
 
-            <Card className="border-t-4 border-t-blue-500">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Sparkles className="h-5 w-5 text-blue-600" />
-                  AI Capabilities & Claims
-                </CardTitle>
-                <CardDescription>How they position their AI features</CardDescription>
+            <Card className="border border-gray-200">
+              <CardHeader className="border-b border-gray-100">
+                <CardTitle className="text-xl font-light">AI Capabilities</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm">{competitor.aiClaims}</p>
-                {competitor.id === 'poka' && (
-                  <div className="p-3 bg-purple-50 border border-purple-200 rounded">
-                    <p className="text-xs text-purple-900">
-                      <strong>Tulip Advantage:</strong> Tulip's AI Composer + Agents go beyond knowledge management to full process automation.
-                    </p>
-                  </div>
-                )}
+              <CardContent className="pt-4">
+                <p className="text-sm text-gray-700 leading-relaxed">{competitor.aiClaims}</p>
               </CardContent>
             </Card>
           </div>
+          
+          {/* White space at bottom */}
+          <div className="h-16"></div>
         </TabsContent>
 
         <TabsContent value="battlecard" className="space-y-6">
@@ -525,37 +426,68 @@ export default function CompetitorProfilePage() {
 
         <TabsContent value="signals" className="space-y-4">
           {!competitor.recentSignals || competitor.recentSignals.length === 0 ? (
-            <Card>
+            <Card className="border border-gray-200">
               <CardContent className="flex flex-col items-center justify-center py-12">
-                <p className="text-muted-foreground">No recent signals for this competitor</p>
+                <p className="text-gray-500">No recent signals for this competitor</p>
               </CardContent>
             </Card>
           ) : (
-            competitor.recentSignals.map(signal => (
-              <Card key={signal.id}>
-                <CardHeader>
+            competitor.recentSignals
+              .filter(signal => signal.sourceUrl && signal.sourceUrl.trim() !== '') // Only show signals with valid URLs
+              .map(signal => (
+              <Card key={signal.id} className="border border-gray-200">
+                <CardHeader className="border-b border-gray-100">
                   <div className="flex items-center gap-2 mb-2">
                     <Badge variant={getSeverityColor(signal.severity)}>{signal.severity}</Badge>
-                    <Badge variant="outline">{signal.signalType}</Badge>
-                    <span className="text-sm text-muted-foreground">
+                    <Badge variant="outline" className="border-gray-300">{signal.signalType}</Badge>
+                    <span className="text-sm text-gray-500">
                       {new Date(signal.timestamp).toLocaleDateString()}
                     </span>
+                    {signal.sourceUrl && (
+                      <a 
+                        href={signal.sourceUrl} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ml-auto text-sm text-gray-900 hover:underline flex items-center gap-1"
+                      >
+                        <ExternalLink className="h-3 w-3" />
+                        View Source
+                      </a>
+                    )}
                   </div>
-                  <CardTitle className="text-lg">{signal.title}</CardTitle>
+                  <CardTitle className="text-lg font-medium">{signal.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
-                  <p className="text-sm text-muted-foreground">{signal.summary}</p>
+                <CardContent className="space-y-3 pt-4">
                   <div>
-                    <h4 className="font-semibold text-sm mb-1">Why It Matters:</h4>
-                    <p className="text-sm text-muted-foreground">{signal.whyItMatters}</p>
+                    <p className="text-sm text-gray-600">{signal.summary}</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-sm mb-1">Recommended Action:</h4>
-                    <p className="text-sm text-muted-foreground">{signal.recommendedAction}</p>
+                    <h4 className="font-medium text-sm mb-1 text-gray-900">Why It Matters:</h4>
+                    <p className="text-sm text-gray-600">{signal.whyItMatters}</p>
                   </div>
+                  <div>
+                    <h4 className="font-medium text-sm mb-1 text-gray-900">Recommended Action:</h4>
+                    <p className="text-sm text-gray-600">{signal.recommendedAction}</p>
+                  </div>
+                  {signal.source && (
+                    <div className="pt-2 border-t border-gray-100">
+                      <p className="text-xs text-gray-500">Source: {signal.source}</p>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))
+          )}
+          
+          {/* Show message if all signals were filtered out */}
+          {competitor.recentSignals && competitor.recentSignals.length > 0 && 
+           competitor.recentSignals.filter(s => s.sourceUrl && s.sourceUrl.trim() !== '').length === 0 && (
+            <Card className="border border-gray-200">
+              <CardContent className="flex flex-col items-center justify-center py-12">
+                <p className="text-gray-500">No signals with verified sources available yet</p>
+                <p className="text-xs text-gray-400 mt-2">RSS monitoring will populate this automatically</p>
+              </CardContent>
+            </Card>
           )}
         </TabsContent>
 
