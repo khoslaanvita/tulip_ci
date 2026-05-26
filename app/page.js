@@ -13,10 +13,37 @@ function Dashboard() {
   const [competitors, setCompetitors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [runningAgent, setRunningAgent] = useState(false);
+  const [marketSummary, setMarketSummary] = useState(null);
+  const [categorySummaries, setCategorySummaries] = useState({});
+  const [loadingIntelligence, setLoadingIntelligence] = useState(true);
 
   useEffect(() => {
     loadCompetitors();
+    loadIntelligence();
   }, []);
+
+  async function loadIntelligence() {
+    try {
+      const [summaryRes, categoriesRes] = await Promise.all([
+        fetch('/api/intelligence/market-summary'),
+        fetch('/api/intelligence/categories')
+      ]);
+      
+      if (summaryRes.ok) {
+        const summaryData = await summaryRes.json();
+        setMarketSummary(summaryData);
+      }
+      
+      if (categoriesRes.ok) {
+        const categoriesData = await categoriesRes.json();
+        setCategorySummaries(categoriesData);
+      }
+    } catch (error) {
+      console.error('Error loading intelligence:', error);
+    } finally {
+      setLoadingIntelligence(false);
+    }
+  }
 
   async function loadCompetitors() {
     try {
@@ -121,6 +148,41 @@ function Dashboard() {
             </div>
           </div>
         </div>
+
+        {/* Market Intelligence Summary Box */}
+        {marketSummary && (
+          <Card className="border-2 border-gray-900 mb-8">
+            <CardHeader className="bg-gray-50 border-b border-gray-200">
+              <CardTitle className="text-xl font-medium">Market Intelligence Summary</CardTitle>
+              <CardDescription className="text-gray-600">Top 3 things happening this month</CardDescription>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div className="space-y-4 mb-6">
+                {marketSummary.top3Events.map((event, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-sm font-medium">
+                      {idx + 1}
+                    </div>
+                    <p className="text-gray-900 flex-1">{event}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="pt-4 border-t border-gray-200">
+                <p className="text-sm text-gray-600 mb-1"><strong>Tulip's Position:</strong></p>
+                <p className="text-gray-900">{marketSummary.tulipPositioning}</p>
+              </div>
+
+              {marketSummary.keyTrend && (
+                <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded">
+                  <p className="text-sm text-blue-900">
+                    <strong>Key Trend:</strong> {marketSummary.keyTrend}
+                  </p>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        )}
 
         {/* Stats Cards - Clean B&W */}
         <div className="grid gap-6 md:grid-cols-3 mb-12">

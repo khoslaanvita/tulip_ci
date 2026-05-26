@@ -4,6 +4,7 @@ import { readJSON, writeJSON, appendToJSON, updateInJSON } from '@/lib/storage';
 import { analyzeSignalWithAI, generateBattlecardWithAI, generateEmailAlert } from '@/lib/ai-helpers';
 import { startScheduler, getSchedulerStatus } from '@/lib/agent-scheduler';
 import { generateVoCInsights, getVoCStats, getTranscriptsForCompetitor } from '@/lib/voc-agent';
+import { generateMarketSummary, generateCategorySummaries, generateDepartmentBriefings } from '@/lib/intelligence-agent';
 
 // Start the background scheduler when the API loads
 if (typeof window === 'undefined') { // Server-side only
@@ -140,6 +141,24 @@ export async function GET(request) {
       
       const insights = await generateVoCInsights(competitorId);
       return NextResponse.json(insights);
+    }
+
+    // GET /api/intelligence/market-summary - Get market intelligence summary
+    if (path === '/intelligence/market-summary') {
+      const summary = await generateMarketSummary();
+      return NextResponse.json(summary);
+    }
+
+    // GET /api/intelligence/categories - Get category summaries
+    if (path === '/intelligence/categories') {
+      const summaries = await generateCategorySummaries();
+      return NextResponse.json(summaries);
+    }
+
+    // GET /api/intelligence/briefings - Get department briefings
+    if (path === '/intelligence/briefings') {
+      const briefings = await generateDepartmentBriefings();
+      return NextResponse.json(briefings);
     }
 
     return NextResponse.json({ error: 'Not found' }, { status: 404 });
