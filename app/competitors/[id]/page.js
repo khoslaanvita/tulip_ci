@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, TrendingUp, AlertTriangle, DollarSign, Sparkles } from 'lucide-react';
+import { ArrowLeft, TrendingUp, AlertTriangle, DollarSign, Sparkles, Rss, ExternalLink, Users, TrendingDown } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function CompetitorProfilePage() {
@@ -151,6 +151,7 @@ export default function CompetitorProfilePage() {
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="battlecard">Battlecard</TabsTrigger>
           <TabsTrigger value="signals">Recent Signals</TabsTrigger>
+          <TabsTrigger value="sources">Sources</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
@@ -433,6 +434,294 @@ export default function CompetitorProfilePage() {
               </Card>
             ))
           )}
+        </TabsContent>
+
+        <TabsContent value="sources" className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Rss className="h-5 w-5" />
+                Monitored Data Sources
+              </CardTitle>
+              <CardDescription>
+                RSS feeds, news sources, and data streams we monitor for {competitor.name}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                {/* RSS Feeds */}
+                <div>
+                  <h3 className="font-semibold mb-3 flex items-center gap-2">
+                    <Rss className="h-4 w-4 text-orange-600" />
+                    RSS & News Feeds
+                  </h3>
+                  <div className="space-y-3">
+                    {competitor.id === 'tulip' && (
+                      <>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Tulip Press Releases</p>
+                              <p className="text-sm text-muted-foreground mt-1">Official Tulip press releases and announcements</p>
+                              <Badge variant="outline" className="mt-2 text-xs">HTML Scraping</Badge>
+                            </div>
+                            <a href="https://tulip.co/press/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Tulip Blog</p>
+                              <p className="text-sm text-muted-foreground mt-1">Product updates and thought leadership</p>
+                              <Badge variant="outline" className="mt-2 text-xs">HTML Scraping</Badge>
+                            </div>
+                            <a href="https://tulip.co/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Assembly Magazine RSS</p>
+                              <p className="text-sm text-muted-foreground mt-1">Industry news mentioning Tulip (Keywords: Tulip, Tulip Interfaces)</p>
+                              <Badge variant="outline" className="mt-2 text-xs bg-green-100">RSS Feed</Badge>
+                            </div>
+                            <a href="https://www.assemblymag.com/rss" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    {competitor.id === 'critical-manufacturing' && (
+                      <>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Critical Manufacturing Blog RSS</p>
+                              <p className="text-sm text-muted-foreground mt-1">Official blog with product updates and insights</p>
+                              <Badge variant="outline" className="mt-2 text-xs bg-green-100">RSS Feed</Badge>
+                            </div>
+                            <a href="https://www.criticalmanufacturing.com/blog/feed/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Critical Manufacturing News</p>
+                              <p className="text-sm text-muted-foreground mt-1">Company news and press releases</p>
+                              <Badge variant="outline" className="mt-2 text-xs">HTML Scraping</Badge>
+                            </div>
+                            <a href="https://www.criticalmanufacturing.com/all-news/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    {competitor.id === 'poka' && (
+                      <>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Poka Blog RSS</p>
+                              <p className="text-sm text-muted-foreground mt-1">Official blog with product updates and customer stories</p>
+                              <Badge variant="outline" className="mt-2 text-xs bg-green-100">RSS Feed</Badge>
+                            </div>
+                            <a href="https://www.poka.io/en/blog/rss.xml" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">IFS News (Poka Parent)</p>
+                              <p className="text-sm text-muted-foreground mt-1">IFS news mentioning Poka (Keywords: Poka)</p>
+                              <Badge variant="outline" className="mt-2 text-xs">HTML Scraping</Badge>
+                            </div>
+                            <a href="https://www.ifs.com/news/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    {competitor.id === 'parsable' && (
+                      <>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Parsable Blog</p>
+                              <p className="text-sm text-muted-foreground mt-1">Company blog and thought leadership</p>
+                              <Badge variant="outline" className="mt-2 text-xs">HTML Scraping</Badge>
+                            </div>
+                            <a href="https://parsable.com/parsable-blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Food Industry Executive RSS</p>
+                              <p className="text-sm text-muted-foreground mt-1">Industry news (Keywords: Parsable, CAI Software)</p>
+                              <Badge variant="outline" className="mt-2 text-xs bg-green-100">RSS Feed</Badge>
+                            </div>
+                            <a href="https://www.foodindustryexecutive.com/rss" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    {competitor.id === 'apprentice' && (
+                      <>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Apprentice.io Newsroom</p>
+                              <p className="text-sm text-muted-foreground mt-1">Company news and press releases</p>
+                              <Badge variant="outline" className="mt-2 text-xs">HTML Scraping</Badge>
+                            </div>
+                            <a href="https://www.apprentice.io/learn/newsroom" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">BioPharm International RSS</p>
+                              <p className="text-sm text-muted-foreground mt-1">Pharma industry news (Keywords: Apprentice, manufacturing execution)</p>
+                              <Badge variant="outline" className="mt-2 text-xs bg-green-100">RSS Feed</Badge>
+                            </div>
+                            <a href="https://www.biopharminternational.com/rss" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    {competitor.id === 'siemens-xcelerator' && (
+                      <>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Siemens Press RSS</p>
+                              <p className="text-sm text-muted-foreground mt-1">Official Siemens press releases (Keywords: Xcelerator, MindSphere, Industrial AI, Copilot)</p>
+                              <Badge variant="outline" className="mt-2 text-xs bg-green-100">RSS Feed</Badge>
+                            </div>
+                            <a href="https://press.siemens.com/global/en/rss-feed" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="p-4 border rounded-lg bg-muted/30">
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <p className="font-medium">Siemens Industrial AI</p>
+                              <p className="text-sm text-muted-foreground mt-1">Industrial AI announcements</p>
+                              <Badge variant="outline" className="mt-2 text-xs">HTML Scraping</Badge>
+                            </div>
+                            <a href="https://www.siemens.com/en-us/company/artificial-intelligence/industrial-ai/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                <Separator />
+
+                {/* Additional Data Sources */}
+                <div>
+                  <h3 className="font-semibold mb-3 flex items-center gap-2">
+                    <TrendingUp className="h-4 w-4 text-blue-600" />
+                    Business Metrics & Data Providers
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="p-4 border rounded-lg bg-blue-50">
+                      <p className="font-medium text-sm">Revenue Tracking</p>
+                      <p className="text-xs text-muted-foreground mt-1">GetLatka, Growjo, ZoomInfo</p>
+                      <Badge variant="outline" className="mt-2 text-xs">Quarterly Updates</Badge>
+                    </div>
+                    <div className="p-4 border rounded-lg bg-blue-50">
+                      <p className="font-medium text-sm flex items-center gap-1">
+                        <Users className="h-3 w-3" />
+                        Employee Tracking
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">LinkedIn Company Pages</p>
+                      <Badge variant="outline" className="mt-2 text-xs">Daily Snapshots</Badge>
+                    </div>
+                    <div className="p-4 border rounded-lg bg-blue-50">
+                      <p className="font-medium text-sm">Funding & Valuation</p>
+                      <p className="text-xs text-muted-foreground mt-1">Crunchbase, PitchBook</p>
+                      <Badge variant="outline" className="mt-2 text-xs">Event-based</Badge>
+                    </div>
+                    <div className="p-4 border rounded-lg bg-blue-50">
+                      <p className="font-medium text-sm">Analyst Reports</p>
+                      <p className="text-xs text-muted-foreground mt-1">Gartner, Forrester</p>
+                      <Badge variant="outline" className="mt-2 text-xs">Quarterly/Annual</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                <Separator />
+
+                {/* Industry-Wide Sources */}
+                <div>
+                  <h3 className="font-semibold mb-3">Industry-Wide News Sources</h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    We also monitor general manufacturing and tech news sources that may mention {competitor.name}:
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-2">
+                    <div className="text-sm p-2 border rounded bg-muted/20">
+                      <span className="font-medium">TechCrunch Manufacturing</span>
+                      <Badge variant="outline" className="ml-2 text-xs bg-green-100">RSS</Badge>
+                    </div>
+                    <div className="text-sm p-2 border rounded bg-muted/20">
+                      <span className="font-medium">VentureBeat Manufacturing</span>
+                      <Badge variant="outline" className="ml-2 text-xs bg-green-100">RSS</Badge>
+                    </div>
+                    <div className="text-sm p-2 border rounded bg-muted/20">
+                      <span className="font-medium">Assembly Magazine</span>
+                      <Badge variant="outline" className="ml-2 text-xs bg-green-100">RSS</Badge>
+                    </div>
+                    <div className="text-sm p-2 border rounded bg-muted/20">
+                      <span className="font-medium">Manufacturing.net</span>
+                      <Badge variant="outline" className="ml-2 text-xs bg-green-100">RSS</Badge>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Data Quality Note */}
+          <Card className="bg-blue-50 border-blue-200">
+            <CardContent className="pt-6">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="h-5 w-5 text-blue-600 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-blue-900">About Data Sources & Quality</p>
+                  <p className="text-sm text-blue-800 mt-1">
+                    All sources are monitored automatically via RSS feeds or scheduled scraping. Data confidence levels are assigned based on source type.
+                    <Link href="/methodology" className="underline ml-1 font-medium">
+                      View data quality methodology →
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </TabsContent>
       </Tabs>
     </div>

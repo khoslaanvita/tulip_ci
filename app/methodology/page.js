@@ -218,7 +218,7 @@ export default function DocumentationPage() {
               </div>
 
               <div className="border-l-4 border-orange-500 pl-4">
-                <Badge variant="secondary" className="mb-2">LOW CONFIDENCE ({'<'}75%)</Badge>
+                <Badge variant="secondary" className="mb-2">LOW CONFIDENCE (&lt;75%)</Badge>
                 <p className="text-sm mb-2"><strong>Definition:</strong> Unverified or estimated data</p>
                 <p className="text-sm font-semibold mb-1">Sources:</p>
                 <ul className="text-sm space-y-1 text-muted-foreground">
@@ -424,7 +424,7 @@ export default function DocumentationPage() {
                   </div>
                   <div className="flex items-center gap-4 p-3 border rounded-lg bg-green-50">
                     <Badge variant="secondary">LOW THREAT</Badge>
-                    <span className="text-sm">{'<'}10 points</span>
+                    <span className="text-sm">&lt;10 points</span>
                   </div>
                 </div>
               </div>

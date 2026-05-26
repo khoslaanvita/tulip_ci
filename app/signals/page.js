@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -10,7 +10,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { ArrowLeft, Plus, Mail, Filter } from 'lucide-react';
+import { ArrowLeft, Plus, Mail, Filter, ExternalLink, Shield, Clock, TrendingUp } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function SignalsPage() {
@@ -110,6 +110,15 @@ export default function SignalsPage() {
     }
   }
 
+  function getConfidenceColor(confidence) {
+    switch (confidence) {
+      case 'high': return 'bg-green-100 text-green-800 border-green-300';
+      case 'medium': return 'bg-yellow-100 text-yellow-800 border-yellow-300';
+      case 'low': return 'bg-orange-100 text-orange-800 border-orange-300';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  }
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -133,7 +142,7 @@ export default function SignalsPage() {
           </Link>
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Signal Feed</h1>
-            <p className="text-muted-foreground">Real-time competitive intelligence signals</p>
+            <p className="text-muted-foreground">Real-time competitive intelligence with verified sources</p>
           </div>
         </div>
         
@@ -284,10 +293,45 @@ export default function SignalsPage() {
                       </Badge>
                       <Badge variant="outline">{signal.signalType}</Badge>
                       <Badge variant="secondary">{signal.competitorName}</Badge>
+                      {signal.sourceConfidence && (
+                        <Badge variant="outline" className={getConfidenceColor(signal.sourceConfidence)}>
+                          <Shield className="h-3 w-3 mr-1" />
+                          {signal.sourceConfidence} confidence
+                        </Badge>
+                      )}
                     </div>
                     <CardTitle className="text-xl">{signal.title}</CardTitle>
-                    <CardDescription>
-                      {signal.source} • {new Date(signal.timestamp).toLocaleDateString()}
+                    <CardDescription className="mt-2 space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium">Source:</span>
+                        <span>{signal.source}</span>
+                        {signal.sourceUrl && (
+                          <>
+                            <span>•</span>
+                            <a 
+                              href={signal.sourceUrl} 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline flex items-center gap-1"
+                            >
+                              <ExternalLink className="h-3 w-3" />
+                              View Source
+                            </a>
+                          </>
+                        )}
+                      </div>
+                      {(signal.verifiedDate || signal.timestamp) && (
+                        <div className="flex items-center gap-1 text-xs">
+                          <Clock className="h-3 w-3" />
+                          <span>Published: {new Date(signal.verifiedDate || signal.timestamp).toLocaleDateString()}</span>
+                          {signal.discoveredDate && (
+                            <>
+                              <span>•</span>
+                              <span>Discovered: {new Date(signal.discoveredDate).toLocaleDateString()}</span>
+                            </>
+                          )}
+                        </div>
+                      )}
                     </CardDescription>
                   </div>
                   <Button 
@@ -326,10 +370,80 @@ export default function SignalsPage() {
                   </Link>
                 </div>
               </CardContent>
+              
+              {/* Source Attribution Footer */}
+              <CardFooter className="border-t pt-4 bg-muted/30">
+                <div className="w-full space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      {signal.sourceUrl ? (
+                        <a 
+                          href={signal.sourceUrl} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-blue-600 hover:underline flex items-center gap-1 font-medium"
+                        >
+                          <ExternalLink className="h-3 w-3" />
+                          View Original Source
+                        </a>
+                      ) : (
+                        <span className="text-sm text-muted-foreground">No URL available</span>
+                      )}
+                      {signal.dataQuality && (
+                        <Badge variant="outline" className="text-xs">
+                          {signal.dataQuality} quality
+                        </Badge>
+                      )}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {signal.discoveredDate && (
+                        <span>Discovered: {new Date(signal.discoveredDate).toLocaleString()}</span>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {/* Rating Breakdown */}
+                  {signal.ratingCriteria && (
+                    <details className="text-xs">
+                      <summary className="cursor-pointer text-muted-foreground hover:text-foreground flex items-center gap-1">
+                        <TrendingUp className="h-3 w-3" />
+                        How was this signal rated? (Impact Score: {signal.ratingCriteria.totalImpact})
+                      </summary>
+                      <div className="mt-2 p-3 bg-background rounded border space-y-1">
+                        <p>• <strong>Base Severity:</strong> {signal.ratingCriteria.baseScore} points</p>
+                        <p>• <strong>Type Weight:</strong> {signal.ratingCriteria.typeWeight}x ({signal.signalType})</p>
+                        <p>• <strong>Recency Bonus:</strong> +{signal.ratingCriteria.recencyBonus} points</p>
+                        <p>• <strong>Total Impact:</strong> {signal.ratingCriteria.totalImpact} points</p>
+                        {signal.severityReason && (
+                          <p className="mt-2 pt-2 border-t"><strong>Reason:</strong> {signal.severityReason}</p>
+                        )}
+                      </div>
+                    </details>
+                  )}
+                </div>
+              </CardFooter>
             </Card>
           ))
         )}
       </div>
+
+      {/* Info about methodology */}
+      <Card className="bg-blue-50 border-blue-200">
+        <CardContent className="pt-6">
+          <div className="flex items-start gap-3">
+            <Shield className="h-5 w-5 text-blue-600 mt-0.5" />
+            <div>
+              <p className="font-semibold text-blue-900">About Signal Sources & Rating</p>
+              <p className="text-sm text-blue-800 mt-1">
+                All signals are automatically collected from verified RSS feeds and news sources, analyzed by AI, and rated based on severity, type, and recency. 
+                <Link href="/methodology" className="underline ml-1 font-medium">
+                  View full methodology →
+                </Link>
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }
