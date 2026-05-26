@@ -70,7 +70,7 @@
     "funding": "Private",
     "valuation": "N/A",
     "threatLevel": "high",
-    "threatScore": 45,
+    "threatScore": 52,
     "positioning": "Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, medical devices, and complex discrete manufacturing with strong emphasis on Industry 4.0 capabilities and traceability.",
     "strengths": [
       "Deep domain expertise in semiconductor manufacturing",
@@ -147,7 +147,7 @@
       "Emphasizing AI-powered search and text tools for manufacturing"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 45,
+    "threatScore": 47,
     "threatLevel": "high"
   },
   {
@@ -193,7 +193,7 @@
       "Lightspeed Venture Partners remains investor in combined company"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 25,
+    "threatScore": 32,
     "threatLevel": "high"
   },
   {
@@ -239,7 +239,7 @@
       "Strong growth in cell & gene therapy segment"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 25,
+    "threatScore": 27,
     "threatLevel": "high"
   },
   {
@@ -288,7 +288,7 @@
       "Showcased AWS collaboration for industrial AI at CES 2025"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 40,
+    "threatScore": 52,
     "threatLevel": "high"
   }
 ]

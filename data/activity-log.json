@@ -1,340 +1,153 @@
 [
   {
-    "id": "act-e08cb445",
-    "agentType": "Market Monitor",
-    "action": "Market Scan Completed",
-    "description": "Scanned 1 competitors and found 1 signals",
-    "timestamp": "2026-05-26T01:59:29.716Z",
-    "result": {
-      "signalsFound": 1,
-      "competitors": [
-        "Poka"
-      ]
-    }
-  },
-  {
-    "id": "act-d1819d2a",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Poka based on 2 recent signals",
-    "timestamp": "2026-05-26T02:00:44.492Z",
-    "result": {
-      "battlecardId": "bc-25211fd7",
-      "competitorName": "Poka"
-    }
-  },
-  {
-    "id": "act-efe4559a",
-    "agentType": "Market Monitor",
-    "action": "Market Scan Completed",
-    "description": "Scanned 1 competitors and found 1 signals",
-    "timestamp": "2026-05-26T02:00:44.493Z",
-    "result": {
-      "signalsFound": 1,
-      "competitors": [
-        "Poka"
-      ]
-    }
-  },
-  {
-    "id": "act-f8ef0f7a",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Parsable based on 1 recent signals",
-    "timestamp": "2026-05-26T02:00:48.916Z",
-    "result": {
-      "battlecardId": "bc-fdcbdc64",
-      "competitorName": "Parsable"
-    }
-  },
-  {
-    "id": "act-4f45bf0e",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Poka based on 2 recent signals",
-    "timestamp": "2026-05-26T02:02:41.761Z",
-    "result": {
-      "battlecardId": "bc-9e4cd7de",
-      "competitorName": "Poka"
-    }
-  },
-  {
-    "id": "act-fcd8fafa",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Critical Manufacturing based on 1 recent signals",
-    "timestamp": "2026-05-26T02:04:46.794Z",
-    "result": {
-      "battlecardId": "bc-b1e4b3c4",
-      "competitorName": "Critical Manufacturing"
-    }
-  },
-  {
-    "id": "act-d31340f8",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Critical Manufacturing based on 2 recent signals",
-    "timestamp": "2026-05-26T02:05:13.692Z",
-    "result": {
-      "battlecardId": "bc-bd726f43",
-      "competitorName": "Critical Manufacturing"
-    }
-  },
-  {
-    "id": "act-e9d475fa",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Parsable based on 2 recent signals",
-    "timestamp": "2026-05-26T02:05:13.883Z",
-    "result": {
-      "battlecardId": "bc-136a91c8",
-      "competitorName": "Parsable"
-    }
-  },
-  {
-    "id": "act-4a60e90a",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Apprentice.io based on 2 recent signals",
-    "timestamp": "2026-05-26T02:05:13.997Z",
-    "result": {
-      "battlecardId": "bc-56d19e1e",
-      "competitorName": "Apprentice.io"
-    }
-  },
-  {
-    "id": "act-a25bf062",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Siemens MindSphere / Xcelerator based on 2 recent signals",
-    "timestamp": "2026-05-26T02:05:14.145Z",
-    "result": {
-      "battlecardId": "bc-f2adc263",
-      "competitorName": "Siemens MindSphere / Xcelerator"
-    }
-  },
-  {
-    "id": "act-86b7e951",
-    "agentType": "Market Monitor",
-    "action": "Market Scan Completed",
-    "description": "Scanned 5 competitors and found 5 signals",
-    "timestamp": "2026-05-26T02:05:14.145Z",
-    "result": {
-      "signalsFound": 5,
-      "competitors": [
-        "Critical Manufacturing",
-        "Poka",
-        "Parsable",
-        "Apprentice.io",
-        "Siemens MindSphere / Xcelerator"
-      ]
-    }
-  },
-  {
-    "id": "act-5b34546b",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Critical Manufacturing based on 3 recent signals",
-    "timestamp": "2026-05-26T02:05:17.758Z",
-    "result": {
-      "battlecardId": "bc-b2d0f438",
-      "competitorName": "Critical Manufacturing"
-    }
-  },
-  {
-    "id": "act-5f476831",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Parsable based on 3 recent signals",
-    "timestamp": "2026-05-26T02:05:17.964Z",
-    "result": {
-      "battlecardId": "bc-236b8abb",
-      "competitorName": "Parsable"
-    }
-  },
-  {
-    "id": "act-de4be3e2",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Apprentice.io based on 3 recent signals",
-    "timestamp": "2026-05-26T02:05:18.107Z",
-    "result": {
-      "battlecardId": "bc-84ec57c9",
-      "competitorName": "Apprentice.io"
-    }
-  },
-  {
-    "id": "act-ede28dc8",
-    "agentType": "Market Monitor",
-    "action": "Market Scan Completed",
-    "description": "Scanned 5 competitors and found 5 signals",
-    "timestamp": "2026-05-26T02:05:18.181Z",
-    "result": {
-      "signalsFound": 5,
-      "competitors": [
-        "Critical Manufacturing",
-        "Poka",
-        "Parsable",
-        "Apprentice.io",
-        "Siemens MindSphere / Xcelerator"
-      ]
-    }
-  },
-  {
-    "id": "act-f85d6828",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Poka based on 5 recent signals",
-    "timestamp": "2026-05-26T02:05:20.360Z",
-    "result": {
-      "battlecardId": "bc-48c6aa12",
-      "competitorName": "Poka"
-    }
-  },
-  {
-    "id": "act-cc2740d7",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Apprentice.io based on 4 recent signals",
-    "timestamp": "2026-05-26T02:05:20.553Z",
-    "result": {
-      "battlecardId": "bc-1f1ef2d5",
-      "competitorName": "Apprentice.io"
-    }
-  },
-  {
-    "id": "act-3d6d2743",
-    "agentType": "Market Monitor",
-    "action": "Market Scan Completed",
-    "description": "Scanned 5 competitors and found 5 signals",
-    "timestamp": "2026-05-26T02:05:20.623Z",
-    "result": {
-      "signalsFound": 5,
-      "competitors": [
-        "Critical Manufacturing",
-        "Poka",
-        "Parsable",
-        "Apprentice.io",
-        "Siemens MindSphere / Xcelerator"
-      ]
-    }
-  },
-  {
-    "id": "act-1779762108730",
+    "id": "act-1779765072784",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:21:48.730Z",
+    "timestamp": "2026-05-26T03:11:12.784Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779762109322",
+    "id": "act-1779765047293",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:21:49.322Z",
+    "timestamp": "2026-05-26T03:10:47.293Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779762109815",
+    "id": "act-1779765046929",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:21:49.815Z",
+    "timestamp": "2026-05-26T03:10:46.929Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779762176868",
+    "id": "act-1779765042400",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:22:56.868Z",
+    "timestamp": "2026-05-26T03:10:42.400Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779762364077",
+    "id": "act-1779765041817",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:26:04.077Z",
+    "timestamp": "2026-05-26T03:10:41.817Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779762370168",
+    "id": "act-1779765041214",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:26:10.168Z",
+    "timestamp": "2026-05-26T03:10:41.214Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-fe8783b9",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Critical Manufacturing based on 2 recent signals",
-    "timestamp": "2026-05-26T02:26:10.483Z",
+    "id": "act-1779765011928",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:10:11.928Z",
     "result": {
-      "battlecardId": "bc-7323c740",
-      "competitorName": "Critical Manufacturing"
+      "competitorsScanned": 6,
+      "newSignals": 0
     }
   },
   {
-    "id": "act-05104be7",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Poka based on 3 recent signals",
-    "timestamp": "2026-05-26T02:26:10.624Z",
+    "id": "act-1779765003659",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:10:03.659Z",
     "result": {
-      "battlecardId": "bc-bc162b5d",
-      "competitorName": "Poka"
+      "competitorsScanned": 6,
+      "newSignals": 0
     }
   },
   {
-    "id": "act-603d4047",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Parsable based on 2 recent signals",
-    "timestamp": "2026-05-26T02:26:10.723Z",
+    "id": "act-1779764993649",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:09:53.649Z",
     "result": {
-      "battlecardId": "bc-0b5d6393",
-      "competitorName": "Parsable"
+      "competitorsScanned": 6,
+      "newSignals": 0
     }
   },
   {
-    "id": "act-739b806e",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Apprentice.io based on 2 recent signals",
-    "timestamp": "2026-05-26T02:26:10.818Z",
+    "id": "act-1779764983640",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:09:43.640Z",
     "result": {
-      "battlecardId": "bc-c0e6f2dc",
-      "competitorName": "Apprentice.io"
+      "competitorsScanned": 6,
+      "newSignals": 0
     }
   },
   {
-    "id": "act-68cbc761",
+    "id": "act-1779764974024",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:09:34.024Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764973756",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:09:33.756Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764970319",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:09:30.319Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-226ed899",
     "agentType": "Market Monitor",
     "action": "Market Scan Completed",
     "description": "Scanned 6 competitors and found 6 signals",
-    "timestamp": "2026-05-26T02:26:10.891Z",
+    "timestamp": "2026-05-26T03:09:28.901Z",
     "result": {
       "signalsFound": 6,
       "competitors": [
@@ -348,574 +161,278 @@
     }
   },
   {
-    "id": "act-1779762371506",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:26:11.506Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779762372783",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:26:12.783Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779762373068",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:26:13.068Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779762376868",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:26:16.868Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779762381554",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:26:21.554Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-58103f9f",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Critical Manufacturing based on 2 recent signals",
-    "timestamp": "2026-05-26T02:26:51.345Z",
-    "result": {
-      "battlecardId": "bc-d83bd391",
-      "competitorName": "Critical Manufacturing"
-    }
-  },
-  {
-    "id": "act-1779762411448",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:26:51.448Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-7f0d71e4",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Critical Manufacturing based on 2 recent signals",
-    "timestamp": "2026-05-26T02:26:53.895Z",
-    "result": {
-      "battlecardId": "bc-da85ca0f",
-      "competitorName": "Critical Manufacturing"
-    }
-  },
-  {
-    "id": "act-1779762414068",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:26:54.068Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779762457367",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:27:37.367Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763008732",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:36:48.732Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763066537",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:37:46.537Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-e006fead",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Siemens MindSphere / Xcelerator based on 3 recent signals",
-    "timestamp": "2026-05-26T02:37:47.065Z",
-    "result": {
-      "battlecardId": "bc-add78d99",
-      "competitorName": "Siemens MindSphere / Xcelerator"
-    }
-  },
-  {
-    "id": "act-594705e6",
-    "agentType": "Market Monitor",
-    "action": "Market Scan Completed",
-    "description": "Scanned 6 competitors and found 6 signals",
-    "timestamp": "2026-05-26T02:37:47.066Z",
-    "result": {
-      "signalsFound": 6,
-      "competitors": [
-        "Tulip",
-        "Critical Manufacturing",
-        "Poka",
-        "Parsable",
-        "Apprentice.io",
-        "Siemens MindSphere / Xcelerator"
-      ]
-    }
-  },
-  {
-    "id": "act-1779763067430",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:37:47.430Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-3cdeebda",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Tulip based on 3 recent signals",
-    "timestamp": "2026-05-26T02:37:48.232Z",
-    "result": {
-      "battlecardId": "bc-3e1cc65f",
-      "competitorName": "Tulip"
-    }
-  },
-  {
-    "id": "act-04d6a6e2",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Critical Manufacturing based on 4 recent signals",
-    "timestamp": "2026-05-26T02:37:48.352Z",
-    "result": {
-      "battlecardId": "bc-59347234",
-      "competitorName": "Critical Manufacturing"
-    }
-  },
-  {
-    "id": "act-1779763068367",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:37:48.367Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-ea0f9e2e",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Apprentice.io based on 4 recent signals",
-    "timestamp": "2026-05-26T02:37:48.639Z",
-    "result": {
-      "battlecardId": "bc-2a0dbd0d",
-      "competitorName": "Apprentice.io"
-    }
-  },
-  {
-    "id": "act-4d113b40",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Siemens MindSphere / Xcelerator based on 4 recent signals",
-    "timestamp": "2026-05-26T02:37:48.785Z",
-    "result": {
-      "battlecardId": "bc-32b5956d",
-      "competitorName": "Siemens MindSphere / Xcelerator"
-    }
-  },
-  {
-    "id": "act-434267dc",
-    "agentType": "Market Monitor",
-    "action": "Market Scan Completed",
-    "description": "Scanned 6 competitors and found 6 signals",
-    "timestamp": "2026-05-26T02:37:48.786Z",
-    "result": {
-      "signalsFound": 6,
-      "competitors": [
-        "Tulip",
-        "Critical Manufacturing",
-        "Poka",
-        "Parsable",
-        "Apprentice.io",
-        "Siemens MindSphere / Xcelerator"
-      ]
-    }
-  },
-  {
-    "id": "act-1779763069139",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:37:49.139Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763086599",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:38:06.599Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763159122",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:39:19.122Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763272784",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:41:12.784Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763877466",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:51:17.466Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-47b6e9df",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Tulip based on 4 recent signals",
-    "timestamp": "2026-05-26T02:51:17.509Z",
-    "result": {
-      "battlecardId": "bc-384392e9",
-      "competitorName": "Tulip"
-    }
-  },
-  {
-    "id": "act-ae9f17ce",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Critical Manufacturing based on 5 recent signals",
-    "timestamp": "2026-05-26T02:51:17.664Z",
-    "result": {
-      "battlecardId": "bc-bdd9c201",
-      "competitorName": "Critical Manufacturing"
-    }
-  },
-  {
-    "id": "act-3d18fc67",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Poka based on 5 recent signals",
-    "timestamp": "2026-05-26T02:51:17.798Z",
-    "result": {
-      "battlecardId": "bc-efe952fb",
-      "competitorName": "Poka"
-    }
-  },
-  {
-    "id": "act-4f3ffd34",
+    "id": "act-297194bb",
     "agentType": "Battlecard Update",
     "action": "Battlecard Generated",
     "description": "Updated battlecard for Siemens MindSphere / Xcelerator based on 5 recent signals",
-    "timestamp": "2026-05-26T02:51:18.054Z",
+    "timestamp": "2026-05-26T03:09:28.900Z",
     "result": {
-      "battlecardId": "bc-0513a5ca",
+      "battlecardId": "bc-f6240c67",
       "competitorName": "Siemens MindSphere / Xcelerator"
     }
   },
   {
-    "id": "act-010345b2",
-    "agentType": "Market Monitor",
-    "action": "Market Scan Completed",
-    "description": "Scanned 6 competitors and found 6 signals",
-    "timestamp": "2026-05-26T02:51:18.054Z",
+    "id": "act-943f508e",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Parsable based on 5 recent signals",
+    "timestamp": "2026-05-26T03:09:28.736Z",
     "result": {
-      "signalsFound": 6,
-      "competitors": [
-        "Tulip",
-        "Critical Manufacturing",
-        "Poka",
-        "Parsable",
-        "Apprentice.io",
-        "Siemens MindSphere / Xcelerator"
-      ]
+      "battlecardId": "bc-f15ffc80",
+      "competitorName": "Parsable"
     }
   },
   {
-    "id": "act-1779763878394",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:51:18.394Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763907617",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:51:47.617Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763907931",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:51:47.931Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763908733",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:51:48.733Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763932314",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:52:12.314Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763933668",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:52:13.668Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763934306",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:52:14.306Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763934612",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:52:14.612Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763935993",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:52:15.993Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763940193",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:52:20.193Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763942591",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:52:22.591Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763953666",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:52:33.666Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779763956809",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:52:36.809Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1335e284",
+    "id": "act-a961075f",
     "agentType": "Battlecard Update",
     "action": "Battlecard Generated",
     "description": "Updated battlecard for Critical Manufacturing based on 5 recent signals",
-    "timestamp": "2026-05-26T02:52:56.060Z",
+    "timestamp": "2026-05-26T03:09:28.561Z",
     "result": {
-      "battlecardId": "bc-61f9ea63",
+      "battlecardId": "bc-07ec0daf",
       "competitorName": "Critical Manufacturing"
     }
   },
   {
-    "id": "act-1779763976196",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:52:56.196Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-1779764003955",
-    "agentType": "Market Monitor",
-    "action": "Scheduled Scan",
-    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:53:23.955Z",
-    "result": {
-      "competitorsScanned": 6,
-      "newSignals": 0
-    }
-  },
-  {
-    "id": "act-7daa3001",
+    "id": "act-bbeb2093",
     "agentType": "Battlecard Update",
     "action": "Battlecard Generated",
     "description": "Updated battlecard for Tulip based on 5 recent signals",
-    "timestamp": "2026-05-26T02:53:25.821Z",
+    "timestamp": "2026-05-26T03:09:28.411Z",
     "result": {
-      "battlecardId": "bc-2de1a398",
+      "battlecardId": "bc-5dfa02de",
       "competitorName": "Tulip"
     }
   },
   {
-    "id": "act-1779764005862",
+    "id": "act-1779764968297",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:53:25.862Z",
+    "timestamp": "2026-05-26T03:09:28.297Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-22425caf",
-    "agentType": "Battlecard Update",
-    "action": "Battlecard Generated",
-    "description": "Updated battlecard for Poka based on 5 recent signals",
-    "timestamp": "2026-05-26T02:53:25.993Z",
+    "id": "act-1779764943268",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:09:03.268Z",
     "result": {
-      "battlecardId": "bc-dad671b1",
-      "competitorName": "Poka"
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764938918",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:08:58.918Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764936870",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:08:56.871Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764866710",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:07:46.710Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764859837",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:07:39.837Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764808733",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:06:48.733Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764807618",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:06:47.618Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764781709",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:06:21.709Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764781093",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:06:21.093Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764780346",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:06:20.346Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764646362",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:04:06.362Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764575362",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T03:02:55.362Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764301449",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:58:21.449Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764265719",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:57:45.719Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764177028",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:56:17.028Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764172784",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:56:12.784Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764172010",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:56:12.010Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764041426",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:54:01.426Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764024234",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:53:44.234Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779764006715",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:53:26.715Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
     }
   },
   {
@@ -948,165 +465,677 @@
     }
   },
   {
-    "id": "act-1779764006715",
+    "id": "act-22425caf",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Poka based on 5 recent signals",
+    "timestamp": "2026-05-26T02:53:25.993Z",
+    "result": {
+      "battlecardId": "bc-dad671b1",
+      "competitorName": "Poka"
+    }
+  },
+  {
+    "id": "act-1779764005862",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:53:26.715Z",
+    "timestamp": "2026-05-26T02:53:25.862Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764024234",
+    "id": "act-7daa3001",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Tulip based on 5 recent signals",
+    "timestamp": "2026-05-26T02:53:25.821Z",
+    "result": {
+      "battlecardId": "bc-2de1a398",
+      "competitorName": "Tulip"
+    }
+  },
+  {
+    "id": "act-1779764003955",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:53:44.234Z",
+    "timestamp": "2026-05-26T02:53:23.955Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764041426",
+    "id": "act-1779763976196",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:54:01.426Z",
+    "timestamp": "2026-05-26T02:52:56.196Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764172010",
+    "id": "act-1335e284",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Critical Manufacturing based on 5 recent signals",
+    "timestamp": "2026-05-26T02:52:56.060Z",
+    "result": {
+      "battlecardId": "bc-61f9ea63",
+      "competitorName": "Critical Manufacturing"
+    }
+  },
+  {
+    "id": "act-1779763956809",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:56:12.010Z",
+    "timestamp": "2026-05-26T02:52:36.809Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764172784",
+    "id": "act-1779763953666",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:56:12.784Z",
+    "timestamp": "2026-05-26T02:52:33.666Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764177028",
+    "id": "act-1779763942591",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:56:17.028Z",
+    "timestamp": "2026-05-26T02:52:22.591Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764265719",
+    "id": "act-1779763940193",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:57:45.719Z",
+    "timestamp": "2026-05-26T02:52:20.193Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764301449",
+    "id": "act-1779763935993",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T02:58:21.449Z",
+    "timestamp": "2026-05-26T02:52:15.993Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764575362",
+    "id": "act-1779763934612",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:02:55.362Z",
+    "timestamp": "2026-05-26T02:52:14.612Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764646362",
+    "id": "act-1779763934306",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:04:06.362Z",
+    "timestamp": "2026-05-26T02:52:14.306Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764780346",
+    "id": "act-1779763933668",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:06:20.346Z",
+    "timestamp": "2026-05-26T02:52:13.668Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764781093",
+    "id": "act-1779763932314",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:06:21.093Z",
+    "timestamp": "2026-05-26T02:52:12.314Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764781709",
+    "id": "act-1779763908733",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:06:21.709Z",
+    "timestamp": "2026-05-26T02:51:48.733Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764807618",
+    "id": "act-1779763907931",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:06:47.618Z",
+    "timestamp": "2026-05-26T02:51:47.931Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0
     }
   },
   {
-    "id": "act-1779764808733",
+    "id": "act-1779763907617",
     "agentType": "Market Monitor",
     "action": "Scheduled Scan",
     "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
-    "timestamp": "2026-05-26T03:06:48.733Z",
+    "timestamp": "2026-05-26T02:51:47.617Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779763878394",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:51:18.394Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-4f3ffd34",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Siemens MindSphere / Xcelerator based on 5 recent signals",
+    "timestamp": "2026-05-26T02:51:18.054Z",
+    "result": {
+      "battlecardId": "bc-0513a5ca",
+      "competitorName": "Siemens MindSphere / Xcelerator"
+    }
+  },
+  {
+    "id": "act-010345b2",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 6 competitors and found 6 signals",
+    "timestamp": "2026-05-26T02:51:18.054Z",
+    "result": {
+      "signalsFound": 6,
+      "competitors": [
+        "Tulip",
+        "Critical Manufacturing",
+        "Poka",
+        "Parsable",
+        "Apprentice.io",
+        "Siemens MindSphere / Xcelerator"
+      ]
+    }
+  },
+  {
+    "id": "act-3d18fc67",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Poka based on 5 recent signals",
+    "timestamp": "2026-05-26T02:51:17.798Z",
+    "result": {
+      "battlecardId": "bc-efe952fb",
+      "competitorName": "Poka"
+    }
+  },
+  {
+    "id": "act-ae9f17ce",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Critical Manufacturing based on 5 recent signals",
+    "timestamp": "2026-05-26T02:51:17.664Z",
+    "result": {
+      "battlecardId": "bc-bdd9c201",
+      "competitorName": "Critical Manufacturing"
+    }
+  },
+  {
+    "id": "act-47b6e9df",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Tulip based on 4 recent signals",
+    "timestamp": "2026-05-26T02:51:17.509Z",
+    "result": {
+      "battlecardId": "bc-384392e9",
+      "competitorName": "Tulip"
+    }
+  },
+  {
+    "id": "act-1779763877466",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:51:17.466Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779763272784",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:41:12.784Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779763159122",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:39:19.122Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779763086599",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:38:06.599Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779763069139",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:37:49.139Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-434267dc",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 6 competitors and found 6 signals",
+    "timestamp": "2026-05-26T02:37:48.786Z",
+    "result": {
+      "signalsFound": 6,
+      "competitors": [
+        "Tulip",
+        "Critical Manufacturing",
+        "Poka",
+        "Parsable",
+        "Apprentice.io",
+        "Siemens MindSphere / Xcelerator"
+      ]
+    }
+  },
+  {
+    "id": "act-4d113b40",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Siemens MindSphere / Xcelerator based on 4 recent signals",
+    "timestamp": "2026-05-26T02:37:48.785Z",
+    "result": {
+      "battlecardId": "bc-32b5956d",
+      "competitorName": "Siemens MindSphere / Xcelerator"
+    }
+  },
+  {
+    "id": "act-ea0f9e2e",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Apprentice.io based on 4 recent signals",
+    "timestamp": "2026-05-26T02:37:48.639Z",
+    "result": {
+      "battlecardId": "bc-2a0dbd0d",
+      "competitorName": "Apprentice.io"
+    }
+  },
+  {
+    "id": "act-1779763068367",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:37:48.367Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-04d6a6e2",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Critical Manufacturing based on 4 recent signals",
+    "timestamp": "2026-05-26T02:37:48.352Z",
+    "result": {
+      "battlecardId": "bc-59347234",
+      "competitorName": "Critical Manufacturing"
+    }
+  },
+  {
+    "id": "act-3cdeebda",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Tulip based on 3 recent signals",
+    "timestamp": "2026-05-26T02:37:48.232Z",
+    "result": {
+      "battlecardId": "bc-3e1cc65f",
+      "competitorName": "Tulip"
+    }
+  },
+  {
+    "id": "act-1779763067430",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:37:47.430Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-594705e6",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 6 competitors and found 6 signals",
+    "timestamp": "2026-05-26T02:37:47.066Z",
+    "result": {
+      "signalsFound": 6,
+      "competitors": [
+        "Tulip",
+        "Critical Manufacturing",
+        "Poka",
+        "Parsable",
+        "Apprentice.io",
+        "Siemens MindSphere / Xcelerator"
+      ]
+    }
+  },
+  {
+    "id": "act-e006fead",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Siemens MindSphere / Xcelerator based on 3 recent signals",
+    "timestamp": "2026-05-26T02:37:47.065Z",
+    "result": {
+      "battlecardId": "bc-add78d99",
+      "competitorName": "Siemens MindSphere / Xcelerator"
+    }
+  },
+  {
+    "id": "act-1779763066537",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:37:46.537Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779763008732",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:36:48.732Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762457367",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:27:37.367Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762414068",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:26:54.068Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-7f0d71e4",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Critical Manufacturing based on 2 recent signals",
+    "timestamp": "2026-05-26T02:26:53.895Z",
+    "result": {
+      "battlecardId": "bc-da85ca0f",
+      "competitorName": "Critical Manufacturing"
+    }
+  },
+  {
+    "id": "act-1779762411448",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:26:51.448Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-58103f9f",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Critical Manufacturing based on 2 recent signals",
+    "timestamp": "2026-05-26T02:26:51.345Z",
+    "result": {
+      "battlecardId": "bc-d83bd391",
+      "competitorName": "Critical Manufacturing"
+    }
+  },
+  {
+    "id": "act-1779762381554",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:26:21.554Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762376868",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:26:16.868Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762373068",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:26:13.068Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762372783",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:26:12.783Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762371506",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:26:11.506Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-68cbc761",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 6 competitors and found 6 signals",
+    "timestamp": "2026-05-26T02:26:10.891Z",
+    "result": {
+      "signalsFound": 6,
+      "competitors": [
+        "Tulip",
+        "Critical Manufacturing",
+        "Poka",
+        "Parsable",
+        "Apprentice.io",
+        "Siemens MindSphere / Xcelerator"
+      ]
+    }
+  },
+  {
+    "id": "act-739b806e",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Apprentice.io based on 2 recent signals",
+    "timestamp": "2026-05-26T02:26:10.818Z",
+    "result": {
+      "battlecardId": "bc-c0e6f2dc",
+      "competitorName": "Apprentice.io"
+    }
+  },
+  {
+    "id": "act-603d4047",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Parsable based on 2 recent signals",
+    "timestamp": "2026-05-26T02:26:10.723Z",
+    "result": {
+      "battlecardId": "bc-0b5d6393",
+      "competitorName": "Parsable"
+    }
+  },
+  {
+    "id": "act-05104be7",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Poka based on 3 recent signals",
+    "timestamp": "2026-05-26T02:26:10.624Z",
+    "result": {
+      "battlecardId": "bc-bc162b5d",
+      "competitorName": "Poka"
+    }
+  },
+  {
+    "id": "act-fe8783b9",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Critical Manufacturing based on 2 recent signals",
+    "timestamp": "2026-05-26T02:26:10.483Z",
+    "result": {
+      "battlecardId": "bc-7323c740",
+      "competitorName": "Critical Manufacturing"
+    }
+  },
+  {
+    "id": "act-1779762370168",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:26:10.168Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762364077",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:26:04.077Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762176868",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:22:56.868Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762109815",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:21:49.815Z",
     "result": {
       "competitorsScanned": 6,
       "newSignals": 0

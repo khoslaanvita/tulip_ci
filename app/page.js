@@ -86,19 +86,27 @@ function Dashboard() {
           <h1 className="text-4xl font-bold tracking-tight">Tulip Competitive Intelligence</h1>
           <p className="text-muted-foreground mt-2">Command Center for Market Monitoring</p>
         </div>
-        <Button onClick={runMarketMonitor} disabled={runningAgent} size="lg">
-          {runningAgent ? (
-            <>
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-              Running...
-            </>
-          ) : (
-            <>
-              <Zap className="mr-2 h-4 w-4" />
-              Run Market Monitor
-            </>
-          )}
-        </Button>
+        <div className="flex gap-3">
+          <Link href="/tulip-command-center">
+            <Button size="lg" variant="default" className="bg-yellow-500 hover:bg-yellow-600 text-white">
+              <span className="mr-2">👑</span>
+              Tulip Command Center
+            </Button>
+          </Link>
+          <Button onClick={runMarketMonitor} disabled={runningAgent} size="lg" variant="outline">
+            {runningAgent ? (
+              <>
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary mr-2"></div>
+                Running...
+              </>
+            ) : (
+              <>
+                <Zap className="mr-2 h-4 w-4" />
+                Run Market Monitor
+              </>
+            )}
+          </Button>
+        </div>
       </div>
 
       {/* Stats Cards */}
@@ -143,6 +151,12 @@ function Dashboard() {
 
       {/* Quick Actions */}
       <div className="flex gap-4">
+        <Link href="/tulip-command-center">
+          <Button variant="default" className="bg-yellow-500 hover:bg-yellow-600">
+            <span className="mr-2">👑</span>
+            Tulip Command Center
+          </Button>
+        </Link>
         <Link href="/signals">
           <Button variant="outline">
             <Activity className="mr-2 h-4 w-4" />
