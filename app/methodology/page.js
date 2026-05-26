@@ -55,10 +55,10 @@ export default function DocumentationPage() {
                 <p className="text-sm font-semibold mb-2">Triggers:</p>
                 <ul className="text-sm space-y-1 text-muted-foreground">
                   <li>• Major product launch directly competing with Tulip core features</li>
-                  <li>• Significant funding round (>$50M) enabling aggressive expansion</li>
+                  <li>• Significant funding round ({'>'}$50M) enabling aggressive expansion</li>
                   <li>• Acquisition of technology/company strengthening their position</li>
                   <li>• Key customer win in Tulip target accounts</li>
-                  <li>• Pricing change undercutting Tulip by >30%</li>
+                  <li>• Pricing change undercutting Tulip by {'>'}30%</li>
                   <li>• Executive hire from Tulip or top competitor</li>
                   <li>• Partnership with major tech vendor (Microsoft, AWS, NVIDIA)</li>
                 </ul>
@@ -218,7 +218,7 @@ export default function DocumentationPage() {
               </div>
 
               <div className="border-l-4 border-orange-500 pl-4">
-                <Badge variant="secondary" className="mb-2">LOW CONFIDENCE (<75%)</Badge>
+                <Badge variant="secondary" className="mb-2">LOW CONFIDENCE ({'<'}75%)</Badge>
                 <p className="text-sm mb-2"><strong>Definition:</strong> Unverified or estimated data</p>
                 <p className="text-sm font-semibold mb-1">Sources:</p>
                 <ul className="text-sm space-y-1 text-muted-foreground">
@@ -303,7 +303,7 @@ export default function DocumentationPage() {
                 <div className="space-y-4">
                   <div className="border-l-4 border-red-500 pl-4">
                     <Badge variant="destructive" className="mb-2">RAPID GROWTH ALERT</Badge>
-                    <p className="text-sm mb-1"><strong>Trigger:</strong> >15% employee increase in 30 days</p>
+                    <p className="text-sm mb-1"><strong>Trigger:</strong> {'>'}15% employee increase in 30 days</p>
                     <p className="text-sm mb-1"><strong>Severity:</strong> HIGH</p>
                     <p className="text-sm mb-1"><strong>Recipients:</strong> CEO, HR, Strategy team</p>
                     <p className="text-sm text-muted-foreground">Indicates: Potential expansion, new product launch, or post-funding hiring spree</p>
@@ -318,14 +318,14 @@ export default function DocumentationPage() {
 
                   <div className="border-l-4 border-orange-500 pl-4">
                     <Badge variant="outline" className="mb-2">CONTRACTION ALERT</Badge>
-                    <p className="text-sm mb-1"><strong>Trigger:</strong> >10% employee decrease in 30 days</p>
+                    <p className="text-sm mb-1"><strong>Trigger:</strong> {'>'}10% employee decrease in 30 days</p>
                     <p className="text-sm mb-1"><strong>Severity:</strong> MEDIUM</p>
                     <p className="text-sm text-muted-foreground">Indicates: Potential financial issues, layoffs, or strategic pivot</p>
                   </div>
 
                   <div className="border-l-4 border-blue-500 pl-4">
                     <Badge variant="outline" className="mb-2">DEPARTMENT FOCUS</Badge>
-                    <p className="text-sm mb-1"><strong>Trigger:</strong> >5 hires in specific department in 30 days</p>
+                    <p className="text-sm mb-1"><strong>Trigger:</strong> {'>'}5 hires in specific department in 30 days</p>
                     <p className="text-sm mb-1"><strong>Severity:</strong> MEDIUM</p>
                     <p className="text-sm text-muted-foreground">Indicates: Investment in specific function (e.g., Engineering = new product, Sales = expansion)</p>
                   </div>
@@ -424,7 +424,7 @@ export default function DocumentationPage() {
                   </div>
                   <div className="flex items-center gap-4 p-3 border rounded-lg bg-green-50">
                     <Badge variant="secondary">LOW THREAT</Badge>
-                    <span className="text-sm"><10 points</span>
+                    <span className="text-sm">{'<'}10 points</span>
                   </div>
                 </div>
               </div>
