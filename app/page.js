@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Activity, TrendingUp, AlertCircle, Bell, Zap, Bot, Factory, Users, ShieldCheck, Wrench, Cpu, BarChart3, Eye, Building2, Layers } from 'lucide-react';
+import { Activity, TrendingUp, AlertCircle, Bell, Zap, Bot, Factory, Users, ShieldCheck, Wrench, Cpu, BarChart3, Eye, Building2, Layers, Target, ArrowRight, Flame, Shield } from 'lucide-react';
 import { toast } from 'sonner';
 
 // Group categories into broader buckets and assign B&W visual identity
@@ -35,12 +35,22 @@ const CATEGORY_STYLES = {
   other:            { label: 'Other',              icon: Building2,   badge: 'bg-white text-gray-600 border border-gray-300' },
 };
 
+// Threat score → colored band classes (red / amber / slate / green accent).
+function threatStyle(score) {
+  const s = score ?? 0;
+  if (s >= 70) return { label: 'Critical', dot: 'bg-red-600', pill: 'bg-red-50 text-red-700 border-red-200', barFill: 'bg-red-600' };
+  if (s >= 50) return { label: 'High',     dot: 'bg-amber-500', pill: 'bg-amber-50 text-amber-800 border-amber-200', barFill: 'bg-amber-500' };
+  if (s >= 30) return { label: 'Medium',   dot: 'bg-gray-500', pill: 'bg-gray-50 text-gray-700 border-gray-300', barFill: 'bg-gray-500' };
+  return                  { label: 'Low',  dot: 'bg-emerald-500', pill: 'bg-emerald-50 text-emerald-800 border-emerald-200', barFill: 'bg-emerald-500' };
+}
+
 function Dashboard() {
   const [competitors, setCompetitors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [runningAgent, setRunningAgent] = useState(false);
   const [marketSummary, setMarketSummary] = useState(null);
   const [categorySummaries, setCategorySummaries] = useState({});
+  const [strategicInsights, setStrategicInsights] = useState(null);
   const [loadingIntelligence, setLoadingIntelligence] = useState(true);
 
   useEffect(() => {
@@ -49,26 +59,32 @@ function Dashboard() {
   }, []);
 
   async function loadIntelligence() {
-    try {
-      const [summaryRes, categoriesRes] = await Promise.all([
-        fetch('/api/intelligence/market-summary'),
-        fetch('/api/intelligence/categories')
-      ]);
-      
-      if (summaryRes.ok) {
-        const summaryData = await summaryRes.json();
-        setMarketSummary(summaryData);
+    // Fetch with retry — Next.js dev compiles routes on first request so the
+    // very first call can fail before the API is ready.
+    const safeFetch = async (url, retries = 3) => {
+      for (let i = 0; i <= retries; i++) {
+        try {
+          const r = await fetch(url);
+          if (r.ok) return await r.json();
+        } catch (e) {
+          // swallow and retry
+        }
+        await new Promise(res => setTimeout(res, 600 + i * 400));
       }
-      
-      if (categoriesRes.ok) {
-        const categoriesData = await categoriesRes.json();
-        setCategorySummaries(categoriesData);
-      }
-    } catch (error) {
-      console.error('Error loading intelligence:', error);
-    } finally {
-      setLoadingIntelligence(false);
-    }
+      console.warn(`Fetch ultimately failed: ${url}`);
+      return null;
+    };
+
+    const [summary, categories, insights] = await Promise.all([
+      safeFetch('/api/intelligence/market-summary'),
+      safeFetch('/api/intelligence/categories'),
+      safeFetch('/api/intelligence/strategic-insights'),
+    ]);
+
+    if (summary) setMarketSummary(summary);
+    if (categories) setCategorySummaries(categories);
+    if (insights) setStrategicInsights(insights);
+    setLoadingIntelligence(false);
   }
 
   async function loadCompetitors() {
@@ -282,6 +298,102 @@ function Dashboard() {
           </Link>
         </div>
 
+        {/* Strategic Insights — Executive briefing of top-3 strategically threatening competitor moves with actions */}
+        {strategicInsights && strategicInsights.insights?.length > 0 && (
+          <div className="mb-12">
+            <div className="flex items-end justify-between mb-4 flex-wrap gap-3">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-1 w-8 bg-emerald-600"></div>
+                  <span className="text-[11px] uppercase tracking-widest text-emerald-700 font-semibold">Strategic Insights</span>
+                </div>
+                <h2 className="text-3xl font-light text-gray-900 tracking-tight">Top 3 Moves to Make</h2>
+                <p className="text-sm text-gray-500 mt-1">
+                  Strategic priorities derived from the {strategicInsights.totalTracked} tracked competitors · Posture: <span className="font-medium text-gray-900">{strategicInsights.posture}</span>
+                </p>
+              </div>
+              <div className="flex items-center gap-4 text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-500 uppercase tracking-wider">High threat</span>
+                  <span className="inline-flex items-center justify-center min-w-[28px] h-7 px-2 bg-red-50 border border-red-200 text-red-700 font-medium rounded-sm">
+                    {strategicInsights.highThreatCount}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-500 uppercase tracking-wider">Avg threat</span>
+                  <span className="inline-flex items-center justify-center min-w-[28px] h-7 px-2 bg-gray-50 border border-gray-300 text-gray-900 font-medium rounded-sm">
+                    {strategicInsights.averageThreatScore}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              {strategicInsights.insights.map((ins) => {
+                const t = threatStyle(ins.threatScore);
+                return (
+                  <Card key={ins.competitorId} className="border border-gray-200 hover:border-gray-900 transition-colors flex flex-col">
+                    {/* Top accent bar */}
+                    <div className={`h-1 ${t.barFill}`}></div>
+                    <CardHeader className="pb-3">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center justify-center w-7 h-7 bg-black text-white text-xs font-medium">
+                            {ins.rank}
+                          </div>
+                          <div>
+                            <CardTitle className="text-base font-medium text-gray-900 leading-tight">
+                              {ins.competitorName}
+                            </CardTitle>
+                            <p className="text-[11px] text-gray-500 uppercase tracking-wider mt-0.5">{ins.category}</p>
+                          </div>
+                        </div>
+                        <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider border ${t.pill}`}>
+                          <span className={`h-1.5 w-1.5 rounded-full ${t.dot}`}></span>
+                          {t.label} · {ins.threatScore}
+                        </span>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-0 flex-1 flex flex-col">
+                      <p className="text-sm font-medium text-gray-900 leading-snug mb-2">
+                        {ins.headline}
+                      </p>
+                      <p className="text-xs text-gray-600 leading-relaxed mb-4 flex-1">
+                        {ins.whyItMatters}
+                      </p>
+
+                      {/* Tulip advantage strip — accent green */}
+                      <div className="border-l-2 border-emerald-600 pl-2 mb-4">
+                        <div className="text-[9px] uppercase tracking-widest text-emerald-700 font-semibold mb-0.5">Tulip Advantage</div>
+                        <p className="text-[11px] text-gray-800 leading-snug">{ins.tulipAdvantage}</p>
+                      </div>
+
+                      {/* Action box */}
+                      <div className="bg-gray-900 text-white p-3 -mx-6 -mb-6 mt-auto">
+                        <div className="flex items-center gap-1.5 text-[9px] uppercase tracking-widest text-gray-400 mb-1.5">
+                          <Target className="h-3 w-3" />
+                          Recommended Action
+                        </div>
+                        <p className="text-xs text-white leading-snug mb-2">{ins.action}</p>
+                        <div className="flex items-center justify-between gap-2 text-[10px] text-gray-400 pt-2 border-t border-gray-700">
+                          <span className="uppercase tracking-wider">{ins.actionOwner}</span>
+                          <span className="uppercase tracking-wider">{ins.timeframe}</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+
+            {!strategicInsights.aiEnabled && (
+              <p className="mt-3 text-[10px] uppercase tracking-widest text-gray-400">
+                Insights computed deterministically · AI refinement available when OpenAI quota is restored
+              </p>
+            )}
+          </div>
+        )}
+
       {/* Competitors Table - Clean and Minimal */}
       <Card className="border border-gray-200">
         <CardHeader className="border-b border-gray-100">
@@ -294,6 +406,7 @@ function Dashboard() {
           <Table>
             <TableHeader>
               <TableRow className="border-b border-gray-200 bg-gray-50">
+                <TableHead className="font-medium text-gray-900 uppercase text-xs tracking-wider">Threat</TableHead>
                 <TableHead className="font-medium text-gray-900 uppercase text-xs tracking-wider">Company</TableHead>
                 <TableHead className="font-medium text-gray-900 uppercase text-xs tracking-wider">Category</TableHead>
                 <TableHead className="font-medium text-gray-900 uppercase text-xs tracking-wider">Industry Focus</TableHead>
@@ -309,8 +422,24 @@ function Dashboard() {
                 const CatIcon = groupStyle.icon;
                 const industry = competitor.industry || competitor.verticalFocus || '-';
                 const angle = competitor.tulipRelevance || competitor.tulipCompetitiveAngle || '-';
+                const ts = threatStyle(competitor.threatScore);
                 return (
                   <TableRow key={competitor.id} className="border-b border-gray-100 hover:bg-gray-50/70 align-top">
+                    <TableCell className="py-4 w-[120px]">
+                      <div className="flex flex-col gap-1.5">
+                        <div className="flex items-baseline gap-1.5">
+                          <span className="text-2xl font-light text-gray-900 leading-none">{competitor.threatScore ?? 0}</span>
+                          <span className="text-[10px] text-gray-400">/100</span>
+                        </div>
+                        <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider border w-fit ${ts.pill}`}>
+                          <span className={`h-1.5 w-1.5 rounded-full ${ts.dot}`}></span>
+                          {ts.label}
+                        </span>
+                        <div className="h-1 w-16 bg-gray-100 overflow-hidden rounded-sm">
+                          <div className={`h-full ${ts.barFill}`} style={{ width: `${competitor.threatScore ?? 0}%` }}></div>
+                        </div>
+                      </div>
+                    </TableCell>
                     <TableCell className="font-medium text-gray-900 py-4">
                       <Link href={`/competitors/${competitor.id}`} className="hover:underline">
                         {competitor.name}

@@ -7,6 +7,7 @@ import { generateComprehensiveVoCInsights, getVoCStats } from '@/lib/voc-agent-e
 import { generateMarketSummary, generateCategorySummaries, generateDepartmentBriefings } from '@/lib/intelligence-agent';
 import { migrateCustomerTranscripts } from '@/lib/db-operations';
 import { generateCompetitorThreatsOpportunities, getRecentCompetitorNews } from '@/lib/competitor-analysis';
+import { generateStrategicInsights, computeThreatScore } from '@/lib/strategic-insights';
 
 // Start the background scheduler when the API loads
 if (typeof window === 'undefined') { // Server-side only
@@ -33,14 +34,16 @@ export async function GET(request) {
       const competitors = readJSON('competitors.json');
       const signals = readJSON('signals.json');
       
-      // Enrich with latest signal info
+      // Enrich with latest signal info and computed threat score
       const enriched = competitors.map(comp => {
         const compSignals = signals.filter(s => s.competitorId === comp.id)
           .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
         const latestSignal = compSignals[0];
+        const dynamicScore = computeThreatScore(comp, signals);
         
         return {
           ...comp,
+          threatScore: dynamicScore,
           latestSignal: latestSignal ? {
             title: latestSignal.title,
             type: latestSignal.signalType,
@@ -50,6 +53,8 @@ export async function GET(request) {
         };
       });
       
+      // Sort by threat score (highest first) so dashboard surfaces the most relevant
+      enriched.sort((a, b) => (b.threatScore || 0) - (a.threatScore || 0));
       return NextResponse.json(enriched);
     }
 
@@ -159,6 +164,12 @@ export async function GET(request) {
     if (path === '/intelligence/market-summary') {
       const summary = await generateMarketSummary();
       return NextResponse.json(summary);
+    }
+
+    // GET /api/intelligence/strategic-insights - Top-3 strategic insights w/ actions
+    if (path === '/intelligence/strategic-insights') {
+      const insights = await generateStrategicInsights();
+      return NextResponse.json(insights);
     }
 
     // GET /api/intelligence/categories - Get category summaries

@@ -174,11 +174,11 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-abf3e74a",
+    "id": "bc-acad9015",
     "competitorId": "sap-digital-manufacturing",
     "competitorName": "SAP Digital Manufacturing",
-    "lastUpdated": "2026-05-26T05:18:49.163Z",
-    "dealContext": "im on a customer call right now and they are asking why to use tulip v sap...",
+    "lastUpdated": "2026-05-26T05:24:52.226Z",
+    "dealContext": null,
     "whenTheyAppear": "SAP Digital Manufacturing typically appears in MES / ERP-adjacent evaluations, particularly in deals where customers are focused on Integrated ERP-to-manufacturing execution platform... They often enter through functional teams evaluating specialized solutions.",
     "theirPositioning": "Integrated ERP-to-manufacturing execution platform",
     "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond MES / ERP-adjacent. While SAP Digital Manufacturing focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
