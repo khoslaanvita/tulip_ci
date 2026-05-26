@@ -185,42 +185,6 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Market Intelligence Summary Box */}
-        {marketSummary && (
-          <Card className="border-2 border-gray-900 mb-8">
-            <CardHeader className="bg-gray-50 border-b border-gray-200">
-              <CardTitle className="text-xl font-medium">Market Intelligence Summary</CardTitle>
-              <CardDescription className="text-gray-600">Top 3 things happening this month</CardDescription>
-            </CardHeader>
-            <CardContent className="pt-6">
-              <div className="space-y-4 mb-6">
-                {marketSummary.top3Events.map((event, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-sm font-medium">
-                      {idx + 1}
-                    </div>
-                    <p className="text-gray-900 flex-1">{event}</p>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="pt-4 border-t border-gray-200">
-                <p className="text-sm text-gray-600 mb-1"><strong>Tulip's Position:</strong></p>
-                <p className="text-gray-900">{marketSummary.tulipPositioning}</p>
-              </div>
-
-              {marketSummary.keyTrend && (
-                <div className="mt-4 p-3 bg-gray-50 border-l-2 border-gray-900">
-                  <p className="text-sm text-gray-900">
-                    <strong className="uppercase text-[10px] tracking-widest text-gray-500 block mb-1">Key Trend</strong>
-                    {marketSummary.keyTrend}
-                  </p>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        )}
-
         {/* Stats Cards - Clean B&W */}
         <div className="grid gap-6 md:grid-cols-3 mb-12">
           <Card className="border border-gray-200 hover:shadow-md transition-shadow">
