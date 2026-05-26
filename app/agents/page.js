@@ -99,6 +99,8 @@ export default function AgentsPage() {
         "Deduplicates content to avoid noise"
       ],
       outputs: "New competitive signals added to database with severity levels (low / medium / high).",
+      outputUrl: "/signals",
+      outputLabel: "View Signal Feed",
       technology: "Node.js · RSS Parser · OpenAI GPT-4o for analysis",
       file: "/app/lib/agent-scheduler.js · /app/lib/rss-monitor.js"
     },
@@ -116,8 +118,10 @@ export default function AgentsPage() {
         "Determines Tulip's current market position",
         "Identifies key trends affecting competitive landscape"
       ],
-      outputs: "Market summary box on dashboard with actionable intelligence.",
-      technology: "OpenAI GPT-4o with strategic analysis prompts",
+      outputs: "Strategic Insights box on the main Dashboard (\"Top 3 Moves to Make\").",
+      outputUrl: "/",
+      outputLabel: "View on Dashboard",
+      technology: "OpenAI GPT-4o-mini with strategic analysis prompts",
       file: "/app/lib/intelligence-agent.js → generateMarketSummary()"
     },
     {
@@ -134,9 +138,11 @@ export default function AgentsPage() {
         "Recommends specific actions per category",
         "Tracks category-level threat evolution"
       ],
-      outputs: "Category summary cards with key updates, implications, and actions.",
-      technology: "OpenAI GPT-4o analyzing category-specific signals",
-      file: "/app/lib/intelligence-agent.js → generateCategorySummaries()"
+      outputs: "\"What's Moving by Category\" section on the main Dashboard (8 category tabs).",
+      outputUrl: "/",
+      outputLabel: "View on Dashboard",
+      technology: "OpenAI GPT-4o-mini analyzing category-specific signals",
+      file: "/app/lib/category-intelligence.js → generateCategoryIntelligence()"
     },
     {
       key: "Department Briefing",
@@ -153,8 +159,10 @@ export default function AgentsPage() {
         "Recommends competitors to watch",
         "Assigns timeframes (immediate / short-term / long-term)"
       ],
-      outputs: "Department-specific briefing pages with tailored insights and actions.",
-      technology: "OpenAI GPT-4o with role-specific analysis",
+      outputs: "Intelligence Briefing page — 5 dept cards (Executive · Product · Sales · Marketing · Customer Success).",
+      outputUrl: "/intelligence-briefing",
+      outputLabel: "Open Briefings Page",
+      technology: "OpenAI GPT-4o-mini with role-specific analysis",
       file: "/app/lib/intelligence-agent.js → generateDepartmentBriefings()"
     },
     {
@@ -172,8 +180,10 @@ export default function AgentsPage() {
         "Tracks market trends and competitor responses",
         "Generates recommended actions with priorities"
       ],
-      outputs: "Threats & Opportunities sections on competitor detail pages.",
-      technology: "OpenAI GPT-4o analyzing competitor signals and profile data",
+      outputs: "\"Tulip Battle Plan\" section on each Competitor Detail page (auto-loads).",
+      outputUrl: "/competitors/sap-digital-manufacturing",
+      outputLabel: "Open a Competitor",
+      technology: "OpenAI GPT-4o-mini analyzing competitor signals and profile data",
       file: "/app/lib/competitor-analysis.js → generateCompetitorThreatsOpportunities()"
     },
     {
@@ -193,8 +203,10 @@ export default function AgentsPage() {
         "Generates Tulip win strategies based on real customer input",
         "Identifies deal risks and mitigation strategies"
       ],
-      outputs: "Comprehensive VoC insights with threats, opportunities, key quotes, and actionable recommendations.",
-      technology: "OpenAI GPT-4o analyzing customer conversation transcripts from MongoDB",
+      outputs: "\"Voice of Customer\" tab on Competitor Detail pages.",
+      outputUrl: "/competitors/sap-digital-manufacturing",
+      outputLabel: "Open a Competitor",
+      technology: "OpenAI GPT-4o-mini analyzing customer conversation transcripts from MongoDB",
       file: "/app/lib/voc-agent-enhanced.js → generateComprehensiveVoCInsights()"
     },
     {
@@ -213,8 +225,10 @@ export default function AgentsPage() {
         "Creates discovery questions to position Tulip favorably",
         "Generates product and marketing implications"
       ],
-      outputs: "Structured battlecard with positioning, objection handling, and discovery questions.",
-      technology: "OpenAI GPT-4o / Claude analyzing competitor data and signals",
+      outputs: "\"Battlecard\" tab on each Competitor Detail page.",
+      outputUrl: "/competitors/sap-digital-manufacturing",
+      outputLabel: "Open a Competitor",
+      technology: "OpenAI GPT-4o-mini analyzing competitor data and signals",
       file: "/app/lib/ai-helpers.js → generateBattlecardWithAI()"
     },
     // ---- Email Agents (trigger-based) ----
@@ -443,6 +457,14 @@ export default function AgentsPage() {
                       <span className="text-gray-400 font-mono">· {time.abs}</span>
                     </div>
                     <div className="flex items-center gap-2">
+                      {agent.outputUrl && (
+                        <Link href={agent.outputUrl}>
+                          <Button size="sm" variant="outline" className="border-gray-300 h-7 text-xs">
+                            <ExternalLink className="h-3 w-3 mr-1" />
+                            {agent.outputLabel || 'View Output'}
+                          </Button>
+                        </Link>
+                      )}
                       {agent.group === 'email' && (
                         <Link href="/email-agents">
                           <Button size="sm" variant="outline" className="border-gray-300 h-7 text-xs">

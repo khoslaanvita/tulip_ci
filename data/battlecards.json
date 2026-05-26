@@ -1,12 +1,12 @@
 [
   {
-    "id": "bc-a07edce6",
+    "id": "bc-fa372349",
     "competitorId": "poka",
     "competitorName": "Poka",
-    "lastUpdated": "2026-05-26T04:18:15.106Z",
+    "lastUpdated": "2026-05-26T14:16:19.533Z",
     "dealContext": null,
-    "whenTheyAppear": "Poka typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Connected worker platform focused on digitizing frontline knowledge, training, and communication for... They often enter through functional teams evaluating specialized solutions.",
-    "theirPositioning": "Connected worker platform focused on digitizing frontline knowledge, training, and communication for manufacturing teams with AI-assisted workflows. Now part of IFS industrial software ecosystem.",
+    "whenTheyAppear": "Poka typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Digital work instructions and knowledge management... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Digital work instructions and knowledge management",
     "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Connected Worker. While Poka focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
     "likelyObjections": [
       "\"Poka specializes in our specific industry\"",
@@ -29,13 +29,13 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-7549ccad",
+    "id": "bc-60b688af",
     "competitorId": "parsable",
     "competitorName": "Parsable",
-    "lastUpdated": "2026-05-26T04:18:15.213Z",
+    "lastUpdated": "2026-05-26T14:16:22.529Z",
     "dealContext": null,
-    "whenTheyAppear": "Parsable typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Connected worker platform for operational execution, focusing on digitizing procedures, checklists, ... They often enter through functional teams evaluating specialized solutions.",
-    "theirPositioning": "Connected worker platform for operational execution, focusing on digitizing procedures, checklists, and workflows for industrial frontline teams. Now integrated with CAI Software's ERP and manufacturing execution suite.",
+    "whenTheyAppear": "Parsable typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Digital procedures for frontline operations... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Digital procedures for frontline operations",
     "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Connected Worker. While Parsable focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
     "likelyObjections": [
       "\"Parsable specializes in our specific industry\"",
@@ -58,13 +58,13 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-021cf2c4",
+    "id": "bc-2d0718a9",
     "competitorId": "critical-manufacturing",
     "competitorName": "Critical Manufacturing",
-    "lastUpdated": "2026-05-26T04:18:14.971Z",
+    "lastUpdated": "2026-05-26T14:15:44.105Z",
     "dealContext": null,
-    "whenTheyAppear": "Critical Manufacturing typically appears in MES evaluations, particularly in deals where customers are focused on Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, medical... They often enter through functional teams evaluating specialized solutions.",
-    "theirPositioning": "Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, medical devices, and complex discrete manufacturing with strong emphasis on Industry 4.0 capabilities and traceability.",
+    "whenTheyAppear": "Critical Manufacturing typically appears in MES evaluations, particularly in deals where customers are focused on Industry 4.0-native MES for high-complexity manufacturing... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Industry 4.0-native MES for high-complexity manufacturing",
     "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond MES. While Critical Manufacturing focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
     "likelyObjections": [
       "\"Critical Manufacturing specializes in our specific industry\"",
@@ -116,24 +116,24 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-7b44b2b3",
+    "id": "bc-cf2684b6",
     "competitorId": "siemens-xcelerator",
-    "competitorName": "Siemens MindSphere / Xcelerator",
-    "lastUpdated": "2026-05-26T04:10:24.677Z",
+    "competitorName": "Siemens Xcelerator",
+    "lastUpdated": "2026-05-26T14:15:40.579Z",
     "dealContext": null,
-    "whenTheyAppear": "Siemens MindSphere / Xcelerator typically appears in SCADA / Industrial Platform evaluations, particularly in deals where customers are focused on Industrial IoT and automation platform combining operational technology (OT) with IT systems for com... They often enter through functional teams evaluating specialized solutions.",
-    "theirPositioning": "Industrial IoT and automation platform combining operational technology (OT) with IT systems for comprehensive digital manufacturing. Open digital business platform with massive ecosystem and industrial AI focus.",
-    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond SCADA / Industrial Platform. While Siemens MindSphere / Xcelerator focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "whenTheyAppear": "Siemens Xcelerator typically appears in SCADA / OT Platform evaluations, particularly in deals where customers are focused on End-to-end industrial digitalization platform... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "End-to-end industrial digitalization platform",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond SCADA / OT Platform. While Siemens Xcelerator focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
     "likelyObjections": [
-      "\"Siemens MindSphere / Xcelerator specializes in our specific industry\"",
-      "\"They seem more focused on SCADA / Industrial Platform than Tulip\"",
+      "\"Siemens Xcelerator specializes in our specific industry\"",
+      "\"They seem more focused on SCADA / OT Platform than Tulip\"",
       "\"Their pricing appears more straightforward\"",
-      "\"We've heard good things about their SCADA / Industrial Platform capabilities\"",
+      "\"We've heard good things about their SCADA / OT Platform capabilities\"",
       "\"Tulip seems like it might be overkill for our needs\""
     ],
-    "salesResponse": "Acknowledge Siemens MindSphere / Xcelerator's strengths in SCADA / Industrial Platform, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "salesResponse": "Acknowledge Siemens Xcelerator's strengths in SCADA / OT Platform, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
     "discoveryQuestions": [
-      "Beyond SCADA / Industrial Platform, what other shop floor challenges are you trying to solve?",
+      "Beyond SCADA / OT Platform, what other shop floor challenges are you trying to solve?",
       "How important is it to have a unified platform vs multiple point solutions?",
       "Who else in your organization has requirements for shop floor digitization?",
       "How do you plan to scale your digital transformation over the next 2-3 years?",
@@ -141,7 +141,7 @@
       "How important is flexibility to customize workflows as your needs evolve?",
       "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
     ],
-    "productImplications": "Continue strengthening SCADA / Industrial Platform capabilities to match Siemens MindSphere / Xcelerator's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "productImplications": "Continue strengthening SCADA / OT Platform capabilities to match Siemens Xcelerator's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
@@ -174,10 +174,10 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-32dff3be",
+    "id": "bc-9a5de9a6",
     "competitorId": "sap-digital-manufacturing",
     "competitorName": "SAP Digital Manufacturing",
-    "lastUpdated": "2026-05-26T14:08:14.245Z",
+    "lastUpdated": "2026-05-26T14:15:36.874Z",
     "dealContext": null,
     "whenTheyAppear": "SAP Digital Manufacturing typically appears in MES / ERP-adjacent evaluations, particularly in deals where customers are focused on Integrated ERP-to-manufacturing execution platform... They often enter through functional teams evaluating specialized solutions.",
     "theirPositioning": "Integrated ERP-to-manufacturing execution platform",
@@ -229,6 +229,267 @@
       "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
     ],
     "productImplications": "Continue strengthening Analytics / Process capabilities to match TrendMiner's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-44a3772a",
+    "competitorId": "factorylogix",
+    "competitorName": "FactoryLogix / Aegis",
+    "lastUpdated": "2026-05-26T14:15:47.533Z",
+    "dealContext": null,
+    "whenTheyAppear": "FactoryLogix / Aegis typically appears in MES / A&D evaluations, particularly in deals where customers are focused on Electronics MES with deep traceability... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Electronics MES with deep traceability",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond MES / A&D. While FactoryLogix / Aegis focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"FactoryLogix / Aegis specializes in our specific industry\"",
+      "\"They seem more focused on MES / A&D than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their MES / A&D capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge FactoryLogix / Aegis's strengths in MES / A&D, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond MES / A&D, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening MES / A&D capabilities to match FactoryLogix / Aegis's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-4a66b613",
+    "competitorId": "plex-systems",
+    "competitorName": "Plex Systems",
+    "lastUpdated": "2026-05-26T14:15:53.382Z",
+    "dealContext": null,
+    "whenTheyAppear": "Plex Systems typically appears in MES / ERP evaluations, particularly in deals where customers are focused on Cloud ERP/MES platform for manufacturing... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Cloud ERP/MES platform for manufacturing",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond MES / ERP. While Plex Systems focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Plex Systems specializes in our specific industry\"",
+      "\"They seem more focused on MES / ERP than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their MES / ERP capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Plex Systems's strengths in MES / ERP, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond MES / ERP, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening MES / ERP capabilities to match Plex Systems's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-85dfa850",
+    "competitorId": "epicor",
+    "competitorName": "Epicor",
+    "lastUpdated": "2026-05-26T14:15:57.994Z",
+    "dealContext": null,
+    "whenTheyAppear": "Epicor typically appears in ERP / MES-adjacent evaluations, particularly in deals where customers are focused on ERP suite with manufacturing execution... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "ERP suite with manufacturing execution",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond ERP / MES-adjacent. While Epicor focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Epicor specializes in our specific industry\"",
+      "\"They seem more focused on ERP / MES-adjacent than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their ERP / MES-adjacent capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Epicor's strengths in ERP / MES-adjacent, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond ERP / MES-adjacent, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening ERP / MES-adjacent capabilities to match Epicor's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-b58b0569",
+    "competitorId": "oracle-manufacturing",
+    "competitorName": "Oracle Cloud Manufacturing",
+    "lastUpdated": "2026-05-26T14:16:01.638Z",
+    "dealContext": null,
+    "whenTheyAppear": "Oracle Cloud Manufacturing typically appears in ERP / SCM evaluations, particularly in deals where customers are focused on Enterprise ERP with manufacturing cloud... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Enterprise ERP with manufacturing cloud",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond ERP / SCM. While Oracle Cloud Manufacturing focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Oracle Cloud Manufacturing specializes in our specific industry\"",
+      "\"They seem more focused on ERP / SCM than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their ERP / SCM capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Oracle Cloud Manufacturing's strengths in ERP / SCM, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond ERP / SCM, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening ERP / SCM capabilities to match Oracle Cloud Manufacturing's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-c930bc9b",
+    "competitorId": "ifscloud",
+    "competitorName": "IFS Cloud",
+    "lastUpdated": "2026-05-26T14:16:06.688Z",
+    "dealContext": null,
+    "whenTheyAppear": "IFS Cloud typically appears in ERP / EAM / Connected Worker evaluations, particularly in deals where customers are focused on Unified ERP, EAM, FSM, and Poka platform... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Unified ERP, EAM, FSM, and Poka platform",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond ERP / EAM / Connected Worker. While IFS Cloud focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"IFS Cloud specializes in our specific industry\"",
+      "\"They seem more focused on ERP / EAM / Connected Worker than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their ERP / EAM / Connected Worker capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge IFS Cloud's strengths in ERP / EAM / Connected Worker, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond ERP / EAM / Connected Worker, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening ERP / EAM / Connected Worker capabilities to match IFS Cloud's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-e1c167f3",
+    "competitorId": "infor",
+    "competitorName": "Infor",
+    "lastUpdated": "2026-05-26T14:16:09.952Z",
+    "dealContext": null,
+    "whenTheyAppear": "Infor typically appears in ERP / Manufacturing Cloud evaluations, particularly in deals where customers are focused on Industry-specific ERP with manufacturing cloud... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Industry-specific ERP with manufacturing cloud",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond ERP / Manufacturing Cloud. While Infor focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Infor specializes in our specific industry\"",
+      "\"They seem more focused on ERP / Manufacturing Cloud than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their ERP / Manufacturing Cloud capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Infor's strengths in ERP / Manufacturing Cloud, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond ERP / Manufacturing Cloud, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening ERP / Manufacturing Cloud capabilities to match Infor's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-ffdb260f",
+    "competitorId": "aptean",
+    "competitorName": "Aptean",
+    "lastUpdated": "2026-05-26T14:16:14.507Z",
+    "dealContext": null,
+    "whenTheyAppear": "Aptean typically appears in ERP / Vertical Software evaluations, particularly in deals where customers are focused on Vertical-specific ERP suites... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Vertical-specific ERP suites",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond ERP / Vertical Software. While Aptean focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Aptean specializes in our specific industry\"",
+      "\"They seem more focused on ERP / Vertical Software than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their ERP / Vertical Software capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Aptean's strengths in ERP / Vertical Software, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond ERP / Vertical Software, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening ERP / Vertical Software capabilities to match Aptean's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-6f34e8ca",
+    "competitorId": "dozuki",
+    "competitorName": "Dozuki",
+    "lastUpdated": "2026-05-26T14:16:26.306Z",
+    "dealContext": null,
+    "whenTheyAppear": "Dozuki typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Digital work instructions and training... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Digital work instructions and training",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Connected Worker. While Dozuki focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Dozuki specializes in our specific industry\"",
+      "\"They seem more focused on Connected Worker than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their Connected Worker capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Dozuki's strengths in Connected Worker, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond Connected Worker, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening Connected Worker capabilities to match Dozuki's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-e74c4e5c",
+    "competitorId": "augmentir",
+    "competitorName": "Augmentir",
+    "lastUpdated": "2026-05-26T14:16:29.152Z",
+    "dealContext": null,
+    "whenTheyAppear": "Augmentir typically appears in Connected Worker / AI evaluations, particularly in deals where customers are focused on AI-powered connected worker and skills optimization... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "AI-powered connected worker and skills optimization",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Connected Worker / AI. While Augmentir focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Augmentir specializes in our specific industry\"",
+      "\"They seem more focused on Connected Worker / AI than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their Connected Worker / AI capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Augmentir's strengths in Connected Worker / AI, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond Connected Worker / AI, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening Connected Worker / AI capabilities to match Augmentir's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   }
 ]

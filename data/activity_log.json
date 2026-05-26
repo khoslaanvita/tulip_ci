@@ -1,5 +1,19 @@
 [
   {
+    "id": "act-1779804812600",
+    "agentType": "Department Briefing",
+    "action": "Manual Run",
+    "description": "5 department briefings refreshed",
+    "timestamp": "2026-05-26T14:12:58.656Z"
+  },
+  {
+    "id": "act-1779804773834",
+    "agentType": "Intelligence Summary",
+    "action": "Manual Run",
+    "description": "Market summary refreshed — 3 events",
+    "timestamp": "2026-05-26T14:12:50.521Z"
+  },
+  {
     "id": "act-1779804688092",
     "agentType": "Email · Critical Watchlist",
     "action": "Manual Run",
