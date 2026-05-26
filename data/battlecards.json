@@ -1,9 +1,9 @@
 [
   {
-    "id": "bc-4df7c081",
+    "id": "bc-31c1d008",
     "competitorId": "poka",
     "competitorName": "Poka",
-    "lastUpdated": "2026-05-26T03:41:41.767Z",
+    "lastUpdated": "2026-05-26T04:10:24.229Z",
     "dealContext": null,
     "whenTheyAppear": "Poka typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Connected worker platform focused on digitizing frontline knowledge, training, and communication for... They often enter through functional teams evaluating specialized solutions.",
     "theirPositioning": "Connected worker platform focused on digitizing frontline knowledge, training, and communication for manufacturing teams with AI-assisted workflows. Now part of IFS industrial software ecosystem.",
@@ -29,10 +29,10 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-880f8dc9",
+    "id": "bc-240eacc7",
     "competitorId": "parsable",
     "competitorName": "Parsable",
-    "lastUpdated": "2026-05-26T03:41:41.882Z",
+    "lastUpdated": "2026-05-26T04:10:24.389Z",
     "dealContext": null,
     "whenTheyAppear": "Parsable typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Connected worker platform for operational execution, focusing on digitizing procedures, checklists, ... They often enter through functional teams evaluating specialized solutions.",
     "theirPositioning": "Connected worker platform for operational execution, focusing on digitizing procedures, checklists, and workflows for industrial frontline teams. Now integrated with CAI Software's ERP and manufacturing execution suite.",
@@ -58,10 +58,10 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-1aba713d",
+    "id": "bc-8cdc2991",
     "competitorId": "critical-manufacturing",
     "competitorName": "Critical Manufacturing",
-    "lastUpdated": "2026-05-26T03:41:41.684Z",
+    "lastUpdated": "2026-05-26T04:09:04.931Z",
     "dealContext": null,
     "whenTheyAppear": "Critical Manufacturing typically appears in MES evaluations, particularly in deals where customers are focused on Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, medical... They often enter through functional teams evaluating specialized solutions.",
     "theirPositioning": "Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, medical devices, and complex discrete manufacturing with strong emphasis on Industry 4.0 capabilities and traceability.",
@@ -87,10 +87,10 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-15659f56",
+    "id": "bc-01e82e82",
     "competitorId": "apprentice",
     "competitorName": "Apprentice.io",
-    "lastUpdated": "2026-05-26T03:41:42.003Z",
+    "lastUpdated": "2026-05-26T04:10:24.518Z",
     "dealContext": null,
     "whenTheyAppear": "Apprentice.io typically appears in Life Sciences / Pharma evaluations, particularly in deals where customers are focused on Purpose-built manufacturing execution platform for life sciences and pharmaceutical manufacturing wi... They often enter through functional teams evaluating specialized solutions.",
     "theirPositioning": "Purpose-built manufacturing execution platform for life sciences and pharmaceutical manufacturing with focus on compliance, batch records, and quality. Strong in biopharma, cell & gene therapy.",
@@ -116,10 +116,10 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-3c5e1e02",
+    "id": "bc-7b44b2b3",
     "competitorId": "siemens-xcelerator",
     "competitorName": "Siemens MindSphere / Xcelerator",
-    "lastUpdated": "2026-05-26T03:52:37.904Z",
+    "lastUpdated": "2026-05-26T04:10:24.677Z",
     "dealContext": null,
     "whenTheyAppear": "Siemens MindSphere / Xcelerator typically appears in SCADA / Industrial Platform evaluations, particularly in deals where customers are focused on Industrial IoT and automation platform combining operational technology (OT) with IT systems for com... They often enter through functional teams evaluating specialized solutions.",
     "theirPositioning": "Industrial IoT and automation platform combining operational technology (OT) with IT systems for comprehensive digital manufacturing. Open digital business platform with massive ecosystem and industrial AI focus.",
@@ -145,10 +145,10 @@
     "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
   },
   {
-    "id": "bc-5df29eb9",
+    "id": "bc-2772957b",
     "competitorId": "tulip",
     "competitorName": "Tulip",
-    "lastUpdated": "2026-05-26T03:41:41.494Z",
+    "lastUpdated": "2026-05-26T04:10:24.063Z",
     "dealContext": null,
     "whenTheyAppear": "Tulip typically appears in Frontline Operations Platform evaluations, particularly in deals where customers are focused on No-code frontline operations platform empowering manufacturers to build custom apps for shop floor d... They often enter through functional teams evaluating specialized solutions.",
     "theirPositioning": "No-code frontline operations platform empowering manufacturers to build custom apps for shop floor digitization. Combines machine connectivity, analytics, and worker guidance. Unicorn status ($1.3B valuation) validates market leadership across automotive, aerospace, pharma, and electronics verticals.",
