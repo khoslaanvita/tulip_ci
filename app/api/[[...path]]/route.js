@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { readJSON, writeJSON, appendToJSON, updateInJSON } from '@/lib/storage';
 import { analyzeSignalWithAI, generateBattlecardWithAI, generateEmailAlert } from '@/lib/ai-helpers';
 import { startScheduler, getSchedulerStatus } from '@/lib/agent-scheduler';
+import { generateVoCInsights, getVoCStats, getTranscriptsForCompetitor } from '@/lib/voc-agent';
 
 // Start the background scheduler when the API loads
 if (typeof window === 'undefined') { // Server-side only
@@ -122,6 +123,23 @@ export async function GET(request) {
     if (path === '/scheduler/status') {
       const status = getSchedulerStatus();
       return NextResponse.json(status);
+    }
+
+    // GET /api/voc/stats - Get Voice of Customer statistics
+    if (path === '/voc/stats') {
+      const stats = getVoCStats();
+      return NextResponse.json(stats);
+    }
+
+    // GET /api/voc/:competitorId - Get VoC insights for a specific competitor
+    if (path.startsWith('/voc/')) {
+      const competitorId = path.split('/')[2];
+      if (!competitorId) {
+        return NextResponse.json({ error: 'Competitor ID required' }, { status: 400 });
+      }
+      
+      const insights = await generateVoCInsights(competitorId);
+      return NextResponse.json(insights);
     }
 
     return NextResponse.json({ error: 'Not found' }, { status: 404 });

@@ -69,8 +69,8 @@
     "employees": "467-541",
     "funding": "Private",
     "valuation": "N/A",
-    "threatLevel": "high",
-    "threatScore": 38,
+    "threatLevel": "low",
+    "threatScore": 5,
     "positioning": "Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, medical devices, and complex discrete manufacturing with strong emphasis on Industry 4.0 capabilities and traceability.",
     "strengths": [
       "Deep domain expertise in semiconductor manufacturing",
@@ -147,8 +147,8 @@
       "Emphasizing AI-powered search and text tools for manufacturing"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 43,
-    "threatLevel": "high"
+    "threatScore": 10,
+    "threatLevel": "medium"
   },
   {
     "id": "parsable",
@@ -193,8 +193,8 @@
       "Lightspeed Venture Partners remains investor in combined company"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 33,
-    "threatLevel": "high"
+    "threatScore": 5,
+    "threatLevel": "low"
   },
   {
     "id": "apprentice",
@@ -239,8 +239,8 @@
       "Strong growth in cell & gene therapy segment"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 43,
-    "threatLevel": "high"
+    "threatScore": 5,
+    "threatLevel": "low"
   },
   {
     "id": "siemens-xcelerator",
@@ -288,7 +288,7 @@
       "Showcased AWS collaboration for industrial AI at CES 2025"
     ],
     "lastUpdated": "2025-05-26T00:00:00Z",
-    "threatScore": 28,
-    "threatLevel": "high"
+    "threatScore": 0,
+    "threatLevel": "low"
   }
 ]

@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, TrendingUp, AlertTriangle, DollarSign, Sparkles, Rss, ExternalLink, Users, TrendingDown } from 'lucide-react';
+import { ArrowLeft, TrendingUp, AlertTriangle, DollarSign, Sparkles, Rss, ExternalLink, Users, TrendingDown, MessageSquare, Phone } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function CompetitorProfilePage() {
@@ -19,6 +19,8 @@ export default function CompetitorProfilePage() {
   const [battlecard, setBattlecard] = useState(null);
   const [loading, setLoading] = useState(true);
   const [generatingBattlecard, setGeneratingBattlecard] = useState(false);
+  const [vocInsights, setVocInsights] = useState(null);
+  const [loadingVoC, setLoadingVoC] = useState(false);
 
   useEffect(() => {
     if (competitorId) {
@@ -72,6 +74,26 @@ export default function CompetitorProfilePage() {
       toast.error('Failed to generate battlecard');
     } finally {
       setGeneratingBattlecard(false);
+    }
+  }
+
+  async function loadVoCInsights() {
+    setLoadingVoC(true);
+    try {
+      const response = await fetch(`/api/voc/${competitorId}`);
+      const data = await response.json();
+      setVocInsights(data);
+      
+      if (data.totalMentions > 0) {
+        toast.success(`Found ${data.totalMentions} customer conversations mentioning this competitor`);
+      } else {
+        toast.info('No customer conversations mention this competitor yet');
+      }
+    } catch (error) {
+      console.error('Error loading VoC insights:', error);
+      toast.error('Failed to load customer insights');
+    } finally {
+      setLoadingVoC(false);
     }
   }
 
@@ -149,6 +171,7 @@ export default function CompetitorProfilePage() {
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList>
           <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="voc">Voice of Customer</TabsTrigger>
           <TabsTrigger value="battlecard">Battlecard</TabsTrigger>
           <TabsTrigger value="signals">Recent Signals</TabsTrigger>
           <TabsTrigger value="sources">Sources</TabsTrigger>
@@ -310,6 +333,213 @@ export default function CompetitorProfilePage() {
             </Card>
           </div>
           
+          {/* White space at bottom */}
+          <div className="h-16"></div>
+        </TabsContent>
+
+        <TabsContent value="voc" className="space-y-6">
+          {!vocInsights ? (
+            <Card className="border border-gray-200">
+              <CardContent className="flex flex-col items-center justify-center py-12">
+                <MessageSquare className="h-12 w-12 text-gray-400 mb-4" />
+                <p className="text-gray-600 mb-4">Analyze customer conversations mentioning this competitor</p>
+                <Button 
+                  onClick={loadVoCInsights} 
+                  disabled={loadingVoC}
+                  className="bg-black hover:bg-gray-800"
+                >
+                  {loadingVoC ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Analyzing...
+                    </>
+                  ) : (
+                    <>
+                      <Phone className="mr-2 h-4 w-4" />
+                      Analyze Voice of Customer
+                    </>
+                  )}
+                </Button>
+              </CardContent>
+            </Card>
+          ) : (
+            <>
+              {/* VoC Summary */}
+              <Card className="border border-gray-200">
+                <CardHeader className="border-b border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <CardTitle className="text-2xl font-light">Voice of Customer Intelligence</CardTitle>
+                      <CardDescription className="text-gray-600 mt-1">
+                        Insights from {vocInsights.totalMentions} customer conversations
+                      </CardDescription>
+                    </div>
+                    <Button 
+                      onClick={loadVoCInsights} 
+                      disabled={loadingVoC}
+                      variant="outline"
+                      size="sm"
+                      className="border-gray-300"
+                    >
+                      Refresh
+                    </Button>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  {vocInsights.summary && (
+                    <div className="space-y-6">
+                      {/* Overall Sentiment */}
+                      <div>
+                        <h3 className="font-medium text-gray-900 mb-2">Overall Customer Sentiment</h3>
+                        <p className="text-sm text-gray-700">{vocInsights.summary.overallSentiment}</p>
+                      </div>
+
+                      <Separator />
+
+                      {/* Strengths and Weaknesses */}
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div>
+                          <h3 className="font-medium text-gray-900 mb-3">Common Strengths</h3>
+                          <ul className="space-y-2">
+                            {vocInsights.summary.commonStrengths?.map((strength, idx) => (
+                              <li key={idx} className="text-sm text-gray-700 flex items-start gap-2">
+                                <span className="text-green-600 mt-0.5">✓</span>
+                                <span>{strength}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h3 className="font-medium text-gray-900 mb-3">Common Weaknesses</h3>
+                          <ul className="space-y-2">
+                            {vocInsights.summary.commonWeaknesses?.map((weakness, idx) => (
+                              <li key={idx} className="text-sm text-gray-700 flex items-start gap-2">
+                                <span className="text-red-600 mt-0.5">✗</span>
+                                <span>{weakness}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      <Separator />
+
+                      {/* Tulip Advantages */}
+                      <div>
+                        <h3 className="font-medium text-gray-900 mb-3">How Tulip Wins (Based on Customer Feedback)</h3>
+                        <ul className="space-y-2">
+                          {vocInsights.summary.tulipAdvantages?.map((advantage, idx) => (
+                            <li key={idx} className="text-sm text-gray-700 flex items-start gap-2">
+                              <span className="text-blue-600 mt-0.5">→</span>
+                              <span>{advantage}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Pricing Position */}
+                      {vocInsights.summary.pricePositioning && (
+                        <>
+                          <Separator />
+                          <div>
+                            <h3 className="font-medium text-gray-900 mb-2">Price Positioning</h3>
+                            <p className="text-sm text-gray-700">{vocInsights.summary.pricePositioning}</p>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+
+              {/* Individual Conversations */}
+              <Card className="border border-gray-200">
+                <CardHeader className="border-b border-gray-100">
+                  <CardTitle className="text-xl font-light">Customer Conversations</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Detailed insights from individual customer calls
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  <div className="space-y-6">
+                    {vocInsights.insights?.map((insight, idx) => (
+                      <div key={idx} className="p-4 border border-gray-200 rounded-lg">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <p className="font-medium text-gray-900">{insight.customerName}</p>
+                            <p className="text-xs text-gray-500 mt-1">
+                              {insight.industry} • {insight.date} • {insight.type}
+                            </p>
+                          </div>
+                          <div className="flex gap-2">
+                            <Badge variant="outline" className="border-gray-300 text-gray-700">
+                              {insight.dealStage}
+                            </Badge>
+                            <Badge 
+                              variant={insight.sentiment === 'positive' ? 'default' : insight.sentiment === 'at-risk' ? 'destructive' : 'secondary'}
+                            >
+                              {insight.sentiment}
+                            </Badge>
+                          </div>
+                        </div>
+
+                        {/* Customer Perception */}
+                        {insight.customerPerception && (
+                          <div className="mb-3">
+                            <p className="text-sm font-medium text-gray-700 mb-1">Customer Perception:</p>
+                            <p className="text-sm text-gray-600">{insight.customerPerception}</p>
+                          </div>
+                        )}
+
+                        {/* Key Quote */}
+                        {insight.keyQuote && (
+                          <div className="bg-gray-50 border-l-4 border-gray-300 p-3 mb-3">
+                            <p className="text-sm italic text-gray-700">"{insight.keyQuote}"</p>
+                          </div>
+                        )}
+
+                        {/* Competitive Differentiators */}
+                        {insight.competitiveDifferentiators && (
+                          <div className="mb-3">
+                            <p className="text-sm font-medium text-gray-700 mb-1">How Tulip Differentiated:</p>
+                            <p className="text-sm text-gray-600">{insight.competitiveDifferentiators}</p>
+                          </div>
+                        )}
+
+                        {/* Win Probability */}
+                        <div className="flex items-center gap-4 text-xs text-gray-500">
+                          <span>Win Probability: <span className="font-medium text-gray-900">{insight.winProbability}</span></span>
+                          {insight.urgency && (
+                            <span>Urgency: <span className="font-medium text-gray-900">{insight.urgency}</span></span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Recommended Actions */}
+              {vocInsights.summary?.recommendedActions && vocInsights.summary.recommendedActions.length > 0 && (
+                <Card className="border border-gray-200 bg-blue-50">
+                  <CardHeader>
+                    <CardTitle className="text-lg font-medium text-blue-900">Recommended Actions</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {vocInsights.summary.recommendedActions.map((action, idx) => (
+                        <li key={idx} className="text-sm text-blue-800 flex items-start gap-2">
+                          <span className="text-blue-600 mt-0.5">•</span>
+                          <span>{action}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              )}
+            </>
+          )}
+
           {/* White space at bottom */}
           <div className="h-16"></div>
         </TabsContent>
