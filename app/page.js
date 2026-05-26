@@ -169,6 +169,12 @@ function Dashboard() {
             Generate Battlecard
           </Button>
         </Link>
+        <Link href="/methodology">
+          <Button variant="outline">
+            <Bell className="mr-2 h-4 w-4" />
+            Methodology & Docs
+          </Button>
+        </Link>
         <Link href="/activity">
           <Button variant="outline">
             <Bell className="mr-2 h-4 w-4" />
