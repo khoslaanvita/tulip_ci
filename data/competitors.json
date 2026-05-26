@@ -1,0 +1,117 @@
+[
+  {
+    "id": "critical-manufacturing",
+    "name": "Critical Manufacturing",
+    "category": "MES",
+    "positioning": "Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, and complex discrete manufacturing with strong emphasis on Industry 4.0 capabilities.",
+    "strengths": [
+      "Deep domain expertise in semiconductor manufacturing",
+      "Highly configurable and scalable MES platform",
+      "Strong track record with Fortune 500 manufacturers",
+      "Advanced real-time data analytics and reporting"
+    ],
+    "weaknesses": [
+      "Complex implementation requiring significant IT resources",
+      "Higher total cost of ownership",
+      "Longer deployment timelines (6-12+ months)",
+      "Less focus on frontline worker experience",
+      "Requires specialized training and consultants"
+    ],
+    "pricingNotes": "Enterprise pricing model, typically $250K-$2M+ depending on facility size and modules. Requires professional services engagement.",
+    "aiClaims": "Promotes AI-driven predictive quality and yield optimization, though primarily relies on rules-based automation with some ML components.",
+    "lastUpdated": "2025-06-15T10:30:00Z"
+  },
+  {
+    "id": "poka",
+    "name": "Poka",
+    "category": "Connected Worker",
+    "positioning": "Connected worker platform focused on digitizing frontline knowledge, training, and communication for manufacturing teams with AI-assisted workflows.",
+    "strengths": [
+      "Intuitive mobile-first interface loved by frontline workers",
+      "Strong focus on knowledge management and training",
+      "Quick deployment (weeks not months)",
+      "AI-powered content recommendations and search",
+      "Growing momentum in discrete manufacturing"
+    ],
+    "weaknesses": [
+      "Less comprehensive than full MES solutions",
+      "Limited machine connectivity and IoT integration",
+      "Smaller company with less enterprise presence",
+      "Lacks deep shop floor execution capabilities",
+      "Still building out analytics and reporting"
+    ],
+    "pricingNotes": "SaaS subscription model, approximately $10-25 per user/month. More accessible pricing for mid-market.",
+    "aiClaims": "Emphasizes AI-assisted frontline knowledge workflows, content recommendations, and automated SOPs. Uses GPT-based models for knowledge synthesis.",
+    "lastUpdated": "2025-06-14T15:20:00Z"
+  },
+  {
+    "id": "parsable",
+    "name": "Parsable",
+    "category": "Connected Worker",
+    "positioning": "Connected worker platform for operational execution, focusing on digitizing procedures, checklists, and workflows for industrial frontline teams.",
+    "strengths": [
+      "Strong in process industries (chemicals, food & beverage, CPG)",
+      "Robust digital workflows and procedure execution",
+      "Good compliance and audit trail capabilities",
+      "Integration with existing enterprise systems",
+      "Proven ROI in reducing errors and improving efficiency"
+    ],
+    "weaknesses": [
+      "Less modern UI compared to newer entrants",
+      "Primarily focused on procedure execution vs broader shop floor",
+      "Limited machine data integration",
+      "Slower innovation pace in recent years",
+      "Less emphasis on knowledge management"
+    ],
+    "pricingNotes": "Enterprise SaaS model, typically $15-30 per user/month with minimum seat counts. Professional services required for customization.",
+    "aiClaims": "Recently started messaging around AI-powered insights and workflow optimization, but AI features are still emerging.",
+    "lastUpdated": "2025-06-13T09:45:00Z"
+  },
+  {
+    "id": "apprentice",
+    "name": "Apprentice.io",
+    "category": "Life Sciences / Pharma",
+    "positioning": "Purpose-built manufacturing execution platform for life sciences and pharmaceutical manufacturing with focus on compliance, batch records, and quality.",
+    "strengths": [
+      "Deep pharma and biotech domain expertise",
+      "Strong compliance and 21 CFR Part 11 capabilities",
+      "Electronic batch records and quality workflows",
+      "Validated system reducing regulatory burden",
+      "Growing presence in cell & gene therapy"
+    ],
+    "weaknesses": [
+      "Narrow vertical focus limits applicability",
+      "Smaller company with limited resources",
+      "Less proven in high-volume discrete manufacturing",
+      "Higher switching costs due to validation requirements",
+      "Limited frontline worker engagement features"
+    ],
+    "pricingNotes": "Subscription + implementation model. Pricing varies significantly by facility complexity and validation requirements. Typically $100K-$500K annual.",
+    "aiClaims": "Beginning to incorporate AI for deviation detection and quality predictions. Messaging around intelligent batch analytics.",
+    "lastUpdated": "2025-06-12T14:10:00Z"
+  },
+  {
+    "id": "siemens-xcelerator",
+    "name": "Siemens MindSphere / Xcelerator",
+    "category": "SCADA / Industrial Platform",
+    "positioning": "Industrial IoT and automation platform from Siemens, combining operational technology (OT) with IT systems for comprehensive digital manufacturing.",
+    "strengths": [
+      "Siemens brand and massive enterprise presence",
+      "Deep OT/automation expertise and hardware integration",
+      "Comprehensive industrial software portfolio",
+      "Strong in process industries and automotive",
+      "Significant R&D investment in industrial AI"
+    ],
+    "weaknesses": [
+      "Extremely complex with steep learning curve",
+      "Requires Siemens ecosystem lock-in",
+      "Very expensive with long implementation cycles",
+      "Overwhelming for mid-market manufacturers",
+      "Poor frontline worker experience - IT/OT focused",
+      "Difficult to extract value without significant consultancy"
+    ],
+    "pricingNotes": "Enterprise platform pricing, highly variable. Can range from $500K to $10M+ for full deployment. Significant consulting and integration costs.",
+    "aiClaims": "Heavy messaging around industrial AI, predictive maintenance, and autonomous optimization. Leverages Siemens Industrial AI capabilities but requires significant data infrastructure.",
+    "lastUpdated": "2025-06-15T11:00:00Z"
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "bc-9e4cd7de",
+    "competitorId": "poka",
+    "competitorName": "Poka",
+    "lastUpdated": "2026-05-26T02:02:41.761Z",
+    "dealContext": null,
+    "whenTheyAppear": "Poka typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Connected worker platform focused on digitizing frontline knowledge, training, and communication for... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Connected worker platform focused on digitizing frontline knowledge, training, and communication for manufacturing teams with AI-assisted workflows.",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Connected Worker. While Poka focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Poka specializes in our specific industry\"",
+      "\"They seem more focused on Connected Worker than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their Connected Worker capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Poka's strengths in Connected Worker, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond Connected Worker, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening Connected Worker capabilities to match Poka's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  },
+  {
+    "id": "bc-fdcbdc64",
+    "competitorId": "parsable",
+    "competitorName": "Parsable",
+    "lastUpdated": "2026-05-26T02:00:48.916Z",
+    "dealContext": null,
+    "whenTheyAppear": "Parsable typically appears in Connected Worker evaluations, particularly in deals where customers are focused on Connected worker platform for operational execution, focusing on digitizing procedures, checklists, ... They often enter through functional teams evaluating specialized solutions.",
+    "theirPositioning": "Connected worker platform for operational execution, focusing on digitizing procedures, checklists, and workflows for industrial frontline teams.",
+    "whereTulipWins": "Tulip wins by offering a comprehensive platform approach that goes beyond Connected Worker. While Parsable focuses on their specific niche, Tulip provides end-to-end shop floor digitization including machine connectivity, quality management, analytics, and custom app building. This prevents customers from needing multiple point solutions.",
+    "likelyObjections": [
+      "\"Parsable specializes in our specific industry\"",
+      "\"They seem more focused on Connected Worker than Tulip\"",
+      "\"Their pricing appears more straightforward\"",
+      "\"We've heard good things about their Connected Worker capabilities\"",
+      "\"Tulip seems like it might be overkill for our needs\""
+    ],
+    "salesResponse": "Acknowledge Parsable's strengths in Connected Worker, then expand the conversation to other manufacturing challenges beyond their core focus. Position Tulip as a platform that starts with their needs but scales to address broader shop floor requirements, avoiding the complexity and cost of multiple disconnected systems. Reference customers who started focused and expanded their use cases.",
+    "discoveryQuestions": [
+      "Beyond Connected Worker, what other shop floor challenges are you trying to solve?",
+      "How important is it to have a unified platform vs multiple point solutions?",
+      "Who else in your organization has requirements for shop floor digitization?",
+      "How do you plan to scale your digital transformation over the next 2-3 years?",
+      "What's your strategy for connecting machines and collecting real-time production data?",
+      "How important is flexibility to customize workflows as your needs evolve?",
+      "What's your experience with platforms that require IT/OT specialists vs engineer-friendly tools?"
+    ],
+    "productImplications": "Continue strengthening Connected Worker capabilities to match Parsable's specialized features. Highlight platform advantages and ease of expansion. Consider industry-specific templates or starter packs that demonstrate quick value.",
+    "marketingImplications": "Develop content comparing platform vs point solution approaches. Create customer stories showing evolution from single use case to comprehensive adoption. Build competitive comparison content emphasizing Tulip's broader value proposition and lower TCO over time."
+  }
+]

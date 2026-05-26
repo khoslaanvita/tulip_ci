@@ -1,0 +1,61 @@
+[
+  {
+    "id": "act-e08cb445",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 1 competitors and found 1 signals",
+    "timestamp": "2026-05-26T01:59:29.716Z",
+    "result": {
+      "signalsFound": 1,
+      "competitors": [
+        "Poka"
+      ]
+    }
+  },
+  {
+    "id": "act-d1819d2a",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Poka based on 2 recent signals",
+    "timestamp": "2026-05-26T02:00:44.492Z",
+    "result": {
+      "battlecardId": "bc-25211fd7",
+      "competitorName": "Poka"
+    }
+  },
+  {
+    "id": "act-efe4559a",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 1 competitors and found 1 signals",
+    "timestamp": "2026-05-26T02:00:44.493Z",
+    "result": {
+      "signalsFound": 1,
+      "competitors": [
+        "Poka"
+      ]
+    }
+  },
+  {
+    "id": "act-f8ef0f7a",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Parsable based on 1 recent signals",
+    "timestamp": "2026-05-26T02:00:48.916Z",
+    "result": {
+      "battlecardId": "bc-fdcbdc64",
+      "competitorName": "Parsable"
+    }
+  },
+  {
+    "id": "act-4f45bf0e",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Poka based on 2 recent signals",
+    "timestamp": "2026-05-26T02:02:41.761Z",
+    "result": {
+      "battlecardId": "bc-9e4cd7de",
+      "competitorName": "Poka"
+    }
+  }
+]
