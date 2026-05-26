@@ -124,8 +124,19 @@ export default function CompetitorProfilePage() {
             <div className="flex items-center gap-3">
               <h1 className="text-3xl font-bold tracking-tight">{competitor.name}</h1>
               <Badge variant="outline" className="text-sm">{competitor.category}</Badge>
+              {competitor.id === 'tulip' && (
+                <Badge variant="default">Reference Competitor</Badge>
+              )}
             </div>
-            <p className="text-muted-foreground mt-1">Last updated: {new Date(competitor.lastUpdated).toLocaleDateString()}</p>
+            <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
+              <span><strong>Revenue:</strong> <span className="text-green-600 font-semibold">{competitor.revenue}</span></span>
+              <span>•</span>
+              <span><strong>Employees:</strong> {competitor.employees}</span>
+              <span>•</span>
+              <span><strong>HQ:</strong> {competitor.headquarters}</span>
+              <span>•</span>
+              <span><strong>Founded:</strong> {competitor.founded}</span>
+            </div>
           </div>
         </div>
         
@@ -143,6 +154,65 @@ export default function CompetitorProfilePage() {
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
+          {/* Key Metrics Card */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Company Overview</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div>
+                  <p className="text-sm text-muted-foreground mb-1">Annual Revenue</p>
+                  <p className="text-2xl font-bold text-green-600">{competitor.revenue}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground mb-1">Total Funding</p>
+                  <p className="text-2xl font-bold text-blue-600">{competitor.funding}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground mb-1">Employees</p>
+                  <p className="text-2xl font-bold">{competitor.employees}</p>
+                </div>
+              </div>
+              <div className="mt-6 grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span className="text-muted-foreground">Headquarters:</span>
+                  <span className="ml-2 font-medium">{competitor.headquarters}</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground">Founded:</span>
+                  <span className="ml-2 font-medium">{competitor.founded}</span>
+                </div>
+                {competitor.valuation && competitor.valuation !== 'N/A' && (
+                  <div>
+                    <span className="text-muted-foreground">Valuation:</span>
+                    <span className="ml-2 font-medium">{competitor.valuation}</span>
+                  </div>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Recent News */}
+          {competitor.recentNews && competitor.recentNews.length > 0 && (
+            <Card>
+              <CardHeader>
+                <CardTitle>Recent News & Updates</CardTitle>
+                <CardDescription>Latest developments from {competitor.name}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {competitor.recentNews.map((news, idx) => (
+                    <li key={idx} className="flex items-start gap-2 pb-3 border-b last:border-0 last:pb-0">
+                      <span className="text-primary mt-1">📰</span>
+                      <span className="text-sm text-muted-foreground">{news}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+
           {/* Positioning */}
           <Card>
             <CardHeader>

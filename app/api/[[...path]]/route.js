@@ -2,6 +2,12 @@ import { NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 import { readJSON, writeJSON, appendToJSON, updateInJSON } from '@/lib/storage';
 import { analyzeSignalWithAI, generateBattlecardWithAI, generateEmailAlert } from '@/lib/ai-helpers';
+import { startScheduler, getSchedulerStatus } from '@/lib/agent-scheduler';
+
+// Start the background scheduler when the API loads
+if (typeof window === 'undefined') { // Server-side only
+  startScheduler();
+}
 
 export async function GET(request) {
   const { pathname, searchParams } = new URL(request.url);
@@ -110,6 +116,12 @@ export async function GET(request) {
       const log = readJSON('activity-log.json');
       log.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
       return NextResponse.json(log);
+    }
+
+    // GET /api/scheduler/status - Get scheduler status
+    if (path === '/scheduler/status') {
+      const status = getSchedulerStatus();
+      return NextResponse.json(status);
     }
 
     return NextResponse.json({ error: 'Not found' }, { status: 404 });

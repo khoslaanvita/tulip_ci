@@ -57,5 +57,199 @@
       "battlecardId": "bc-9e4cd7de",
       "competitorName": "Poka"
     }
+  },
+  {
+    "id": "act-fcd8fafa",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Critical Manufacturing based on 1 recent signals",
+    "timestamp": "2026-05-26T02:04:46.794Z",
+    "result": {
+      "battlecardId": "bc-b1e4b3c4",
+      "competitorName": "Critical Manufacturing"
+    }
+  },
+  {
+    "id": "act-d31340f8",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Critical Manufacturing based on 2 recent signals",
+    "timestamp": "2026-05-26T02:05:13.692Z",
+    "result": {
+      "battlecardId": "bc-bd726f43",
+      "competitorName": "Critical Manufacturing"
+    }
+  },
+  {
+    "id": "act-e9d475fa",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Parsable based on 2 recent signals",
+    "timestamp": "2026-05-26T02:05:13.883Z",
+    "result": {
+      "battlecardId": "bc-136a91c8",
+      "competitorName": "Parsable"
+    }
+  },
+  {
+    "id": "act-4a60e90a",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Apprentice.io based on 2 recent signals",
+    "timestamp": "2026-05-26T02:05:13.997Z",
+    "result": {
+      "battlecardId": "bc-56d19e1e",
+      "competitorName": "Apprentice.io"
+    }
+  },
+  {
+    "id": "act-a25bf062",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Siemens MindSphere / Xcelerator based on 2 recent signals",
+    "timestamp": "2026-05-26T02:05:14.145Z",
+    "result": {
+      "battlecardId": "bc-f2adc263",
+      "competitorName": "Siemens MindSphere / Xcelerator"
+    }
+  },
+  {
+    "id": "act-86b7e951",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 5 competitors and found 5 signals",
+    "timestamp": "2026-05-26T02:05:14.145Z",
+    "result": {
+      "signalsFound": 5,
+      "competitors": [
+        "Critical Manufacturing",
+        "Poka",
+        "Parsable",
+        "Apprentice.io",
+        "Siemens MindSphere / Xcelerator"
+      ]
+    }
+  },
+  {
+    "id": "act-5b34546b",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Critical Manufacturing based on 3 recent signals",
+    "timestamp": "2026-05-26T02:05:17.758Z",
+    "result": {
+      "battlecardId": "bc-b2d0f438",
+      "competitorName": "Critical Manufacturing"
+    }
+  },
+  {
+    "id": "act-5f476831",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Parsable based on 3 recent signals",
+    "timestamp": "2026-05-26T02:05:17.964Z",
+    "result": {
+      "battlecardId": "bc-236b8abb",
+      "competitorName": "Parsable"
+    }
+  },
+  {
+    "id": "act-de4be3e2",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Apprentice.io based on 3 recent signals",
+    "timestamp": "2026-05-26T02:05:18.107Z",
+    "result": {
+      "battlecardId": "bc-84ec57c9",
+      "competitorName": "Apprentice.io"
+    }
+  },
+  {
+    "id": "act-ede28dc8",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 5 competitors and found 5 signals",
+    "timestamp": "2026-05-26T02:05:18.181Z",
+    "result": {
+      "signalsFound": 5,
+      "competitors": [
+        "Critical Manufacturing",
+        "Poka",
+        "Parsable",
+        "Apprentice.io",
+        "Siemens MindSphere / Xcelerator"
+      ]
+    }
+  },
+  {
+    "id": "act-f85d6828",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Poka based on 5 recent signals",
+    "timestamp": "2026-05-26T02:05:20.360Z",
+    "result": {
+      "battlecardId": "bc-48c6aa12",
+      "competitorName": "Poka"
+    }
+  },
+  {
+    "id": "act-cc2740d7",
+    "agentType": "Battlecard Update",
+    "action": "Battlecard Generated",
+    "description": "Updated battlecard for Apprentice.io based on 4 recent signals",
+    "timestamp": "2026-05-26T02:05:20.553Z",
+    "result": {
+      "battlecardId": "bc-1f1ef2d5",
+      "competitorName": "Apprentice.io"
+    }
+  },
+  {
+    "id": "act-3d6d2743",
+    "agentType": "Market Monitor",
+    "action": "Market Scan Completed",
+    "description": "Scanned 5 competitors and found 5 signals",
+    "timestamp": "2026-05-26T02:05:20.623Z",
+    "result": {
+      "signalsFound": 5,
+      "competitors": [
+        "Critical Manufacturing",
+        "Poka",
+        "Parsable",
+        "Apprentice.io",
+        "Siemens MindSphere / Xcelerator"
+      ]
+    }
+  },
+  {
+    "id": "act-1779762108730",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:21:48.730Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762109322",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:21:49.322Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
+  },
+  {
+    "id": "act-1779762109815",
+    "agentType": "Market Monitor",
+    "action": "Scheduled Scan",
+    "description": "Automated scan of 6 competitor sources completed. No new high-priority signals detected.",
+    "timestamp": "2026-05-26T02:21:49.815Z",
+    "result": {
+      "competitorsScanned": 6,
+      "newSignals": 0
+    }
   }
 ]

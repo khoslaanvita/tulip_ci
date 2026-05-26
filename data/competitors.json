@@ -1,117 +1,278 @@
 [
   {
+    "id": "tulip",
+    "name": "Tulip",
+    "category": "Frontline Operations Platform",
+    "headquarters": "Somerville, MA, USA",
+    "founded": "2014",
+    "revenue": "$50M ARR",
+    "employees": "340",
+    "funding": "$152.5M (Series D)",
+    "valuation": "$150M",
+    "positioning": "No-code frontline operations platform that empowers manufacturers to build custom apps for shop floor digitization, combining machine connectivity, analytics, and worker guidance for Industry 4.0 transformation.",
+    "strengths": [
+      "No-code app builder loved by engineers and frontline teams",
+      "Strong machine connectivity and IoT integration",
+      "Comprehensive platform: work instructions + quality + analytics + traceability",
+      "Fast deployment (weeks) with immediate ROI",
+      "AI Composer and AI Agents for automated app creation",
+      "Growing library of reusable templates and industry-specific apps"
+    ],
+    "weaknesses": [
+      "Smaller than enterprise MES vendors like Siemens",
+      "Less vertical-specific depth than niche players",
+      "Requires change management for full adoption",
+      "May need training for complex use cases"
+    ],
+    "pricingNotes": "Subscription model, typically per-user pricing with platform fee. Mid-market accessible, enterprise scalable. Pricing varies by deployment size and modules.",
+    "aiClaims": "AI Composer converts SOPs/videos into apps. Tulip AI Agents analyze data and automate tasks. Strong vision AI for quality inspection. Focus on practical manufacturing AI applications.",
+    "keyProducts": [
+      "AI Composer",
+      "Tulip AI Agents",
+      "Functions",
+      "OpsMoto",
+      "Frontline QMS",
+      "Composable MES"
+    ],
+    "recentNews": [
+      "Launched AI Composer for SOP-to-app conversion (2025)",
+      "Introduced Tulip AI Agents for configurable automation (2025)",
+      "Released OpsMoto enterprise dashboard (2025 beta)",
+      "Expanded Library with no-code MES app suites (June 2025)",
+      "Partnership with Sartorius for biopharma (2025)"
+    ],
+    "lastUpdated": "2025-05-26T00:00:00Z"
+  },
+  {
     "id": "critical-manufacturing",
     "name": "Critical Manufacturing",
     "category": "MES",
-    "positioning": "Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, and complex discrete manufacturing with strong emphasis on Industry 4.0 capabilities.",
+    "headquarters": "Porto, Portugal",
+    "founded": "2009",
+    "revenue": "$43.9M - $54.9M (est.)",
+    "employees": "467-541",
+    "funding": "Private",
+    "valuation": "N/A",
+    "threatLevel": "low",
+    "threatScore": 5,
+    "positioning": "Enterprise-grade Manufacturing Execution System (MES) focused on semiconductor, electronics, medical devices, and complex discrete manufacturing with strong emphasis on Industry 4.0 capabilities and traceability.",
     "strengths": [
       "Deep domain expertise in semiconductor manufacturing",
       "Highly configurable and scalable MES platform",
-      "Strong track record with Fortune 500 manufacturers",
-      "Advanced real-time data analytics and reporting"
+      "Strong track record with Fortune 500 manufacturers (Intel, Infineon, Philips, Medtronic)",
+      "Advanced real-time data analytics and reporting",
+      "AWS cloud deployment available (June 2025)",
+      "Strong traceability and digital twin capabilities"
     ],
     "weaknesses": [
       "Complex implementation requiring significant IT resources",
       "Higher total cost of ownership",
       "Longer deployment timelines (6-12+ months)",
       "Less focus on frontline worker experience",
-      "Requires specialized training and consultants"
+      "Requires specialized training and consultants",
+      "More expensive than mid-market solutions"
     ],
-    "pricingNotes": "Enterprise pricing model, typically $250K-$2M+ depending on facility size and modules. Requires professional services engagement.",
-    "aiClaims": "Promotes AI-driven predictive quality and yield optimization, though primarily relies on rules-based automation with some ML components.",
+    "pricingNotes": "Enterprise pricing model, typically $250K-$2M+ depending on facility size and modules. Requires professional services engagement. Target customers are large manufacturers.",
+    "aiClaims": "Promotes AI-ready manufacturing execution with intelligent operations. Focus on traceability, BOM variation management, dynamic data tools, and analytics. Less emphasis on generative AI compared to newer platforms.",
+    "keyProducts": [
+      "MES Platform",
+      "Digital Twin",
+      "Analytics",
+      "Traceability",
+      "BOM Management"
+    ],
+    "recentNews": [
+      "MES now available on AWS for flexible cloud deployment (June 4, 2025)",
+      "Hosted MES & Industry 4.0 Summit 2025 in Porto (June 2025)",
+      "Demonstrated MES capabilities at Hannover Messe 2025 (March 2025)",
+      "Serves customers including Intel, Infineon, Huawei, ASE, OSRAM, Philips, Medtronic, GE Healthcare, Jabil, Honeywell"
+    ],
     "lastUpdated": "2025-06-15T10:30:00Z"
   },
   {
     "id": "poka",
     "name": "Poka",
     "category": "Connected Worker",
-    "positioning": "Connected worker platform focused on digitizing frontline knowledge, training, and communication for manufacturing teams with AI-assisted workflows.",
+    "headquarters": "Montreal, Canada",
+    "founded": "2014",
+    "revenue": "$18.6M ARR",
+    "employees": "169",
+    "funding": "$45M+ (acquired by IFS 2023)",
+    "valuation": "Acquired by IFS",
+    "positioning": "Connected worker platform focused on digitizing frontline knowledge, training, and communication for manufacturing teams with AI-assisted workflows. Now part of IFS industrial software ecosystem.",
     "strengths": [
       "Intuitive mobile-first interface loved by frontline workers",
       "Strong focus on knowledge management and training",
       "Quick deployment (weeks not months)",
-      "AI-powered content recommendations and search",
-      "Growing momentum in discrete manufacturing"
+      "AI Toolkit launched January 2025 with GPT-based knowledge synthesis",
+      "Growing momentum in discrete manufacturing",
+      "IFS backing provides enterprise credibility and resources"
     ],
     "weaknesses": [
       "Less comprehensive than full MES solutions",
-      "Limited machine connectivity and IoT integration",
-      "Smaller company with less enterprise presence",
+      "Limited machine connectivity and IoT integration compared to platforms",
+      "Acquired company may have slower innovation post-IFS integration",
       "Lacks deep shop floor execution capabilities",
       "Still building out analytics and reporting"
     ],
-    "pricingNotes": "SaaS subscription model, approximately $10-25 per user/month. More accessible pricing for mid-market.",
-    "aiClaims": "Emphasizes AI-assisted frontline knowledge workflows, content recommendations, and automated SOPs. Uses GPT-based models for knowledge synthesis.",
-    "lastUpdated": "2025-06-14T15:20:00Z"
+    "pricingNotes": "SaaS subscription model, approximately $10-25 per user/month. More accessible pricing for mid-market. IFS backing may lead to enterprise bundles.",
+    "aiClaims": "Launched AI Toolkit in January 2025 featuring AI-powered knowledge creation, visual aids for video work instructions, multilingual transcription/translation, and AI-enhanced search. Uses GPT-based models for knowledge synthesis and automated SOPs.",
+    "keyProducts": [
+      "AI Toolkit",
+      "Poka Automate",
+      "Digital Work Instructions",
+      "Knowledge Management",
+      "Training Platform"
+    ],
+    "recentNews": [
+      "Launched AI Toolkit for Connected Worker Platform (Jan 29, 2025)",
+      "Published Poka Automate for paperless factory workflows (Mar 2025)",
+      "Acquired by IFS (June 2023) - now part of enterprise portfolio",
+      "Emphasizing AI-powered search and text tools for manufacturing"
+    ],
+    "lastUpdated": "2025-05-26T00:00:00Z",
+    "threatScore": 10,
+    "threatLevel": "medium"
   },
   {
     "id": "parsable",
     "name": "Parsable",
     "category": "Connected Worker",
-    "positioning": "Connected worker platform for operational execution, focusing on digitizing procedures, checklists, and workflows for industrial frontline teams.",
+    "headquarters": "San Francisco, CA, USA",
+    "founded": "2013",
+    "revenue": "$18.9M - $30M (est.)",
+    "employees": "150+ (est.)",
+    "funding": "$133M (acquired by CAI Software 2024)",
+    "valuation": "Acquired by CAI Software",
+    "positioning": "Connected worker platform for operational execution, focusing on digitizing procedures, checklists, and workflows for industrial frontline teams. Now integrated with CAI Software's ERP and manufacturing execution suite.",
     "strengths": [
       "Strong in process industries (chemicals, food & beverage, CPG)",
       "Robust digital workflows and procedure execution",
       "Good compliance and audit trail capabilities",
       "Integration with existing enterprise systems",
-      "Proven ROI in reducing errors and improving efficiency"
+      "Proven ROI in reducing errors and improving efficiency",
+      "CAI Software backing adds ERP/supply chain integration"
     ],
     "weaknesses": [
       "Less modern UI compared to newer entrants",
       "Primarily focused on procedure execution vs broader shop floor",
       "Limited machine data integration",
-      "Slower innovation pace in recent years",
-      "Less emphasis on knowledge management"
+      "Post-acquisition integration may slow innovation",
+      "Less emphasis on knowledge management than Poka",
+      "Acquired status may create customer uncertainty"
     ],
-    "pricingNotes": "Enterprise SaaS model, typically $15-30 per user/month with minimum seat counts. Professional services required for customization.",
-    "aiClaims": "Recently started messaging around AI-powered insights and workflow optimization, but AI features are still emerging.",
-    "lastUpdated": "2025-06-13T09:45:00Z"
+    "pricingNotes": "Enterprise SaaS model, typically $15-30 per user/month with minimum seat counts. Professional services required for customization. CAI Software may bundle with ERP.",
+    "aiClaims": "Announced AI-Powered Analytics in June 2024, just before acquisition. Focus on workflow optimization and insights. Less aggressive AI messaging compared to Poka or Tulip.",
+    "keyProducts": [
+      "Connected Worker Platform",
+      "Digital Procedures",
+      "AI-Powered Analytics",
+      "Workflow Automation"
+    ],
+    "recentNews": [
+      "Acquired by CAI Software (Sept 25, 2024)",
+      "Received 2024 Frost & Sullivan Global Enabling Technology Leadership Award",
+      "Announced AI-Powered Analytics (June 2024)",
+      "Matt Belkin continues as CEO under CAI Software",
+      "Lightspeed Venture Partners remains investor in combined company"
+    ],
+    "lastUpdated": "2025-05-26T00:00:00Z",
+    "threatScore": 5,
+    "threatLevel": "low"
   },
   {
     "id": "apprentice",
     "name": "Apprentice.io",
     "category": "Life Sciences / Pharma",
-    "positioning": "Purpose-built manufacturing execution platform for life sciences and pharmaceutical manufacturing with focus on compliance, batch records, and quality.",
+    "headquarters": "Los Angeles, CA, USA",
+    "founded": "2015",
+    "revenue": "$55.2M ARR (2024)",
+    "employees": "250+ (est.)",
+    "funding": "$207M",
+    "valuation": "N/A",
+    "positioning": "Purpose-built manufacturing execution platform for life sciences and pharmaceutical manufacturing with focus on compliance, batch records, and quality. Strong in biopharma, cell & gene therapy.",
     "strengths": [
       "Deep pharma and biotech domain expertise",
       "Strong compliance and 21 CFR Part 11 capabilities",
       "Electronic batch records and quality workflows",
       "Validated system reducing regulatory burden",
-      "Growing presence in cell & gene therapy"
+      "Growing presence in cell & gene therapy",
+      "Well-funded with $207M total raised",
+      "Fastest growing in revenue ($35.7M to $55.2M YoY)"
     ],
     "weaknesses": [
-      "Narrow vertical focus limits applicability",
-      "Smaller company with limited resources",
+      "Narrow vertical focus limits applicability outside pharma",
       "Less proven in high-volume discrete manufacturing",
       "Higher switching costs due to validation requirements",
-      "Limited frontline worker engagement features"
+      "Limited frontline worker engagement features vs Poka/Tulip",
+      "Requires regulatory validation which extends deployment time"
     ],
-    "pricingNotes": "Subscription + implementation model. Pricing varies significantly by facility complexity and validation requirements. Typically $100K-$500K annual.",
-    "aiClaims": "Beginning to incorporate AI for deviation detection and quality predictions. Messaging around intelligent batch analytics.",
-    "lastUpdated": "2025-06-12T14:10:00Z"
+    "pricingNotes": "Subscription + implementation model. Pricing varies significantly by facility complexity and validation requirements. Typically $100K-$500K annual. Higher price point due to regulated environment.",
+    "aiClaims": "Incorporating AI for deviation detection and quality predictions. Messaging around intelligent batch analytics. AR/AI-driven software platform for pharma demands.",
+    "keyProducts": [
+      "Electronic Batch Records",
+      "Quality Management",
+      "Deviation Detection AI",
+      "Batch Analytics"
+    ],
+    "recentNews": [
+      "Reached $55.2M ARR in 2024, up from $35.7M in 2023 (54% growth)",
+      "Total funding reached $207M across multiple rounds",
+      "Latest funding round approximately $65M (March 2023)",
+      "Backed by Insight Partners for life science manufacturing process",
+      "Strong growth in cell & gene therapy segment"
+    ],
+    "lastUpdated": "2025-05-26T00:00:00Z",
+    "threatScore": 5,
+    "threatLevel": "low"
   },
   {
     "id": "siemens-xcelerator",
     "name": "Siemens MindSphere / Xcelerator",
     "category": "SCADA / Industrial Platform",
-    "positioning": "Industrial IoT and automation platform from Siemens, combining operational technology (OT) with IT systems for comprehensive digital manufacturing.",
+    "headquarters": "Munich, Germany",
+    "founded": "1847 (Siemens), Xcelerator launched 2022",
+    "revenue": "Part of Siemens (€78B+ total revenue)",
+    "employees": "Part of Siemens (320,000+ global)",
+    "funding": "Public company (Siemens AG)",
+    "valuation": "Siemens market cap ~€150B+",
+    "positioning": "Industrial IoT and automation platform combining operational technology (OT) with IT systems for comprehensive digital manufacturing. Open digital business platform with massive ecosystem and industrial AI focus.",
     "strengths": [
-      "Siemens brand and massive enterprise presence",
+      "Siemens brand and massive global enterprise presence",
       "Deep OT/automation expertise and hardware integration",
       "Comprehensive industrial software portfolio",
-      "Strong in process industries and automotive",
-      "Significant R&D investment in industrial AI"
+      "Strong partnerships with NVIDIA, AWS, Microsoft for industrial AI",
+      "Significant R&D investment - Industrial Copilot, AI agents, digital twins",
+      "Process industries and automotive market leadership"
     ],
     "weaknesses": [
       "Extremely complex with steep learning curve",
       "Requires Siemens ecosystem lock-in",
-      "Very expensive with long implementation cycles",
+      "Very expensive with long implementation cycles (12-24+ months)",
       "Overwhelming for mid-market manufacturers",
-      "Poor frontline worker experience - IT/OT focused",
-      "Difficult to extract value without significant consultancy"
+      "Poor frontline worker experience - IT/OT focused not user-focused",
+      "Difficult to extract value without significant consultancy spend"
     ],
-    "pricingNotes": "Enterprise platform pricing, highly variable. Can range from $500K to $10M+ for full deployment. Significant consulting and integration costs.",
-    "aiClaims": "Heavy messaging around industrial AI, predictive maintenance, and autonomous optimization. Leverages Siemens Industrial AI capabilities but requires significant data infrastructure.",
-    "lastUpdated": "2025-06-15T11:00:00Z"
+    "pricingNotes": "Enterprise platform pricing, highly variable. Can range from $500K to $10M+ for full deployment. Significant consulting and integration costs. Requires ongoing professional services.",
+    "aiClaims": "Heavy 2025 focus on Industrial Copilot for Operations, industrial AI agents, digital twins with NVIDIA physics-based visualization. Partnerships with AWS and Microsoft for AI acceleration. AI agent marketplace planned on Xcelerator Marketplace. Positioning as comprehensive industrial AI platform.",
+    "keyProducts": [
+      "Industrial Copilot",
+      "AI Agents",
+      "Industrial Edge",
+      "Digital Twin",
+      "Teamcenter",
+      "MindSphere"
+    ],
+    "recentNews": [
+      "Unveiled Industrial Copilot for Operations at CES 2025 (January 2025)",
+      "Expanded NVIDIA partnership for AI and digital twins (June 2025)",
+      "Introduced industrial AI agents at Automate 2025 with AI agent marketplace",
+      "Enhanced Industrial Edge for AI model deployment and management",
+      "Hosted AI with Purpose Summit 2025 focused on industrial AI transformation",
+      "Showcased AWS collaboration for industrial AI at CES 2025"
+    ],
+    "lastUpdated": "2025-05-26T00:00:00Z",
+    "threatScore": 0,
+    "threatLevel": "low"
   }
 ]
